@@ -496,7 +496,7 @@ input {
 }
 
 .card-3 .card-heading {
-  background: url("../image/cupidjpg.jpg") top left/cover no-repeat;
+  background: url("../images/cupidjpg.jpg") top left/cover no-repeat;
   display: table-cell;
   width: 50%;
 }
