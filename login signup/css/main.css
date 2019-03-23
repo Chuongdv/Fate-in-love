@@ -260,6 +260,13 @@ h6 {
   background: #4dae3c;
 }
 
+.btn--lightsalmon{
+  background: #FF8C69;
+}
+
+.btn--lightsalmon:hover {
+  background: #4dae3c;
+}
 /* ==========================================================================
    #DATE PICKER
    ========================================================================== */
@@ -343,6 +350,13 @@ input {
   position: relative;
   margin-bottom: 33px;
   border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.input--style-4{
+  padding: 5px 0;
+  font-size: 12px;
+  color: #ccc;
+  background: transparent;
 }
 
 .input--style-3 {
