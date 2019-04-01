@@ -1,2 +1,2 @@
 # Fate-in-love
-Web project
+Web project.
