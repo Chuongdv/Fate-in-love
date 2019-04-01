@@ -122,6 +122,7 @@ transform: scale(1.2,1.2);
 }
 .firstinfo .profileinfo h1 {
   font-size: 1.5em;
+  color: #000000;
 }
 .firstinfo .profileinfo h3 {
   font-size: 1.2em;
