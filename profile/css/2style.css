@@ -40,7 +40,7 @@ body {
   height: 400px;
   
   padding: 40px;
-  border-radius: 3px;
+  border-radius: 30px;
   background:white ;
   box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
   position: relative;
@@ -89,6 +89,11 @@ body {
 -o-transition: all 0.5s ease;
 }
 
+.firstinfo .img{
+  width: 20px;
+  height: 20px;
+}
+
 .firstinfo  img:hover{
 transform: scale(1.2,1.2);
 -webkit-transform: scale(1.2,1.2);
@@ -122,7 +127,7 @@ transform: scale(1.2,1.2);
 }
 .firstinfo .profileinfo h1 {
   font-size: 1.5em;
-  color: #000000;
+  color:#000000;
 }
 .firstinfo .profileinfo h3 {
   font-size: 1.2em;
@@ -201,13 +206,16 @@ background: #ad2740;
 color: white;
 display: none;
 padding: 50px;
-text-align: center;
+text-align: left;
 }
 .container {
 width: 60%;  
 margin: auto;  
 }
 
+.tabcontent p{
+  color: #000000;
+}
 
 
 
