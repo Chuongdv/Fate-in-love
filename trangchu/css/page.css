@@ -53,6 +53,15 @@ body {
   border: 1px solid #f1f1f1;
 }
 
+.rowmenu{
+	font-size: 20px;
+}
+
+.rowmenu:hover{
+	font-size: 30px;
+	color: #990000;
+}
+
 @media screen and (max-width: 500px) {
   .header a {
     float: none;
@@ -92,7 +101,7 @@ nav ul {
 nav ul li a{
   color: black;
   text-align: center;
-  padding: 12px;
+  padding: 15px;
   text-decoration: none;
   font-size: 18px; 
   line-height: 25px;
