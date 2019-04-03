@@ -58,6 +58,7 @@ body {
   overflow: hidden;
   padding: 5px 5px;
   background-color: #f1f1f1;
+  border-radius: 5px;
 }
 
 .header a {
@@ -92,12 +93,14 @@ body {
 
 .menu {
   color: white;
-  background-color: #477bd1; 
+  background-color: #477bd1;
+  border-radius: 5px;
 }
 
 .listmenu{
   padding: 15px;
   border: 1px solid #f1f1f1;
+  border-radius: 5px;
 }
 
 .rowmenu{
@@ -144,6 +147,7 @@ nav ul {
   margin: 5px;
   margin-left: 0px;
   background-color: white;
+  border-radius: 5px;
 
 }
 
