@@ -1,5 +1,5 @@
 @import "https://fonts.googleapis.com/css?family=Open+Sans:300,400";
-body, .badgescard, .firstinfo {
+.badgescard, .firstinfo {
   display: flex;
   justify-content: left;
   align-items: center;
@@ -33,12 +33,12 @@ body {
 .content {
   position: relative;
   animation: animatop 0.9s cubic-bezier(0.425, 1.14, 0.47, 1.125) forwards;
+  margin-top: 10px;
 }
 
-.card {
-  width: 750px;
-  height: 400px;
-  
+.card { 
+  max-width: 1000px;
+  min-height: 450px ;
   padding: 40px;
   border-radius: 30px;
   background:white ;
@@ -49,8 +49,8 @@ body {
 .card:after {
   content: '';
   display: block;
-  width: 280px;
-  height: 700px;
+  width: 500px;
+  height: 1500px;
   background: cadetblue;
   position: absolute;
   animation: rotatemagic 0.75s cubic-bezier(0.425, 1.04, 0.47, 1.105) 1s both;
@@ -81,8 +81,8 @@ body {
 }
 .firstinfo img {
   border-radius: 50%;
-  width: 120px;
-  height: 120px;
+  width: 250px;
+  height: 250px;
     transition: all 1s ease;
 -webkit-transition: all 0.5s ease;
 -moz-transition: all 0.5s ease;
@@ -95,15 +95,15 @@ body {
 }
 
 .firstinfo  img:hover{
-transform: scale(1.2,1.2);
--webkit-transform: scale(1.2,1.2);
--moz-transform: scale(1.2,1.2);
--o-transform: scale(1.2,1.2);
--ms-transform: scale(1.2,1.2);
+transform: scale(1.1,1.1);
+-webkit-transform: scale(1.1,1.1);
+-moz-transform: scale(1.1,1.1);
+-o-transform: scale(1.1,1.1);
+-ms-transform: scale(1.1,1.1);
 }
 
 .firstinfo .image_profile:hover{
-  opacity: 0.3;
+  opacity: 1;
 }
 
 
@@ -218,7 +218,7 @@ text-align: left;
 }
 .container {
 width: 60%;  
-margin: auto;  
+margin-top: 10px;  
 }
 
 .tabcontent p{
@@ -300,3 +300,10 @@ margin: auto;
     background-position: 0% 50%
   }
 }
+
+
+
+
+
+
+
