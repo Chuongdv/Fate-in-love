@@ -38,7 +38,7 @@ body {
 
 .card { 
   max-width: 1000px;
-  min-height: 450px ;
+  min-height: 550px ;
   padding: 40px;
   border-radius: 30px;
   background:white ;
@@ -81,8 +81,8 @@ body {
 }
 .firstinfo img {
   border-radius: 50%;
-  width: 250px;
-  height: 250px;
+  width: 300px;
+  height: 300px;
     transition: all 1s ease;
 -webkit-transition: all 0.5s ease;
 -moz-transition: all 0.5s ease;
@@ -105,6 +105,16 @@ transform: scale(1.1,1.1);
 .firstinfo .image_profile:hover{
   opacity: 1;
 }
+
+.firstinfo .image_stranger{
+  width: 50px;
+    height: 50px;
+
+}
+.pad{
+  padding-left: 50px;
+}
+
 
 
 
@@ -134,11 +144,11 @@ transform: scale(1.2,1.2);
   padding: 0px 20px;
 }
 .firstinfo .profileinfo h1 {
-  font-size: 1.5em;
+  font-size: 1.8em;
   color:#000000;
 }
 .firstinfo .profileinfo h3 {
-  font-size: 1.2em;
+  font-size: 1.5em;
   color: #009688;
   font-style: italic;
 }
@@ -147,6 +157,14 @@ transform: scale(1.2,1.2);
   color: #5A5A5A;
   line-height: 1.2;
   font-style: initial;
+}
+
+.bb{
+padding: 10px 0px;
+  color: #5A5A5A;
+  line-height: 1.2;
+  font-style: initial;
+
 }
 
 .btn {
@@ -231,6 +249,10 @@ margin-top: 10px;
   color: white;
   font-size: 16px;
   padding: 16px 32px;
+}
+
+.listmenu img{
+  border-radius: 50%;
 }
 
 @keyframes animatop {
