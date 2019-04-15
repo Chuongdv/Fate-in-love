@@ -15,9 +15,9 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('admin/dangnhap','UserController@getDangnhapAdmin');
-Route::post('admin/dangnhap','UserController@postDangnhapAdmin');
-Route::get('admin/logout','UserController@getDangXuatAdmin');
+// Route::get('admin/dangnhap','UserController@getDangnhapAdmin');
+// Route::post('admin/dangnhap','UserController@postDangnhapAdmin');
+// Route::get('admin/logout','UserController@getDangXuatAdmin');
 
 Route::group(['prefix'=>'admin'/*,'middleware'=>'adminLogin'*/],function(){
 	Route::group(['prefix'=>'user'],function(){
