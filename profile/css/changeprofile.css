@@ -19,7 +19,7 @@ color: #009688;
 
 }
 .text-350{
-	width: 350px;
+	width: 340px;
 
 }
 .w100{
@@ -27,9 +27,12 @@ color: #009688;
 	line-height: 3;
 }
 
+.margintop-40{
+	margin-top: 40px;
+}
 
 
-.input {
+.profileinfo .change .inpudd {
 	// needs to be relative so the :focus span is positioned correctly
 	position: relative;
 

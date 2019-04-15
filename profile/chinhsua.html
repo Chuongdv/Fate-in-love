@@ -10,7 +10,7 @@
 <link href="css/changeprofile.css" rel="stylesheet" type="text/css" media="all" /> 
 <link href="css/style.css" rel="stylesheet" type="text/css" media="all" /> 
 
-
+<link href="css/btn_changeprofile.css" rel="stylesheet" type="text/css" media="all" /> 
 
 
 </head>
@@ -53,42 +53,59 @@
       <div class="content">
   <div class="card">
     <div class="firstinfo">
-      <ul>
-          <li><img src="https://nguoinoitieng.tv/images/nnt/96/0/bbka.jpg" class="image_profile" /></li>
-          <li><button>Chỉnh sửa</button></li>
+      <table>
+        <tr><td>
+         <img src="https://nguoinoitieng.tv/images/nnt/96/0/bbka.jpg" /></td></tr>
+        
+        <tr><td style="text-align: center;">
+            <div class="button_container">
+              <button class="btn"><span>sửa ảnh!</span></button>
+              </div>
+
+
+
+
+        </td></tr>
+
+      </table>
+          <li>
+          <li></li>
       </ul>
 
         <!-- CHANGE A PHOTO-->
       
 
       <div class="profileinfo">
-        <ul class="change">
+        <table class="change">
+          <tr>
 
-        <!--li>Họ tên: <input type="text" name="Name" value="Phạm Hoài Lâm" class="text-350" /></li-->
+            <td>Họ tên: </td>
 
-        <li><p>
-            <span class="input">
-              <input type="text" placeholder="Gradient border focus fun">
+            <td> 
+              <p>
+            <span class="inpudd">
+              <input type="text" placeholder="" value="Phạm Hoài Lâm">
               <span></span>
             </span>
           </p>
-        </li>
+        </td>
+          </tr>
 
 
+          <tr>
+            <td>Ngày sinh: </td>
+            <td><input type="date" name="Datebirth" value="1998-11-14" class="dateb" /></td>
+          </tr>
 
+          <tr>
+            <td>Giới thiệu: </td>
+            <td><input type="text" name="" value="soloa" class="text-350 w100"/></td>
 
-        <li>Ngày sinh: <input type="date" name="Datebirth" value="1998-11-14" class="dateb" /></li>
+          </tr>
 
-        <li>Giới thiệu: <input type="text" name="" value="soloa" class="text-350 w100"/></li>
-        <!--li>Trường: 
-          <select>
-            <option value="HUST">Đại học Bách Khoa Hà Nội</option>
-            <option value="NUCE">Đại học Xây Dựng</option>
-            
-          </select>
-        </li-->
-        <li>
-          <select class="old-select">
+          <tr>
+            <td>Trường: </td>
+            <td> <select class="old-select">
               <option value="html">Đại học Bách Khoa Hà Nội</option>
               <option value="css">Đại học Xây Dựng</option>
               
@@ -104,20 +121,20 @@
                 <span></span>
             </div>
           </div>
+           </td>
+          </tr>
 
-        </li>
-
-        <!--li>Quê quán: 
-          <select>
-            <option value="HN">Hà Nội</option>
-            <option value="HCM">Hồ Chí Minh</option>
-            <option value="QQ">Quần Què</option>
-            <option value="CC">Củ cải</option>
-          </select>
-        </li-->
+          <tr>
+            <td><button class="btns" style="margin-top: 50px;"><span>Xác nhận</span></button></td>
+            <td><button class="btns"  style="margin-top: 50px;"><span>Hủy</span></button></td>
 
 
-      </ul>
+
+          </tr>
+
+
+        </table>
+        
         
 
 
