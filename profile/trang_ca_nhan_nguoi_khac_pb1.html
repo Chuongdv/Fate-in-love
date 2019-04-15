@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Nguyễn Thị A</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" href="css/page.css">
+  <link rel="stylesheet" type="text/css" href="css/my.css">
+  <link href="css/2style.css" rel="stylesheet" type="text/css" media="all" />
+  <link href="css/button_crush_mesg.css" rel="stylesheet" type="text/css" media="all" />
+
+</head>
+<body>
+  <div class="header" style="background-image: url('image/header.jpg');">
+    <a href="#default" class="logo">Fate in love</a>
+    <div class="header-right">
+      <a class="active" href="#home">Trang chủ</a>
+      <a href="#contact">Contact</a>
+      <a href="#about">About</a>
+    </div>
+  </div>
+
+  <section>
+    <nav>
+      <ul >
+                <li class="menu listmenu" style="background-image: url('image/menubg.jpg');">
+                  Menu
+                </li>
+        <li href="#" class="listmenu">
+          <image src="https://images.headlines.pw/topnews-2017/imgs/fd/c2/fdc2905c434afd3909038a88dc0437982d744884.jpg" width="50">
+                  <a href="#" style="font-size: 20px">Nguyễn Thị A</a>
+                </li>
+                <li href="#" class="listmenu">
+          <image src="image/chat.png" width="50">
+                  <a href="#" style="font-size: 20px">Chat</a>
+                </li>
+                <li href="#" class="listmenu">
+          <image src="image/ghepdoi.png" width="50">
+                  <a href="#" style="font-size: 20px">Ghép đôi</a>
+                </li>
+                <li href="#" class="listmenu">
+          <image src="image/thongbao.png" width="50">
+                  <a href="#" style="font-size: 20px">Thông báo</a>
+                </li>
+            </ul>
+    </nav>
+
+    <div>
+      <div class="content">
+  <div class="card">
+    <div class="firstinfo">
+    
+      <img src="https://images.headlines.pw/topnews-2017/imgs/fd/c2/fdc2905c434afd3909038a88dc0437982d744884.jpg" class="image_profile" />
+   
+  
+    
+      
+
+      <div class="profileinfo">
+        <h1>Nguyễn Thị A</h1>
+        <h3>14/11/1998</h3>
+        <p class="bio">soloa</p> 
+        <p class="bio"><img class="img" src="https://banner2.kisspng.com/20180630/fea/kisspng-netherlands-headgear-bachelor-s-degree-hat-square-5b37b126419390.8893612415303764862686.jpg"/> Trường đại học Bách Khoa Hà Nội</p>
+        <p class="bio">sống tại Hà Nội</p>
+        <p class="bio">có 0 người crush</p>
+      </div>
+
+
+    <div class="pad">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/Heart_coraz%C3%B3n.svg/1200px-Heart_coraz%C3%B3n.svg.png" class="image_stranger" />
+        
+
+    </div>
+   <div class="pad">
+      <img src="image/chat.png" class="image_stranger" />
+        
+
+    </div>
+   
+
+    </div>
+  </div>
+
+  
+
+  
+</div>
+<!-- js cho cac tabs -->
+<script type="text/javascript">
+    var buttons = document.getElementsByClassName('tablinks');
+    var contents = document.getElementsByClassName('tabcontent');
+    function showContent(id){
+        for (var i = 0; i < contents.length; i++) {
+            contents[i].style.display = 'none';
+        }
+        var content = document.getElementById(id);
+        content.style.display = 'block';
+    }
+    for (var i = 0; i < buttons.length; i++) {
+        buttons[i].addEventListener("click", function(){
+            var id = this.textContent;
+            for (var i = 0; i < buttons.length; i++) {
+                buttons[i].classList.remove("active");
+            }
+            this.className += " active";
+            showContent(id);
+        });
+    }
+    showContent('Crush');
+</script>
+
+    </div>
+    
+  </section>
+
+</body>
+</html>
