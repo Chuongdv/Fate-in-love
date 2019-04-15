@@ -23,24 +23,24 @@ Route::group(['prefix'=>'admin'/*,'middleware'=>'adminLogin'*/],function(){
 	Route::group(['prefix'=>'user'],function(){
 		Route::get('danhsach','UserController@getDanhSach');
 
-		Route::get('sua/{id}','UserController@getSua');
-		Route::post('sua/{id}','UserController@postSua');
+		Route::get('sua','UserController@getSua');
+		Route::post('sua','UserController@postSua');
 
 		Route::get('them','UserController@getThem');
 		Route::post('them','UserController@postThem');
 
-		Route::get('xoa/{id}','UserController@getXoa');
+		Route::get('xoa','UserController@getXoa');
 	});
 	Route::group(['prefix'=>'truong'],function(){
 		Route::get('danhsach','TruongController@getDanhSach');
 
-		Route::get('sua/{id}','TruongController@getSua');
-		Route::post('sua/{id}','TruongController@postSua');
+		Route::get('sua','TruongController@getSua');
+		Route::post('sua','TruongController@postSua');
 
 		Route::get('them','TruongController@getThem');
 		Route::post('them','TruongController@postThem');
 
-		Route::get('xoa/{id}','TruongController@getXoa');
+		Route::get('xoa','TruongController@getXoa');
 	});
 });
 ?>

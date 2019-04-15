@@ -15,9 +15,8 @@
                 <thead>
                     <tr align="center">
                         <th>ID</th>
-                        <th>Name</th>
+                        <th>Tên</th>
                         <th>Email</th>
-                        <th>Level</th>
                         <th>Delete</th>
                         <th>Edit</th>
                     </tr>
@@ -27,7 +26,6 @@
                         <td>1</td>
                         <td>name</td>
                         <td>email</td>
-                        <td>level</td>
                         <td class="center"><i class="fa fa-trash-o  fa-fw"></i><a href="#"> Delete</a></td>
                         <td class="center"><i class="fa fa-pencil fa-fw"></i> <a href="#">Edit</a></td>
                     </tr>

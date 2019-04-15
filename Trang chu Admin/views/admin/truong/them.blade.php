@@ -12,7 +12,7 @@
             </div>
             <!-- /.col-lg-12 -->
             <div class="col-lg-7" style="padding-bottom:120px">
-                {{-- @if(count($errors) > 0)
+                <!-- @if(count($errors) > 0)
                     <div class="alert alert-danger">
                         @foreach($errors->all() as $err)
                             {{$err}}<br>
@@ -24,13 +24,20 @@
                     <div class="alert alert-success">
                         {{session('thongbao')}}
                     </div>
-                @endif
- --}}
+                @endif -->
                 <form action="admin/theloai/them" method="POST">
                     <input type="hidden" name="_token" value="{{csrf_token()}}"/>
                     <div class="form-group">
                         <label>Tên trường</label>
                         <input class="form-control" name="Ten" placeholder="Nhập tên thể loại" />
+                    </div>
+                    <div class="form-group">
+                        <label>Địa chỉ</label>
+                        <input class="form-control" name="DiaChi" placeholder="Nhập địa chỉ" />
+                    </div>
+                    <div class="form-group">
+                        <label>Logo</label>
+                        <input type="file" class="form-control" name="Logo"/>
                     </div>
 
                     <button type="submit" class="btn btn-default">Thêm</button>

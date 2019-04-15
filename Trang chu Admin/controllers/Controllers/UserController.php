@@ -20,19 +20,19 @@ class UserController extends Controller
     	return view('admin.user.them');
     }
 
-    public function postThem(Request $request){
+    public function postThem(){
     	return redirect('admin/user/them');
     }
 
-    public function getSua($id){
+    public function getSua(){
     	return view('admin.user.sua');
     }
 
-    public function postSua(Request $request, $id){
+    public function postSua(){
     	return redirect('admin/user/sua');
     }
 
-    public function getXoa($id){
+    public function getXoa(){
     	return redirect('admin/user/danhsach');
     }
 
@@ -40,7 +40,7 @@ class UserController extends Controller
         return view('admin.login');
     }
 
-    public function postDangnhapAdmin(Request $request){
+    public function postDangnhapAdmin(){
         return redirect('admin/truong/danhsach');
     }
 

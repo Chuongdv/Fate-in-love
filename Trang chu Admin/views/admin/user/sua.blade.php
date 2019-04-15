@@ -7,12 +7,12 @@
         <div class="row">
             <div class="col-lg-12">
                 <h1 class="page-header">User
-                    {{-- <small>{{$user->name}}</small> --}}
+                    <small>Tên user</small>
                 </h1>
             </div>
             <!-- /.col-lg-12 -->
             <div class="col-lg-7" style="padding-bottom:120px">
-                {{-- @if(count($errors) > 0)
+                <!-- {{-- @if(count($errors) > 0)
                     <div class="alert alert-danger">
                         @foreach($errors->all() as $err)
                             {{$err}}<br>
@@ -24,42 +24,24 @@
                     <div class="alert alert-success">
                         {{session('thongbao')}}
                     </div>
-                @endif --}}
-                <form action="admin/user/sua/{{$user->id}}" method="POST">
+                @endif --}} -->
+                <form action="" method="POST">
                     <input type="hidden" name="_token" value="{{csrf_token()}}">
                     <div class="form-group">
                         <label>Họ tên</label>
-                        <input class="form-control" name="name" placeholder="Nhập tên người dùng" value="{{$user->name}}" />
+                        <input class="form-control" name="name" placeholder="Nhập tên người dùng" />
                     </div>
                     <div class="form-group">
                         <label>Email</label>
-                        <input type="email" class="form-control" name="email" placeholder="Nhập địa chỉ email" value="{{$user->email}}" readonly="" />
+                        <input type="email" class="form-control" name="email" placeholder="Nhập địa chỉ email" />
                     </div>
                     <div class="form-group">
-                        <input type="checkbox" id="changePassword" name="changePassword">
-                        <label>Đổi mật khẩu</label>
-                        <input type="password" class="form-control password" name="password" placeholder="Nhập mật khẩu" disabled="" />
+                        <label>Password</label>
+                        <input type="password" class="form-control" name="password" placeholder="Nhập mật khẩu" />
                     </div>
                     <div class="form-group">
-                        <label>Nhập lại mật khẩu</label>
-                        <input type="password" class="form-control password" name="passwordAgain" placeholder="Nhập lại mật khẩu" disabled="" />
-                    </div>
-                    <div class="form-group">
-                        <label>Quyền người dùng</label>
-                        <label class="radio-inline">
-                            <input name="quyen" value="0"
-                            {{-- @if($user->quyen == 0)
-                            {{"checked"}}
-                            @endif --}}
-                            type="radio">Thường
-                        </label>
-                        <label class="radio-inline">
-                            <input name="rdoStatus" value="1" 
-                            {{-- @if($user->quyen == 1)
-                            {{"checked"}}
-                            @endif
-                            type="radio">Admin --}}
-                        </label>
+                        <label>Nhập lại Password</label>
+                        <input type="password" class="form-control" name="passwordAgain" placeholder="Nhập lại mật khẩu" />
                     </div>
                     <button type="submit" class="btn btn-default">Sửa</button>
                     <button type="reset" class="btn btn-default">Làm mới</button>
@@ -74,7 +56,7 @@
 
 @endsection
 
-@section('script')
+<!-- @section('script')
     <script type="text/javascript">
         $(document).ready(function(){
             $("#changePassword").change(function(){
@@ -87,4 +69,4 @@
             });
         });
     </script>
-@endsection
+@endsection -->

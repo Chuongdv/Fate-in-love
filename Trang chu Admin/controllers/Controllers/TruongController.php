@@ -17,20 +17,20 @@ class TruongController extends Controller
     	return view('admin.truong.them');
     }
 
-    public function postThem(Request $request){
+    public function postThem(){
         return redirect('admin/truong/them');
     }
 
-    public function getSua($id){
+    public function getSua(){
         return view('admin.truong.sua');
     }
 
-    public function postSua(Request $request, $id){
+    public function postSua(){
 
         return redirect('admin/truong/sua');
     }
 
-    public function getXoa($id){
+    public function getXoa(){
         return redirect('admin/truong/danhsach');
     }
 }

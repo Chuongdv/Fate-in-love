@@ -11,17 +11,18 @@
                 </h1>
             </div>
             <!-- /.col-lg-12 -->
-            {{-- @if(session('thongbao'))
+            <!-- {{-- @if(session('thongbao'))
                 <div class="alert alert-success">
                     {{session('thongbao')}}
                 </div>
-            @endif --}}
+            @endif --}} -->
             <table class="table table-striped table-bordered table-hover" id="dataTables-example">
                 <thead>
                     <tr align="center">
                         <th>ID</th>
                         <th>Tên</th>
-                        <th>Tên không dấu</th>
+                        <th>Logo</th>
+                        <th>Địa chỉ</th>
                         <th>Delete</th>
                         <th>Edit</th>
                     </tr>
@@ -30,9 +31,10 @@
                     <tr class="odd gradeX" align="center">
                         <td>1</td>
                         <td>Ten</td>
-                        <td>Ten</td>
+                        <td><img src="" alt="Chưa có ảnh"></td>
+                        <td>Địa chỉ</td>
                         <td class="center"><i class="fa fa-trash-o  fa-fw"></i><a href="#"> Delete</a></td>
-                        <td class="center"><i class="fa fa-pencil fa-fw"></i> <a href="#">Edit</a></td>
+                        <td class="center"><i class="fa fa-pencil fa-fw"></i> <a href="admin/truong/sua">Edit</a></td>
                     </tr>
                 </tbody>
             </table>
