@@ -14,12 +14,14 @@
 Route::get('/', function () {
     return view('welcome');
 });
-
-
-
+Route::get('/index', function () {
+    return view('viewpage.index');
+});
 Route::get('/signup_and_login','UserController@getSignUp');
-Route::post('/signup','UserController@postSignUp');
+Route::post('/signup_and_login','UserController@postSignUp');
 
-Route::post('/login','UserController@postLogin');
 Route::get('/index','PageController@page');
-?>
+Route::get('/myprofile','PageController@myprofile');
+Route::get('/editprofile','PageController@editprofile');
+Route::get('/profile','PageController@profile');
+

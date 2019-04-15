@@ -4,7 +4,7 @@
 
 <head>
   <meta charset="UTF-8">
-  <title>Fate in Love</title>
+  <title>FateInLove</title>
       <link rel="stylesheet" href="css/style.css"/>
       <base href="{{asset('')}}">
 </head>
@@ -38,15 +38,15 @@
                         </div>
 
                         @endif
-    <form action='signup' method="post">
-      <input type="hidden" name="_token" value="{{csrf_token()}}"/>
-      
+    <form action='signup_and_login' method="post">
+      <input type="hidden" name="_token" value="{{csrf_token()}}"/> 
       <input type="text" placeholder="Tên" name="name">
       <input type="email" placeholder="Email" name="email">
       <input type="gender" placeholder="Giới tính" name="gender">
       <input type="birthdate" placeholder="Ngày sinh" name="birthday">
       <input type="password" placeholder="Mật khẩu" name="password">
       <input type="password" placeholder="Nhập lại mật khẩu" name="passwordAgain">
+      <input type="text" placeholder="Nhập ID cá nhân(không quá 8 ký tự)" name="uid">
       <button class="button" type="submit">Đăng ký</button>
     </form>
   </div>

@@ -1,153 +1,74 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<title>CSS Template</title>
+	<title>FateInLove</title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" type="text/css" href="css/pages.css">
-	<link rel="stylesheet" type="text/css" href="css/my.css'">
+	<link rel="stylesheet" type="text/css" href="css/page.css">
+	<link rel="stylesheet" type="text/css" href="css/my.css">
 	<link rel="stylesheet" type="text/css" href="css/profile.css">
+	<style type="text/css">
+		a{
+            color: pink;
+		}
+	</style>
 </head>
-<body style="background-image: url('images/lovebg.png');">
-	<div class="header" style="background-image: url('images/header.jpg');">
-		<a href="#default" class="logo">Web tình duyên</a>
+<body>
+	<div class="header" style="background-image: url('image/header.jpg');">
+		<a href="#default" class="logo" style="color: #CC0066;">FateInLove</a>
 		<div class="header-right">
-			<a class="active" href="#home">Home</a>
-			<a href="#contact">Contact</a>
-			<a href="#about">About</a>
+			<a href="index" style="color: #CC0066; font-weight: bold;">Home</a>
+			<a href="#contact" style="color: #CC0066;font-weight: bold;" >Contact</a>
+			<a href="#about" style="color: #CC0066;font-weight: bold;" >About</a>
 		</div>
 	</div>
 
 	<section>
 		<nav>
 			<ul >
-                <li class="menu listmenu" style="background-image: url('images/menubg.jpg');">
+                <li class="menu listmenu" style="background-image: url('image/menubg.jpg');color: #CC0066; font-weight: bold; ">
                 	Menu
                 </li>
 				<li href="#" class="listmenu">
-					<images src="images/banthan.png" width="50">
-                	<a href="#" style="font-size: 20px">Bản thân</a>
+					<image src="image/banthan.png" width="50">
+                	<a href="myprofile" class="rowmenu"style="color: #CC0066;font-weight: bold;">Profile</a>
                 </li>
                 <li href="#" class="listmenu">
-					<images src="images/chat.png" width="50">
-                	<a href="#" style="font-size: 20px">Chat</a>
+					<image src="image/chat.png" width="50">
+                	<a href="#" class="rowmenu" style="color: #CC0066;font-weight: bold;">Chat</a>
                 </li>
                 <li href="#" class="listmenu">
-					<images src="images/ghepdoi.png" width="50">
-                	<a href="#" style="font-size: 20px">Ghép đôi</a>
+					<image src="image/ghepdoi.png" width="50">
+                	<a href="#" class="rowmenu"style="color: #CC0066;font-weight: bold;">Ghép đôi</a>
                 </li>
                 <li href="#" class="listmenu">
-					<images src="images/thongbao.png" width="50">
-                	<a href="#" style="font-size: 20px">Thông báo</a>
+					<image src="image/thongbao.png" width="50">
+                	<a href="#" class="rowmenu"style="color: #CC0066;font-weight: bold;">Thông báo</a>
                 </li>
             </ul>
-		</nav>
-
-		<article>
-			{{-- <input id="slider" class="customSlider" type="checkbox">
-			<label for="slider"></label> --}}
-
+        </nav>
+            <?php
+				$data = $users->where('star',1)->sortByDesc('created_at')->take(8);
+				?>
+@foreach($data as $user)
+		<div>
 			<div class="wrapper" style="float: left;">
-				<div class="profile">
-					<div>
-						<img src="images/dohuong.jpg" class="thumbnail">
-					</div>
-					
-					<div class="check"><i class="fas fa-check"></i></div>
-					<h3 class="name">Đỗ Hương</h3>
-					<p class="title">Javascript Developer</p>
-					<button type="button" class="btn">Hire Me</button>
-				</div>
 				
-				<div class="social-icons">
-					<div class="icon">
-						<a href="/"><i class="fab fa-dribbble"></i></a>
-						<h4>12.8k</h4>
-						<p>Followers</p>
+				<a href="#" class="infocrush">
+					<div class="profile">
+						<div>
+							<a href="profile"><img src="image/profile/{{$user->image}}" class="thumbnail imgcrush"><a>
+						</div>
+						<h3 class="name" style="color: #CC0066;">{{$user->name}}</h3>
+						<p class="title"style="color: #CC0066;">{{$user->birthday}}</p>
 					</div>
-					
-					<div class="icon">
-						<a href="#"><i class="fab fa-behance"></i></a>
-						<h4>12.8k</h4>
-						<p>Followers</p>
-					</div>
-					
-					<div class="icon">
-						<a href="#"><i class="fab fa-twitter"></i></a>
-						<h4>12.8k</h4>
-						<p>Followers</p>
-					</div>
-				</div>
-			</div>
-
-			<div class="wrapper" style="float: left;">
-				<div class="profile">
-					<div>
-						<img src="images/talan.jpg" class="thumbnail">
-					</div>
-					
-					<div class="check"><i class="fas fa-check"></i></div>
-					<h3 class="name">Đỗ Hương</h3>
-					<p class="title">Javascript Developer</p>
-					<button type="button" class="btn">Hire Me</button>
-				</div>
+				</a>
 				
-				<div class="social-icons">
-					<div class="icon">
-						<a href="/"><i class="fab fa-dribbble"></i></a>
-						<h4>12.8k</h4>
-						<p>Followers</p>
-					</div>
-					
-					<div class="icon">
-						<a href="#"><i class="fab fa-behance"></i></a>
-						<h4>12.8k</h4>
-						<p>Followers</p>
-					</div>
-					
-					<div class="icon">
-						<a href="#"><i class="fab fa-twitter"></i></a>
-						<h4>12.8k</h4>
-						<p>Followers</p>
-					</div>
-				</div>
 			</div>
-
-			<div class="wrapper" style="float: left;">
-				<div class="profile">
-					<div>
-						<img src="images/dohuong.jpg" class="thumbnail">
-					</div>
-					
-					<div class="check"><i class="fas fa-check"></i></div>
-					<h3 class="name">Đỗ Hương</h3>
-					<p class="title">Javascript Developer</p>
-					<button type="button" class="btn">Hire Me</button>
-				</div>
-				
-				<div class="social-icons">
-					<div class="icon">
-						<a href="/"><i class="fab fa-dribbble"></i></a>
-						<h4>12.8k</h4>
-						<p>Followers</p>
-					</div>
-					
-					<div class="icon">
-						<a href="#"><i class="fab fa-behance"></i></a>
-						<h4>12.8k</h4>
-						<p>Followers</p>
-					</div>
-					
-					<div class="icon">
-						<a href="#"><i class="fab fa-twitter"></i></a>
-						<h4>12.8k</h4>
-						<p>Followers</p>
-					</div>
-				</div>
-			</div>
-		</article>
+			
+		</div>
+		@endforeach
 	</section>
 
 </body>
 </html>
-

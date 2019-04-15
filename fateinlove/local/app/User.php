@@ -36,4 +36,12 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function crush(){
+        return $this->hasMany('App\Crush','uid','uid');
+    }
+
+    public function follow(){
+        return $this->hasMany('App\Follow','uid','uid');
+    }
 }
