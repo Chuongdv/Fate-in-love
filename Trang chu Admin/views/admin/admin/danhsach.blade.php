@@ -6,7 +6,7 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-lg-12">
-                <h1 class="page-header">User
+                <h1 class="page-header">Admin
                     <small>Danh sách</small>
                 </h1>
             </div>
@@ -17,8 +17,8 @@
                         <th>ID</th>
                         <th>Tên</th>
                         <th>Email</th>
-                        <th>Chi tiết</th>
                         <th>Delete</th>
+                        <th>Edit</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -26,8 +26,8 @@
                         <td>1</td>
                         <td>name</td>
                         <td>email</td>
-                        <td class="center"><i class="fa fa-trash-o  fa-fw"></i><a href="#"> Chi tiết</a></td>
-                        <td class="center"><i class="fa fa-pencil fa-fw"></i> <a href="#">Xóa</a></td>
+                        <td class="center"><i class="fa fa-trash-o  fa-fw"></i><a href="#"> Delete</a></td>
+                        <td class="center"><i class="fa fa-pencil fa-fw"></i> <a href="admin/admin/sua">Edit</a></td>
                     </tr>
                 </tbody>
             </table>

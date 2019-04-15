@@ -13,13 +13,22 @@
                 <!-- /input-group -->
             </li>
             <li>
+                <a href="admin/admin/danhsach"><i class="fa fa-users fa-fw"></i> Admin<span class="fa arrow"></span></a>
+                <ul class="nav nav-second-level">
+                    <li>
+                        <a href="admin/admin/danhsach">Danh sách</a>
+                    </li>
+                    <li>
+                        <a href="admin/admin/them">Thêm</a>
+                    </li>
+                </ul>
+                <!-- /.nav-second-level -->
+            </li>
+            <li>
                 <a href="admin/user/danhsach"><i class="fa fa-users fa-fw"></i> User<span class="fa arrow"></span></a>
                 <ul class="nav nav-second-level">
                     <li>
                         <a href="admin/user/danhsach">Danh sách</a>
-                    </li>
-                    <li>
-                        <a href="admin/user/them">Thêm</a>
                     </li>
                 </ul>
                 <!-- /.nav-second-level -->

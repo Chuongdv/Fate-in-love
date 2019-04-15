@@ -20,14 +20,22 @@ Route::post('admin/dangnhap','UserController@postDangnhapAdmin');
 Route::get('admin/logout','UserController@getDangXuatAdmin');
 
 Route::group(['prefix'=>'admin'/*,'middleware'=>'adminLogin'*/],function(){
+	Route::group(['prefix'=>'admin'],function(){
+		Route::get('danhsach','AdminController@getDanhSach');
+
+		Route::get('sua','AdminController@getSua');
+		Route::post('sua','AdminController@postSua');
+
+		Route::get('them','AdminController@getThem');
+		Route::post('them','AdminController@postThem');
+
+		Route::get('xoa','AdminController@getXoa');
+	});
 	Route::group(['prefix'=>'user'],function(){
 		Route::get('danhsach','UserController@getDanhSach');
 
-		Route::get('sua','UserController@getSua');
-		Route::post('sua','UserController@postSua');
-
-		Route::get('them','UserController@getThem');
-		Route::post('them','UserController@postThem');
+		Route::get('chitiet','UserController@getChiTiet');
+		//Route::post('sua','UserController@postSua');
 
 		Route::get('xoa','UserController@getXoa');
 	});
