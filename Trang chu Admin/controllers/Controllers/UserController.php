@@ -41,7 +41,7 @@ class UserController extends Controller
     }
 
     public function postDangnhapAdmin(Request $request){
-        return redirect('admin/theloai/danhsach');
+        return redirect('admin/truong/danhsach');
     }
 
     public function getDangXuatAdmin(){
