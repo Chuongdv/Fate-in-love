@@ -5,8 +5,9 @@
 <head>
   <meta charset="UTF-8">
   <title>FateInLove</title>
-      <link rel="stylesheet" href="css/style.css"/>
-      <base href="{{asset('')}}">
+ 
+<link rel="stylesheet"  href="{{ asset('css/signup_login.css') }}" /> 
+  
 </head>
 
 <body>
@@ -46,7 +47,7 @@
       <input type="birthdate" placeholder="Ngày sinh" name="birthday">
       <input type="password" placeholder="Mật khẩu" name="password">
       <input type="password" placeholder="Nhập lại mật khẩu" name="passwordAgain">
-      <input type="text" placeholder="Nhập ID cá nhân(không quá 8 ký tự)" name="uid">
+      <input type="text" placeholder="Nhập ID cá nhân(không quá 8 ký tự)" name="id">
       <button class="button" type="submit">Đăng ký</button>
     </form>
   </div>

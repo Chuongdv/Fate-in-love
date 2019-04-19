@@ -19,9 +19,12 @@ Route::get('/index', function () {
 });
 Route::get('/signup_and_login','UserController@getSignUp');
 Route::post('/signup_and_login','UserController@postSignUp');
+Route::post('/login','UserController@postLogin');
+Route::get('/logout','UserController@getLogout');
 
-Route::get('/index','PageController@page');
-Route::get('/myprofile','PageController@myprofile');
-Route::get('/editprofile','PageController@editprofile');
-Route::get('/profile','PageController@profile');
+Route::get('/home','PageController@page');
+Route::get('/myprofile/{id}','PageController@getMyProfile');
+Route::get('/profile/{id}','PageController@getProfile');
 
+Route::get('/editprofile/{id}','PageController@getEditProfile');
+Route::post('/editprofile/{id}','PageController@postEditProfile');

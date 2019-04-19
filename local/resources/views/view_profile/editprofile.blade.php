@@ -1,37 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Phạm Hoài Lâm</title>
+  <title>{{$user_edit->name}}</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" type="text/css" href="css/page.css">
-  <link rel="stylesheet" type="text/css" href="css/my.css">
-   <link href="css/2style.css" rel="stylesheet" type="text/css" media="all" />
-   <link rel="stylesheet" type="text/css" href="css/changeprofile.css">
-   <link rel="stylesheet" type="text/css" href="css/new.css">
-
-
+  <link rel="stylesheet"  href="{{ asset('css/new_page.css') }}" /> 
+<link rel="stylesheet"  href="{{ asset('css/2style.css') }}" /> 
+<link rel="stylesheet" type="text/css" href="{{ asset('css/profile.css') }}">
+   <link rel="stylesheet"  href="{{ asset('css/changeprofile.css') }}" /> 
+<link rel="stylesheet"  href="{{ asset('css/new.css') }}" /> 
+<base href="{{asset('')}}">
 
 </head>
 <body>
   <div class="header" style="background-image: url('image/header.jpg');">
     <a href="#default" class="logo" style="color: #CC0066;">FateInLove</a>
     <div class="header-right">
-      <a href="index" style="color: #CC0066; font-weight: bold;">Home</a>
+    
+              <a href="/myprofile/{{$user_edit->id}}" style="color: #CC0066; font-weight: bold;">{{$user_edit->name}}</a>
+                      
+                   
+      <a href="/logout" style="color: #CC0066; font-weight: bold;">Logout</a>
+      <a href="/home" style="color: #CC0066; font-weight: bold;">Home</a>
       <a href="#contact" style="color: #CC0066;font-weight: bold;" >Contact</a>
       <a href="#about" style="color: #CC0066;font-weight: bold;" >About</a>
-    </div>
+      </div>
   </div>
 
   <section>
-   <nav>
+  
+        <nav>
       <ul >
                 <li class="menu listmenu" style="background-image: url('image/menubg.jpg');color: #CC0066; font-weight: bold; ">
                   Menu
                 </li>
         <li href="#" class="listmenu">
-          <image src="image/banthan.png" width="50">
-                  <a href="#" class="rowmenu"style="color: #CC0066;font-weight: bold;">Profile</a>
+          <image src="image/profile/{{$user_edit->image}}" width="50">
+                  
+                  <a href="/myprofile/{{$user_edit->id}}" class="rowmenu"style="color: #CC0066;font-weight: bold;">Profile</a>
                 </li>
                 <li href="#" class="listmenu">
           <image src="image/chat.png" width="50">
@@ -53,32 +59,47 @@
   <div class="card">
     <div class="firstinfo">
      
-    <img src="https://nguoinoitieng.tv/images/nnt/96/0/bbka.jpg" class="image_profile" />
+    <img src="{{asset('image/profile/lanta.jpg')}}" class="image_profile" />
   
 
         <!-- CHANGE A PHOTO-->
-      
-<form action="" method="">
       <div class="profileinfo">
         <ul class="change">
+          @if(count($errors) >0)
+                        <div class="alert alert-danger" style="color: red">
+                            @foreach($errors->all() as $err)
+                            {{$err}}<br>
 
-        <li><p>
-           Tạ Thị Lan
-          </p>
-        </li>
+                            @endforeach
 
+                        </div>
+
+                        @endif
+
+                         @if(session('thongbao'))
+                        <div class="alert alert-success" style="color: green">
+                            
+                            {{session('thongbao')}}<br>
+                        </div>
+
+                        @endif
+
+<form action="" method="post">
+   <input type="hidden" name="_token" value="{{csrf_token()}}"/> 
 <label for="user">Name:</label> 
-<input type="text" name="user"><br /> 
+<input type="text" name="name" value="{{$user_edit->name}}"><br /> 
 <label>Email:</label> 
-<input type="text" name="emailaddress" ><br /> 
+<input type="text" name="email" value="{{$user_edit->email}}"><br /> 
+<label>Home:</label> 
+<input type="text" name="home" value="{{$user_edit->home}}"><br /> 
 <label>Introduece:</label> 
-<textarea name="comments"></textarea><br /> 
+<textarea name="introduce" placeholder="{{$user_edit->introduce}}"></textarea><br /> 
  
         <label> School:
-          <select class="old-select">
-              <option value="html">Đại học Bách Khoa Hà Nội</option>
-              <option value="css">Đại học Xây Dựng</option>
-              <option value="jquery" selected>Đại học Kinh tế Quốc Dân</option>
+          <select class="old-select" name="school">
+            @foreach($school as $sch)
+              <option value="{{$sch->name}}" >{{$sch->name}}</option>
+              @endforeach
           </select>
           <div class="new-select">
             <div class="selection">
@@ -92,26 +113,13 @@
         </label>
 <input type="submit" name="submitbutton" id="submitbutton" value="Edit" /> 
 </form>
-       
-
-        <!--li>Quê quán: 
-          <select>
-            <option value="HN">Hà Nội</option>
-            <option value="HCM">Hồ Chí Minh</option>
-            <option value="QQ">Quần Què</option>
-            <option value="CC">Củ cải</option>
-          </select>
-        </li-->
-
-
-        
-
-
-
+</ul>       
 
       </div>
 
     </div>
+  </div>
+</div>
   </section>
 <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
 

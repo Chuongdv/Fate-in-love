@@ -7,6 +7,6 @@ use Illuminate\Database\Eloquent\Model;
 class Follow extends Model
 {
     //
-    protected $crush = "Follow";
+    protected $table = "Follow";
 
 }

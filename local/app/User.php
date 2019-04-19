@@ -38,10 +38,10 @@ class User extends Authenticatable
     ];
 
     public function crush(){
-        return $this->hasMany('App\Crush','uid','uid');
+        return $this->hasMany('App\Crush','cid','id');
     }
 
-    public function follow(){
-        return $this->hasMany('App\Follow','uid','uid');
+    public function Follow(){
+        return $this->hasMany('App\Follow','uid','id');
     }
 }

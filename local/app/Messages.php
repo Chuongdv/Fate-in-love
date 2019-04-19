@@ -7,6 +7,6 @@ use Illuminate\Database\Eloquent\Model;
 class Messages extends Model
 {
     //
-    protected $crush = "Messages";
+    protected $table = "Messages";
 
 }

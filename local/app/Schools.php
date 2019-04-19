@@ -4,9 +4,9 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class School extends Model
+class Schools extends Model
 {
     //
-    protected $crush = "School";
 
+    protected $table = 'Schools';
 }

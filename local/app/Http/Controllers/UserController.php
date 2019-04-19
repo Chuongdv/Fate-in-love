@@ -3,11 +3,14 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+
 use App\User;
+use App\Schools;
 use Illuminate\Support\Facades\Auth;
 class UserController extends Controller
 {
     //
+
      function getSignUp(){
     	return view('viewpage.login_signup');
     }
@@ -21,7 +24,7 @@ class UserController extends Controller
          'passwordAgain'=>'required|same:password',
          'birthday'=>'required',
          'gender'=>'required',
-         'uid'=>'required|max:8|min:6|unique:users,uid',
+         'id'=>'required|max:8|min:6|unique:users,id',
 
         ],
         [
@@ -37,15 +40,15 @@ class UserController extends Controller
             'passwordAgain.same'=>'Mật khẩu không trùng khớp',
             'birthday.required'=>'Bạn chưa điền ngày tháng năm sinh',
             'gender.required'=>'Giới tính của bạn là gì???',
-            'uid.required'=>'Bạn cần tạo cho mình một mã ID cá nhân',
-            'uid.max'=>'Mã ID cá nhân không quá 9 ký tự',
-            'uid.min'=>'Mã ID cá nhân bảo mật kém',
-            'uid.unique'=>'Ai đó đã dùng mã ID cá nhân này'
+            'id.required'=>'Bạn cần tạo cho mình một mã ID cá nhân',
+            'id.max'=>'Mã ID cá nhân không quá 9 ký tự',
+            'id.min'=>'Mã ID cá nhân bảo mật kém',
+            'id.unique'=>'Ai đó đã dùng mã ID cá nhân này'
 
         ]);
 
         $user = new User;
-        $user->uid = $request->uid;
+        $user->id = $request->id;
         $user->name = $request->name;
         $user->email = $request->email;
         $user->password = bcrypt($request->password);
@@ -76,9 +79,16 @@ class UserController extends Controller
    	]);
 
  if(Auth::attempt(['email'=>$request->email, 'password'=>$request->password])){
- 	return redirect('index');
+ 	return redirect('home');
  } else{
     return redirect('signup_and_login')->with('thongbao','Email không tồn tại hoặc sai mật khẩu!');
  }
    }
+
+    public function getLogout(){
+      Auth::logout();
+      return redirect('signup_and_login');
+    }
+
+   
 }
