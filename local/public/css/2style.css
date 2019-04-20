@@ -15,7 +15,7 @@ body {
   min-height: 100%;
   font-size: 16px;
   overflow: hidden;
-
+  overflow: scroll;
     width: 100wh;
   height: 90vh;
   color: #fff;
@@ -38,7 +38,7 @@ body {
 }
 
 .card { 
-  max-width: 1000px;
+  max-width: 1070px;
   min-height: 550px ;
   padding: 40px;
   border-radius: 30px;
@@ -144,6 +144,8 @@ transform: scale(1.2,1.2);
 .firstinfo .profileinfo {
   padding: 0px 20px;
 }
+
+
 .firstinfo .profileinfo h1 {
   font-size: 1.8em;
   color:#000000;
@@ -232,7 +234,7 @@ background: #ad2740;
 .tabcontent {
 color: white;
 display: none;
-padding: 50px;
+padding: 0px;
 text-align: left;
 }
 .container {

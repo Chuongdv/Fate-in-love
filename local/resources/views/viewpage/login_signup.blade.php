@@ -15,6 +15,7 @@
   <div class="container">
   <div class="message signup">
     <div class="btn-wrapper">
+      <img src="image/logo/logo_fil.png"/>
       <button class="button" id="signup">Đăng ký</button>
       <button class="button" id="login"> Đăng nhập</button>
     </div>

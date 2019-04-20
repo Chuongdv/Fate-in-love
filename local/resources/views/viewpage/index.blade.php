@@ -15,16 +15,16 @@
 	</style>
 </head>
 <body>
-	<div class="header" style="background-image: url('image/header.jpg');">
-		<a href="#default" class="logo" style="color: #CC0066;">FateInLove</a>
+	<div class="header" >
+		<a href="#default" class="logo""><img src="image/logo/logo_fil_zoom.png"></a>
 		<div class="header-right">
 
-              <a href="/myprofile/{{$user->id}}" style="color: #CC0066; font-weight: bold;">{{$user->name}}</a>
+              <a href="/myprofile/{{$user->id}}" >{{$user->name}}</a>
                      
-            <a href="/logout" style="color: #CC0066; font-weight: bold;">Logout</a>
-			<a href="/home" style="color: #CC0066; font-weight: bold;">Home</a>
-			<a href="#contact" style="color: #CC0066;font-weight: bold;" >Contact</a>
-			<a href="#about" style="color: #CC0066;font-weight: bold;" >About</a>
+            <a href="/logout" >Đăng xuất</a>
+			<a href="/home" ">Trang chủ</a>
+			<a href="#contact" >Liên hệ</a>
+			
 			
 		</div>
 	</div>
@@ -32,26 +32,26 @@
 	<section>
 		<nav>
 			<ul >
-                <li class="menu listmenu" style="background-image: url('image/menubg.jpg');color: #CC0066; font-weight: bold; ">
+                <li class="menu listmenu">
                 	Menu
                 </li>
-				<li href="#" class="listmenu">
-					<image src="image/profile/{{$user->image}}" width="50">
+				<li href="#" class="listmenu" style="text-align: left;">
+					<a href="/myprofile/{{$user->id}}" class="rowmenu""><img src="image/profile/{{$user->image}}"width="30" height= "30" />
 						
-                	<a href="/myprofile/{{$user->id}}" class="rowmenu"style="color: #CC0066;font-weight: bold;">Profile</a>
+                	Tên</a>
          
                 </li>
                 <li href="#" class="listmenu">
-					<image src="image/chat.png" width="50">
-                	<a href="#" class="rowmenu" style="color: #CC0066;font-weight: bold;">Chat</a>
+					<a href="#" class="rowmenu" ><img src="" width="30" height= "30"/>
+                	Chat</a>
                 </li>
                 <li href="#" class="listmenu">
-					<image src="image/ghepdoi.png" width="50">
-                	<a href="#" class="rowmenu"style="color: #CC0066;font-weight: bold;">Ghép đôi</a>
+					<a href="#" class="rowmenu"><image src="" width="30"  height= "30">
+                	Ghép đôi</a>
                 </li>
                 <li href="#" class="listmenu">
-					<image src="image/thongbao.png" width="50">
-                	<a href="#" class="rowmenu"style="color: #CC0066;font-weight: bold;">Thông báo</a>
+					<a href="#" class="rowmenu"><image src="" width="30"  height= "30">
+                	Thông báo</a>
                 </li>
             </ul>
         </nav>
@@ -60,15 +60,15 @@
 				?>
 @foreach($data as $user)
 		<div>
-			<div class="wrapper" style="float: left;">
+			<div class="wrapper" >
 				
 				<a href="#" class="infocrush">
 					<div class="profile">
 						<div>
 							<a href="/profile/{{$user->id}}"><img src="image/profile/{{$user->image}}" class="thumbnail imgcrush"><a>
 						</div>
-						<h3 class="name" style="color: #CC0066;">{{$user->name}}</h3>
-						<p class="title"style="color: #CC0066;">{{$user->birthday}}</p>
+						<h3 class="name" >{{$user->name}}</h3>
+						<p class="title">{{$user->birthday}}</p>
 					</div>
 				</a>
 				

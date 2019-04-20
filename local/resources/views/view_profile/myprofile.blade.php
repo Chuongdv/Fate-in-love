@@ -6,7 +6,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   
 <link rel="stylesheet"  href="{{ asset('css/new_page.css') }}" /> 
-<link rel="stylesheet"  href="{{ asset('css/2style.css') }}" /> 
+<link rel="stylesheet"  href="{{ asset('css/2style.css') }}" />
+ <link rel="stylesheet"  href="{{ asset('css/style_crush_in_profile.css') }}" />
 <base href="{{asset('')}}">
 </head>
 <body>
@@ -74,20 +75,68 @@
         <p class="bio"><img class="img" src="image/logo/logodc.jpg"/> Sống tại {{$my->home}}</p> 
 
         <p class="bio"><img class="img" src="image/logo/logocr.jpg"/> có 0 người crush</p>
-        <p class="bio"><img class="img" src="image/profile/{{$my->image}}"/> {{$my->introduce}}</p>
+        <p class="bio" style="width: 350px;"><img class="img" src="image/profile/{{$my->image}}"/> {{$my->introduce}}</p>
         <p class="bio"><a href="/editprofile/{{$my->id}}"><img class="img" src="image/logo/logoedit.jpg"/></a> Chỉnh sửa</p>
       </div>
 <div>
-      <div class="tab">
-  <button class="tablinks active">Crush</button>
-  <button class="tablinks">School</button>
-</div>
+      
+        <div class="tab">
+            <button class="tablinks active">Crush</button>
+          
+            <button class="tablinks">School</button>
+         
+        </div>
+  
+
  
 <div id="Crush" class="tabcontent">
     <!--chi cho 6 hinh thoi-->
-    
-    <a href="#"><img src="https://media.ohay.tv/v1/content/2015/05/enhanced-buzz-3386-1327948523-8-ohay-tv-738.jpg"/></a>
-    <a href="#"><img src="https://media.ohay.tv/v1/content/2015/05/enhanced-buzz-3386-1327948523-8-ohay-tv-738.jpg"/></a>
+    <div>
+
+      <div class="profilet">
+          <div ><img src="https://images.headlines.pw/topnews-2017/imgs/fd/c2/fdc2905c434afd3909038a88dc0437982d744884.jpg" class="photot"/></div>
+          <div class="contentt"><a href="#">
+            <div class="textt">
+              <h1>Kelly Chen</h1>
+              
+            </div></a>
+           
+          </div>
+          
+         
+        </div>
+<div class="profilet">
+          <div ><img src="https://images.headlines.pw/topnews-2017/imgs/fd/c2/fdc2905c434afd3909038a88dc0437982d744884.jpg" class="photot"/></div>
+          <div class="contentt"><a href="#">
+            <div class="textt">
+              <h1>Kelly Chen</h1>
+              
+            </div></a>
+           
+          </div>
+          
+         
+        </div><div class="profilet">
+          <div ><img src="https://images.headlines.pw/topnews-2017/imgs/fd/c2/fdc2905c434afd3909038a88dc0437982d744884.jpg" class="photot"/></div>
+          <div class="contentt"><a href="#">
+            <div class="textt">
+              <h1>Kelly Chen</h1>
+              
+            </div></a>
+           
+          </div>
+          
+         
+        </div>
+
+
+
+
+
+
+
+    </div>
+
     <p>Đã quan tâm 20 crush</p>
 
 
@@ -95,6 +144,10 @@
 </div>
  
 <div id="School" class="tabcontent">
+     <a href="#"><img src="https://scontent.fhan2-4.fna.fbcdn.net/v/t1.0-9/55835898_2829817113910232_8593846147565486080_n.jpg?_nc_cat=100&_nc_oc=AQlGPmriOY2fm7rLKDDOd-zALIiGCRcDLsWL4T3tIn-K0oJzpGPTvXRgSksm5pa6QVY&_nc_ht=scontent.fhan2-4.fna&oh=906cb88d389184b33260c3e7112a43e1&oe=5D0FA6A8"/></a>
+     <a href="#"><img src="https://scontent.fhan2-4.fna.fbcdn.net/v/t1.0-9/55835898_2829817113910232_8593846147565486080_n.jpg?_nc_cat=100&_nc_oc=AQlGPmriOY2fm7rLKDDOd-zALIiGCRcDLsWL4T3tIn-K0oJzpGPTvXRgSksm5pa6QVY&_nc_ht=scontent.fhan2-4.fna&oh=906cb88d389184b33260c3e7112a43e1&oe=5D0FA6A8"/></a>
+     <a href="#"><img src="https://scontent.fhan2-4.fna.fbcdn.net/v/t1.0-9/55835898_2829817113910232_8593846147565486080_n.jpg?_nc_cat=100&_nc_oc=AQlGPmriOY2fm7rLKDDOd-zALIiGCRcDLsWL4T3tIn-K0oJzpGPTvXRgSksm5pa6QVY&_nc_ht=scontent.fhan2-4.fna&oh=906cb88d389184b33260c3e7112a43e1&oe=5D0FA6A8"/></a>
+     <a href="#"><img src="https://scontent.fhan2-4.fna.fbcdn.net/v/t1.0-9/55835898_2829817113910232_8593846147565486080_n.jpg?_nc_cat=100&_nc_oc=AQlGPmriOY2fm7rLKDDOd-zALIiGCRcDLsWL4T3tIn-K0oJzpGPTvXRgSksm5pa6QVY&_nc_ht=scontent.fhan2-4.fna&oh=906cb88d389184b33260c3e7112a43e1&oe=5D0FA6A8"/></a>
      <a href="#"><img src="https://scontent.fhan2-4.fna.fbcdn.net/v/t1.0-9/55835898_2829817113910232_8593846147565486080_n.jpg?_nc_cat=100&_nc_oc=AQlGPmriOY2fm7rLKDDOd-zALIiGCRcDLsWL4T3tIn-K0oJzpGPTvXRgSksm5pa6QVY&_nc_ht=scontent.fhan2-4.fna&oh=906cb88d389184b33260c3e7112a43e1&oe=5D0FA6A8"/></a>
      <a href="#"><img src="https://scontent.fhan2-4.fna.fbcdn.net/v/t1.0-9/55835898_2829817113910232_8593846147565486080_n.jpg?_nc_cat=100&_nc_oc=AQlGPmriOY2fm7rLKDDOd-zALIiGCRcDLsWL4T3tIn-K0oJzpGPTvXRgSksm5pa6QVY&_nc_ht=scontent.fhan2-4.fna&oh=906cb88d389184b33260c3e7112a43e1&oe=5D0FA6A8"/></a>
      <p>Đã quan tâm 5 trường</p>
