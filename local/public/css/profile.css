@@ -90,6 +90,9 @@
   margin-top: 2.2em;
   position: relative;
 }
+.wrapper .profile:hover{
+  background-color: pink;
+}
 .wrapper .profile:after {
   width: 100%;
   height: 1px;

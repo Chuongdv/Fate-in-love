@@ -1,7 +1,7 @@
 @import "https://fonts.googleapis.com/css?family=Open+Sans:300,400";
 .badgescard, .firstinfo {
   display: flex;
-  justify-content: left;
+
   align-items: center;
 }
 
@@ -15,7 +15,7 @@ body {
   min-height: 100%;
   font-size: 16px;
   overflow: hidden;
-  overflow: scroll;
+  
     width: 100wh;
   height: 90vh;
   color: #fff;
@@ -254,9 +254,6 @@ margin-top: 10px;
   padding: 16px 32px;
 }
 
-.listmenu img{
-  border-radius: 50%;
-}
 
 @keyframes animatop {
   0% {

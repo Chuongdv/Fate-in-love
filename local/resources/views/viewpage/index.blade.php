@@ -5,14 +5,10 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet"  href="{{ asset('css/new_page.css') }}" /> 
-<link rel="stylesheet"  href="{{ asset('css/2style.css') }}" /> 
+<link rel="stylesheet"  href="{{ asset('css/back_ground.css') }}" /> 
 <link rel="stylesheet" type="text/css" href="{{ asset('css/profile.css') }}">
 <base href="{{asset('')}}">
-	<style type="text/css">
-		a{
-            color: pink;
-		}
-	</style>
+	
 </head>
 <body>
 	<div class="header" >
@@ -21,9 +17,15 @@
 
               <a href="/myprofile/{{$user->id}}" style="color: #bf0000;" >{{$user->name}}</a>
                      
+<<<<<<< HEAD
             <a href="/logout" style="color: #bf0000;">Đăng xuất</a>
 			<a href="/home" style="color: #bf0000;">Trang chủ</a>
 			<a href="#contact" style="color: #bf0000;">Liên hệ</a>
+=======
+            <a href="/logout" >Đăng xuất</a>
+			<a href="/home" class="avtive">Trang chủ</a>
+			<a href="#contact" >Liên hệ</a>
+>>>>>>> a36332f218cfeaae189235949a743bb897600bb9
 			
 			
 		</div>
@@ -35,8 +37,13 @@
                 <li class="menu listmenu">
                 	Menu
                 </li>
+<<<<<<< HEAD
 				<li href="#" class="listmenu" style="text-align: left;">
 					<a href="/myprofile/{{$user->id}}" class="rowmenu"style="color: #bf0000;"><img src="image/profile/{{$user->image}}"width="30" height= "30" />
+=======
+				<li href="#" class="listmenu" >
+					<a href="/myprofile/{{$user->id}}" class="rowmenu""><img src="image/profile/{{$user->image}}"width="30" height= "30" />
+>>>>>>> a36332f218cfeaae189235949a743bb897600bb9
 						
                 	Trang cá nhân</a>
          

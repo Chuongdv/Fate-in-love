@@ -10,7 +10,7 @@ body, .message, .form, form {
 body {
   height: 100vh;
   background: #EE3789;
-  font-family: "Source Sans Pro", sans-serif;
+  font-family: Bookman, Tahoma, Verdana, sans-serif;
   overflow: hidden;
 }
 
@@ -73,7 +73,7 @@ body {
   font-size: 18px;
   height: 50px;
   color: #809BCE;
-  font-family: 'Playfair Display', serif;
+  font-family: Bookman, Tahoma, Verdana, serif;
 }
 
 .btn-wrapper img{
@@ -119,7 +119,7 @@ form input:focus {
   z-index: 3;
   letter-spacing: 2px;
   background: linear-gradient(45deg, #809BCE, #9893DA);
-  font-family: 'Playfair Display', serif;
+  font-family: Bookman, Tahoma, Verdana, serif;
 
   -webkit-border-radius: 3px;
   -moz-border-radius: 3px;
