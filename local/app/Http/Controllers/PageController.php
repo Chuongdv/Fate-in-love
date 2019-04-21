@@ -29,7 +29,11 @@ class PageController extends Controller
 
     }
      function editprofile(){
-        return view ('view_profile.editprofile');
+      if(Auth::check()){
+        $user = Auth::user();
+}
+        return view ('view_profile.editprofile',['user'=>$user]);
+      
 
     }
    public  function getProfile($id){
@@ -79,7 +83,7 @@ class PageController extends Controller
         $user_edit->name = $request->name;
         $user_edit->home =$request->home;
         $user_edit->introduce = $request->introduce;
-        $user_edit->name_school = $request->school;
+        $user_edit->sid = $request->school;
         $user_edit->save();
 
         return redirect('editprofile/'.$id)->with('thongbao','Bạn đã cập nhật thông tin cá nhân mới!');

@@ -44,4 +44,8 @@ class User extends Authenticatable
     public function Follow(){
         return $this->hasMany('App\Follow','uid','id');
     }
+
+    public function school(){
+        return $this->beLongsTo('App\Schools','sid','id');
+    }
 }

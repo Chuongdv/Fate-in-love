@@ -12,7 +12,9 @@ class UserController extends Controller
     //
 
      function getSignUp(){
-    	return view('viewpage.login_signup');
+        $school = Schools::all();
+
+    	return view('viewpage.login_signup',['school'=>$school]);
     }
 
    function postSignUp(Request $request){
@@ -25,6 +27,7 @@ class UserController extends Controller
          'birthday'=>'required',
          'gender'=>'required',
          'id'=>'required|max:8|min:6|unique:users,id',
+         'school'=>'required'
 
         ],
         [
@@ -43,7 +46,8 @@ class UserController extends Controller
             'id.required'=>'Bạn cần tạo cho mình một mã ID cá nhân',
             'id.max'=>'Mã ID cá nhân không quá 9 ký tự',
             'id.min'=>'Mã ID cá nhân bảo mật kém',
-            'id.unique'=>'Ai đó đã dùng mã ID cá nhân này'
+            'id.unique'=>'Ai đó đã dùng mã ID cá nhân này',
+            'school.required'=>'Bạn đang học tại trường đại học nào??'
 
         ]);
 
@@ -54,6 +58,7 @@ class UserController extends Controller
         $user->password = bcrypt($request->password);
         $user->birthday = $request->birthday;
         $user->gender = $request->gender;
+        $user->sid = $request->school;
         $user->save();
 
         return redirect('signup_and_login')->with('thongbao','Đăng ký thành công!!');
