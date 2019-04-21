@@ -56,9 +56,9 @@
         </nav>
 
 
-    
-     
-      <div class="content">
+
+
+<div class="content">
   <div class="card">
     <div class="firstinfo">
     
@@ -79,7 +79,7 @@
 
         <p class="bio"><img class="img" src="image/logo/logocr.jpg"/> có 0 người crush</p>
         <p class="bio" style="width: 350px;"><img class="img" src="image/profile/{{$my->image}}"/> {{$my->introduce}}</p>
-        <p class="bio"><a href="/editprofile/{{$my->id}}"><img class="img" src="image/logo/logoedit.jpg"/></a> Chỉnh sửa</p>
+        <a href="/editprofile/{{$my->id}}"><p class="bio"><img class="img" src="image/logo/logoedit.jpg"/> Chỉnh sửa</p></a>
       </div>
 <div>
       
@@ -93,44 +93,55 @@
 
  
 <div id="Crush" class="tabcontent">
-    <!--chi cho 6 hinh thoi-->
+    <!--chi cho 4 hinh thoi-->
     <div>
 
+      <div class="profilet p20">
+          <a href="#"><img src="https://images.headlines.pw/topnews-2017/imgs/fd/c2/fdc2905c434afd3909038a88dc0437982d744884.jpg" class="photot"/>
+          
+          <div class="contentt">
+              <h1 style="font-size: 15px;">Phạm Hoài Lâm</h1>
+              <h2 style="font-size: 10px;">1000 người theo dõi</h2>
+          </div>  
+              
+            </a>     
+          
+      </div>
       <div class="profilet">
-          <div ><img src="https://images.headlines.pw/topnews-2017/imgs/fd/c2/fdc2905c434afd3909038a88dc0437982d744884.jpg" class="photot"/></div>
-          <div class="contentt"><a href="#">
-            <div class="textt">
-              <h1>Kelly Chen</h1>
-              
-            </div></a>
-           
-          </div>
+          <a href="#"><img src="https://images.headlines.pw/topnews-2017/imgs/fd/c2/fdc2905c434afd3909038a88dc0437982d744884.jpg" class="photot"/>
           
-         
-        </div>
-<div class="profilet">
-          <div ><img src="https://images.headlines.pw/topnews-2017/imgs/fd/c2/fdc2905c434afd3909038a88dc0437982d744884.jpg" class="photot"/></div>
-          <div class="contentt"><a href="#">
-            <div class="textt">
-              <h1>Kelly Chen</h1>
+          <div class="contentt">
+              <h1 style="font-size: 15px;">Phạm Hoài Lâm</h1>
+              <h2 style="font-size: 10px;">1000 người theo dõi</h2>
+          </div>  
               
-            </div></a>
-           
-          </div>
+            </a>     
           
-         
-        </div><div class="profilet">
-          <div ><img src="https://images.headlines.pw/topnews-2017/imgs/fd/c2/fdc2905c434afd3909038a88dc0437982d744884.jpg" class="photot"/></div>
-          <div class="contentt"><a href="#">
-            <div class="textt">
-              <h1>Kelly Chen</h1>
+      </div>
+      <div class="profilet">
+          <a href="#"><img src="https://images.headlines.pw/topnews-2017/imgs/fd/c2/fdc2905c434afd3909038a88dc0437982d744884.jpg" class="photot"/>
+          
+          <div class="contentt">
+              <h1 style="font-size: 15px;">Phạm Hoài Lâm</h1>
+              <h2 style="font-size: 10px;">1000 người theo dõi</h2>
+          </div>  
               
-            </div></a>
-           
-          </div>
+            </a>     
           
+      </div>
+      <div class="profilet">
+          <a href="#"><img src="https://images.headlines.pw/topnews-2017/imgs/fd/c2/fdc2905c434afd3909038a88dc0437982d744884.jpg" class="photot"/>
+          
+          <div class="contentt">
+              <h1 style="font-size: 15px;">Phạm Hoài Lâm</h1>
+              <h2 style="font-size: 10px;">1000 người theo dõi</h2>
+          </div>  
+              
+            </a>     
+          
+      </div>
+
          
-        </div>
 
 
 
@@ -140,20 +151,64 @@
 
     </div>
 
-    <p>Đã quan tâm 20 crush</p>
+  <p>Đã quan tâm <a href="#">20 crush</a></p>
 
 
 
 </div>
  
 <div id="School" class="tabcontent">
-     <a href="#"><img src="https://scontent.fhan2-4.fna.fbcdn.net/v/t1.0-9/55835898_2829817113910232_8593846147565486080_n.jpg?_nc_cat=100&_nc_oc=AQlGPmriOY2fm7rLKDDOd-zALIiGCRcDLsWL4T3tIn-K0oJzpGPTvXRgSksm5pa6QVY&_nc_ht=scontent.fhan2-4.fna&oh=906cb88d389184b33260c3e7112a43e1&oe=5D0FA6A8"/></a>
-     <a href="#"><img src="https://scontent.fhan2-4.fna.fbcdn.net/v/t1.0-9/55835898_2829817113910232_8593846147565486080_n.jpg?_nc_cat=100&_nc_oc=AQlGPmriOY2fm7rLKDDOd-zALIiGCRcDLsWL4T3tIn-K0oJzpGPTvXRgSksm5pa6QVY&_nc_ht=scontent.fhan2-4.fna&oh=906cb88d389184b33260c3e7112a43e1&oe=5D0FA6A8"/></a>
-     <a href="#"><img src="https://scontent.fhan2-4.fna.fbcdn.net/v/t1.0-9/55835898_2829817113910232_8593846147565486080_n.jpg?_nc_cat=100&_nc_oc=AQlGPmriOY2fm7rLKDDOd-zALIiGCRcDLsWL4T3tIn-K0oJzpGPTvXRgSksm5pa6QVY&_nc_ht=scontent.fhan2-4.fna&oh=906cb88d389184b33260c3e7112a43e1&oe=5D0FA6A8"/></a>
-     <a href="#"><img src="https://scontent.fhan2-4.fna.fbcdn.net/v/t1.0-9/55835898_2829817113910232_8593846147565486080_n.jpg?_nc_cat=100&_nc_oc=AQlGPmriOY2fm7rLKDDOd-zALIiGCRcDLsWL4T3tIn-K0oJzpGPTvXRgSksm5pa6QVY&_nc_ht=scontent.fhan2-4.fna&oh=906cb88d389184b33260c3e7112a43e1&oe=5D0FA6A8"/></a>
-     <a href="#"><img src="https://scontent.fhan2-4.fna.fbcdn.net/v/t1.0-9/55835898_2829817113910232_8593846147565486080_n.jpg?_nc_cat=100&_nc_oc=AQlGPmriOY2fm7rLKDDOd-zALIiGCRcDLsWL4T3tIn-K0oJzpGPTvXRgSksm5pa6QVY&_nc_ht=scontent.fhan2-4.fna&oh=906cb88d389184b33260c3e7112a43e1&oe=5D0FA6A8"/></a>
-     <a href="#"><img src="https://scontent.fhan2-4.fna.fbcdn.net/v/t1.0-9/55835898_2829817113910232_8593846147565486080_n.jpg?_nc_cat=100&_nc_oc=AQlGPmriOY2fm7rLKDDOd-zALIiGCRcDLsWL4T3tIn-K0oJzpGPTvXRgSksm5pa6QVY&_nc_ht=scontent.fhan2-4.fna&oh=906cb88d389184b33260c3e7112a43e1&oe=5D0FA6A8"/></a>
-     <p>Đã quan tâm 5 trường</p>
+   <div class="profilet p20">
+          <a href="#"><img src="https://images.headlines.pw/topnews-2017/imgs/fd/c2/fdc2905c434afd3909038a88dc0437982d744884.jpg" class="photot"/>
+          
+          <div class="contentt">
+              <h1 style="font-size: 15px;">Bách Khoa Hà Nội</h1>
+              <h2 style="font-size: 10px;">1000 sinh viên</h2>
+          </div>  
+              
+            </a>     
+          
+      </div>
+
+     <div class="profilet">
+          <a href="#"><img src="https://images.headlines.pw/topnews-2017/imgs/fd/c2/fdc2905c434afd3909038a88dc0437982d744884.jpg" class="photot"/>
+          
+          <div class="contentt">
+              <h1 style="font-size: 15px;">Đại Học Xây Dựng</h1>
+              <h2 style="font-size: 10px;">1000 sinh viên</h2>
+          </div>  
+              
+            </a>     
+          
+      </div>
+
+      <div class="profilet">
+          <a href="#"><img src="https://images.headlines.pw/topnews-2017/imgs/fd/c2/fdc2905c434afd3909038a88dc0437982d744884.jpg" class="photot"/>
+          
+          <div class="contentt">
+              <h1 style="font-size: 15px;">Đại học Mỏ</h1>
+              <h2 style="font-size: 10px;">200 sinh viên</h2>
+          </div>  
+              
+            </a>     
+          
+      </div>
+
+      <div class="profilet">
+          <a href="#"><img src="https://images.headlines.pw/topnews-2017/imgs/fd/c2/fdc2905c434afd3909038a88dc0437982d744884.jpg" class="photot"/>
+          
+          <div class="contentt">
+              <h1 style="font-size: 15px;">Kinh Tế Quốc Dân</h1>
+              <h2 style="font-size: 10px;">1000 sinh viên</h2>
+          </div>  
+              
+            </a>     
+          
+      </div>
+
+
+     
+     <p>Đã quan tâm <a href ="#">5 trường</a></p>
 </div>
  
 
@@ -189,6 +244,12 @@
 </script>
 
     </div>
+      
+
+      
+    
+     
+      
 
     
   </section>
