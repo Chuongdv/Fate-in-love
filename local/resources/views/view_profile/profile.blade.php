@@ -13,41 +13,42 @@
 
 </head>
 <body>
-  <div class="header" style="background-image: url('image/header.jpg');">
-    <a href="#default" class="logo" style="color: #CC0066;">FateInLove</a>
-     <div class="header-right">
-   
-              <a href="/myprofile/{{$user->id}}" style="color: #CC0066; font-weight: bold;">{{$user->name}}</a>
-                      
-                  
-      <a href="/logout" style="color: #CC0066; font-weight: bold;">Logout</a>
-      <a href="/home" style="color: #CC0066; font-weight: bold;">Home</a>
-      <a href="#contact" style="color: #CC0066;font-weight: bold;" >Contact</a>
-      <a href="#about" style="color: #CC0066;font-weight: bold;" >About</a>
+  <div class="header" >
+    <a href="#default" class="logo""><img src="image/logo/logo_fil_zoom.png"></a>
+    <div class="header-right">
+
+              <a href="/myprofile/{{$user->id}}" style="color: #bf0000;" >{{$user->name}}</a>
+                     
+            <a href="/logout" style="color: #bf0000;">Đăng xuất</a>
+      <a href="/home" style="color: #bf0000;">Trang chủ</a>
+      <a href="#contact" style="color: #bf0000;">Liên hệ</a>
+      
+      
     </div>
   </div>
   <section>
   <nav>
       <ul >
-                <li class="menu listmenu" style="background-image: url('image/menubg.jpg');color: #CC0066; font-weight: bold; ">
+                <li class="menu listmenu">
                   Menu
                 </li>
-        <li href="#" class="listmenu">
-          <image src="image/profile/{{$user->image}}" width="50">
-                  
-                  <a href="/myprofile/{{$user->id}}" class="rowmenu"style="color: #CC0066;font-weight: bold;">Profile</a>
+        <li href="#" class="listmenu" style="text-align: left;">
+          <a href="/myprofile/{{$user->id}}" class="rowmenu"style="color: #bf0000;"><img src="image/profile/{{$user->image}}"width="30" height= "30" />
+            
+                  Tên</a>
+         
                 </li>
                 <li href="#" class="listmenu">
-          <image src="image/chat.png" width="50">
-                  <a href="#" class="rowmenu" style="color: #CC0066;font-weight: bold;">Chat</a>
+          <a href="" class="rowmenu" style="color: #bf0000;"><img src="image/chat.png" width="30" height= "30"/>
+                  Chat</a>
                 </li>
                 <li href="#" class="listmenu">
-          <image src="image/ghepdoi.png" width="50">
-                  <a href="#" class="rowmenu"style="color: #CC0066;font-weight: bold;">Ghép đôi</a>
+          <a href="#" class="rowmenu"style="color: #bf0000;"><image src="image/ghepdoi.png" width="30"  height= "30">
+                  Ghép đôi</a>
                 </li>
                 <li href="#" class="listmenu">
-          <image src="image/thongbao.png" width="50">
-                  <a href="#" class="rowmenu"style="color: #CC0066;font-weight: bold;">Thông báo</a>
+          <a href="#" class="rowmenu"style="color: #bf0000;"><image src="image/thongbao.png" width="30"  height= "30">
+                  Thông báo</a>
                 </li>
             </ul>
         </nav>
@@ -62,7 +63,7 @@
         <h1 style="color:  #CC0066;">{{$user_page->name}}</h1>
         <h3 style="color:  #CC0066;">{{$user_page->birthday}}</h3>
         <p class="bio"><img class="img" src="image/profile/{{$user_page->image}}"/>{{$user_page->introduce}}</p> 
-        <p class="bio"><img class="img" src="image/logo/logosch.jpg"/>{{$user_page->name_school}}</p>
+        <p class="bio"><img class="img" src="image/logo/logosch.jpg"/>{{$user_page->school->name}}</p>
         <p class="bio"><img class="img" src="image/logo/logodc.jpg"/>Sống tại {{$user_page->home}}</p>
         <p class="bio"><img class="img" src="image/logo/logocr.jpg"/> có 0 người crush</p>
         

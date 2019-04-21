@@ -13,43 +13,44 @@
 
 </head>
 <body>
-  <div class="header" style="background-image: url('image/header.jpg');">
-    <a href="#default" class="logo" style="color: #CC0066;">FateInLove</a>
+ <div class="header" >
+    <a href="#default" class="logo""><img src="image/logo/logo_fil_zoom.png"></a>
     <div class="header-right">
-    
-              <a href="/myprofile/{{$user_edit->id}}" style="color: #CC0066; font-weight: bold;">{{$user_edit->name}}</a>
-                      
-                   
-      <a href="/logout" style="color: #CC0066; font-weight: bold;">Logout</a>
-      <a href="/home" style="color: #CC0066; font-weight: bold;">Home</a>
-      <a href="#contact" style="color: #CC0066;font-weight: bold;" >Contact</a>
-      <a href="#about" style="color: #CC0066;font-weight: bold;" >About</a>
-      </div>
+
+              <a href="/myprofile/{{$user_edit->id}}" style="color: #bf0000;" >{{$user_edit->name}}</a>
+                     
+            <a href="/logout" style="color: #bf0000;">Đăng xuất</a>
+      <a href="/home" style="color: #bf0000;">Trang chủ</a>
+      <a href="#contact" style="color: #bf0000;">Liên hệ</a>
+      
+      
+    </div>
   </div>
 
   <section>
   
-        <nav>
+       <nav>
       <ul >
-                <li class="menu listmenu" style="background-image: url('image/menubg.jpg');color: #CC0066; font-weight: bold; ">
+                <li class="menu listmenu">
                   Menu
                 </li>
-        <li href="#" class="listmenu">
-          <image src="image/profile/{{$user_edit->image}}" width="50">
-                  
-                  <a href="/myprofile/{{$user_edit->id}}" class="rowmenu"style="color: #CC0066;font-weight: bold;">Profile</a>
+        <li href="#" class="listmenu" style="text-align: left;">
+          <a href="/myprofile/{{$user_edit->id}}" class="rowmenu"style="color: #bf0000;"><img src="image/profile/{{$user_edit->image}}"width="30" height= "30" />
+            
+                  Tên</a>
+         
                 </li>
                 <li href="#" class="listmenu">
-          <image src="image/chat.png" width="50">
-                  <a href="#" class="rowmenu" style="color: #CC0066;font-weight: bold;">Chat</a>
+          <a href="" class="rowmenu" style="color: #bf0000;"><img src="image/chat.png" width="30" height= "30"/>
+                  Chat</a>
                 </li>
                 <li href="#" class="listmenu">
-          <image src="image/ghepdoi.png" width="50">
-                  <a href="#" class="rowmenu"style="color: #CC0066;font-weight: bold;">Ghép đôi</a>
+          <a href="#" class="rowmenu"style="color: #bf0000;"><image src="image/ghepdoi.png" width="30"  height= "30">
+                  Ghép đôi</a>
                 </li>
                 <li href="#" class="listmenu">
-          <image src="image/thongbao.png" width="50">
-                  <a href="#" class="rowmenu"style="color: #CC0066;font-weight: bold;">Thông báo</a>
+          <a href="#" class="rowmenu"style="color: #bf0000;"><image src="image/thongbao.png" width="30"  height= "30">
+                  Thông báo</a>
                 </li>
             </ul>
         </nav>
@@ -59,7 +60,7 @@
   <div class="card">
     <div class="firstinfo">
      
-    <img src="{{asset('image/profile/lanta.jpg')}}" class="image_profile" />
+    <img src="image/profile/{{$user_edit->image}}" class="image_profile" />
   
 
         <!-- CHANGE A PHOTO-->
@@ -95,22 +96,19 @@
 <label>Introduece:</label> 
 <textarea name="introduce" placeholder="{{$user_edit->introduce}}"></textarea><br /> 
  
-        <label> School:
+        <label> School: </label>
           <select class="old-select" name="school">
-            @foreach($school as $sch)
-              <option value="{{$sch->name}}" >{{$sch->name}}</option>
-              @endforeach
+             @foreach($school as $sch)
+                                <option 
+                                @if($user_edit->sid== $sch->id) 
+                                {{"selected"}}
+                                @endif
+
+                                value="{{$sch->id}}">{{$sch->name}}</option>
+                                @endforeach
           </select>
-          <div class="new-select">
-            <div class="selection">
-                <p>
-                    <span></span>
-                    <i></i>
-                </p>
-                <span></span>
-            </div>
-          </div>
-        </label>
+      
+        
 <input type="submit" name="submitbutton" id="submitbutton" value="Edit" /> 
 </form>
 </ul>       

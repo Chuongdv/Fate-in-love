@@ -49,6 +49,11 @@
       <input type="password" placeholder="Mật khẩu" name="password">
       <input type="password" placeholder="Nhập lại mật khẩu" name="passwordAgain">
       <input type="text" placeholder="Nhập ID cá nhân(không quá 8 ký tự)" name="id">
+         <select class="form-control" name="school">
+                                @foreach($school as $sch)
+                                <option value="{{$sch->id}}">{{$sch->name}}</option>
+                                @endforeach
+                                </select>
       <button class="button" type="submit">Đăng ký</button>
     </form>
   </div>
