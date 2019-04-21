@@ -11,17 +11,17 @@
 <base href="{{asset('')}}">
 </head>
 <body>
-  <div class="header" style="background-image: url('image/header.jpg');">
-    <a href="#default" class="logo" style="color: #CC0066;">FateInLove</a>
+  <div class="header" >
+    <a href="#default" class="logo""><img src="image/logo/logo_fil_zoom.png"></a>
     <div class="header-right">
-   
-              <a href="/myprofile/{{$my->id}}" style="color: #CC0066; font-weight: bold;">{{$my->name}}</a>
+              
+              <a href="/myprofile/{{$my->id}}">{{$my->name}}</a>
                       
                    
-      <a href="/logout" style="color: #CC0066; font-weight: bold;">Logout</a>
-      <a href="/home" style="color: #CC0066; font-weight: bold;">Home</a>
-      <a href="#contact" style="color: #CC0066;font-weight: bold;" >Contact</a>
-      <a href="#about" style="color: #CC0066;font-weight: bold;" >About</a>
+       <a href="/logout" >Đăng xuất</a>
+      <a href="/home" class="avtive">Trang chủ</a>
+      <a href="#contact" >Liên hệ</a>
+      
     </div>
   </div>
 
@@ -29,31 +29,34 @@
   <section>
    <nav>
       <ul >
-                <li class="menu listmenu" style="background-image: url('image/menubg.jpg');color: #CC0066; font-weight: bold; ">
+                <li class="menu listmenu">
                   Menu
                 </li>
-        <li href="#" class="listmenu">
-          <image src="image/profile/{{$my->image}}" width="50">
-                  
-                  <a href="/myprofile/{{$my->id}}" class="rowmenu"style="color: #CC0066;font-weight: bold;">Profile</a>
+                
+                <li href="#" class="listmenu">
+                  <a href="/myprofile/{{$my->id}}" class="rowmenu">
+                    <img src="image/profile/{{$my->image}}" width="30" height="30">
+                          
+                          Profile</a>
+                </li>
+                
+                <li href="#" class="listmenu">
+                  <a href="#" class="rowmenu" ><img src="" width="30" height= "30"/>
+                  Chat</a>
                 </li>
                 <li href="#" class="listmenu">
-          <image src="image/chat.png" width="50">
-                  <a href="#" class="rowmenu" style="color: #CC0066;font-weight: bold;">Chat</a>
+                   <a href="#" class="rowmenu"><image src="" width="30"  height= "30">
+                  Ghép đôi</a>
                 </li>
                 <li href="#" class="listmenu">
-          <image src="image/ghepdoi.png" width="50">
-                  <a href="#" class="rowmenu"style="color: #CC0066;font-weight: bold;">Ghép đôi</a>
-                </li>
-                <li href="#" class="listmenu">
-          <image src="image/thongbao.png" width="50">
-                  <a href="#" class="rowmenu"style="color: #CC0066;font-weight: bold;">Thông báo</a>
+                   <a href="#" class="rowmenu"><image src="" width="30"  height= "30">
+                  Thông báo</a>
                 </li>
             </ul>
         </nav>
 
 
-    <div>
+    
      
       <div class="content">
   <div class="card">
@@ -187,7 +190,7 @@
 
     </div>
 
-    </div>
+    
   </section>
 
 </body>

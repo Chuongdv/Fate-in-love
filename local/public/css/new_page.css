@@ -27,6 +27,7 @@ body {
   border: 1px;
   border-bottom-right-radius: 10px;
   border-bottom-left-radius: 10px;
+  font-family: Bookman, Tahoma, Verdana;
  }
 
 .header a.logo img{
@@ -53,19 +54,26 @@ body {
 }
 
 .menu {
-
+  color: black;
+  text-align: center;
+}
+.menu:hover{
+  font-size: 20px;
 }
 
 .listmenu{
   padding: 12px;
   
-  background-color: pink;
-  
+  background-color: #FDFEFF;
+  border-radius: 10px;
   opacity: 0.8;
+}
+.listmenu img{
+  border-radius: 50%;
 }
 .listmenu:hover{
   opacity: 1;
-  background-color: #222222;
+  background-color: pink;
   color: black;
 }
 
@@ -97,7 +105,7 @@ nav ul {
   list-style-type: none;
   float: left;
   width: 17%;
-  padding: 10px 10px 10px 10px;
+  
   padding-left: 0px;
   margin: 5px;
   margin-left: 0px;
@@ -107,15 +115,16 @@ nav ul {
   
 }
 
-
 nav ul li a{
-  color: orange;
+  color: blas=ck;
   text-align: center;
   padding: 10px;
   vertical-align: middle;
   text-decoration: none;
   font-size: 18px; 
   line-height: 50px;
+  font-family: Bookman, Tahoma, Verdana;
+
 }
 
 

@@ -5,14 +5,10 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet"  href="{{ asset('css/new_page.css') }}" /> 
-<link rel="stylesheet"  href="{{ asset('css/2style.css') }}" /> 
+<link rel="stylesheet"  href="{{ asset('css/back_ground.css') }}" /> 
 <link rel="stylesheet" type="text/css" href="{{ asset('css/profile.css') }}">
 <base href="{{asset('')}}">
-	<style type="text/css">
-		a{
-            color: pink;
-		}
-	</style>
+	
 </head>
 <body>
 	<div class="header" >
@@ -22,7 +18,7 @@
               <a href="/myprofile/{{$user->id}}" >{{$user->name}}</a>
                      
             <a href="/logout" >Đăng xuất</a>
-			<a href="/home" ">Trang chủ</a>
+			<a href="/home" class="avtive">Trang chủ</a>
 			<a href="#contact" >Liên hệ</a>
 			
 			
@@ -35,7 +31,7 @@
                 <li class="menu listmenu">
                 	Menu
                 </li>
-				<li href="#" class="listmenu" style="text-align: left;">
+				<li href="#" class="listmenu" >
 					<a href="/myprofile/{{$user->id}}" class="rowmenu""><img src="image/profile/{{$user->image}}"width="30" height= "30" />
 						
                 	Tên</a>
