@@ -14,14 +14,14 @@
 </head>
 <body>
   <div class="header" >
-    <a href="#default" class="logo""><img src="image/logo/logo_fil_zoom.png"></a>
+    <a href="#default" class="logo"><img src="image/logo/logo_fil_zoom.png"></a>
     <div class="header-right">
 
-              <a href="/myprofile/{{$user->id}}" style="color: #bf0000;" >{{$user->name}}</a>
+              <a href="/myprofile/{{$user->id}}" >{{$user->name}}</a>
                      
-            <a href="/logout" style="color: #bf0000;">Đăng xuất</a>
-      <a href="/home" style="color: #bf0000;">Trang chủ</a>
-      <a href="#contact" style="color: #bf0000;">Liên hệ</a>
+            <a href="/logout">Đăng xuất</a>
+      <a href="/home">Trang chủ</a>
+      <a href="#contact">Liên hệ</a>
       
       
     </div>
@@ -33,21 +33,21 @@
                   Menu
                 </li>
         <li href="#" class="listmenu" style="text-align: left;">
-          <a href="/myprofile/{{$user->id}}" class="rowmenu"style="color: #bf0000;"><img src="image/profile/{{$user->image}}"width="30" height= "30" />
+          <a href="/myprofile/{{$user->id}}" class="rowmenu"><img src="image/profile/{{$user->image}}"width="30" height= "30" />
             
-                  Tên</a>
+                  {{$user->name}}</a>
          
                 </li>
                 <li href="#" class="listmenu">
-          <a href="" class="rowmenu" style="color: #bf0000;"><img src="image/chat.png" width="30" height= "30"/>
+          <a href="" class="rowmenu"><img src="image/chat.png" width="30" height= "30"/>
                   Chat</a>
                 </li>
                 <li href="#" class="listmenu">
-          <a href="#" class="rowmenu"style="color: #bf0000;"><image src="image/ghepdoi.png" width="30"  height= "30">
+          <a href="#" class="rowmenu"><image src="image/ghepdoi.png" width="30"  height= "30">
                   Ghép đôi</a>
                 </li>
                 <li href="#" class="listmenu">
-          <a href="#" class="rowmenu"style="color: #bf0000;"><image src="image/thongbao.png" width="30"  height= "30">
+          <a href="#" class="rowmenu"><image src="image/thongbao.png" width="30"  height= "30">
                   Thông báo</a>
                 </li>
             </ul>
@@ -57,8 +57,38 @@
       <div class="content">
   <div class="card">
     <div class="firstinfo">
-      <img src="image/profile/{{$user_page->image}}" class="image_profile" />
-        <div class="profileinfo">
+      <table>
+          <tr><td>
+               <img src="image/profile/{{$user_page->image}}" class="image_profile" />
+          </td></tr>
+          <tr><td style="text-align: center;">
+            <div class="button_container">
+              <button onclick = "myClick()" id="fl" class="btn" style="width: 150px; border-radius: 50px; margin-top: 50px;"><span>Theo dõi</span></button>
+              <button class="btn draw-border">Nhắn tin</button>
+              </div>
+              <script type="text/javascript">
+                function{
+                    var imgPath = new String();
+                    imgPath = document.getElementById("fl").style.backgroundImage;
+
+                    if(imgPath == "url(images/blue.gif)" || imgPath == "")
+                    {
+                        document.getElementById("div1").style.backgroundImage = "url(images/green.gif)";
+                    }
+                    else
+                    {
+                        document.getElementById("div1").style.backgroundImage = "url(images/blue.gif)";
+                    }
+                  }
+              </script>
+          </td></tr>
+
+
+
+
+      </table>
+     
+        <div class="profileinfo" style="margin-left: 100px;">
         <h1></h1>
         <h1 style="color:  #CC0066;">{{$user_page->name}}</h1>
         <h3 style="color:  #CC0066;">{{$user_page->birthday}}</h3>
@@ -68,16 +98,7 @@
         <p class="bio"><img class="img" src="image/logo/logocr.jpg"/> có 0 người crush</p>
         
       </div>
-    <div class="pad">
-      <img src="image/crush.png" class="image_stranger" />
-        
-
-    </div>
-   <div class="pad">
-      <img src="image/chat.png" class="image_stranger" />
-        
-
-    </div>
+    
    
 
     </div>
@@ -88,28 +109,7 @@
   
 </div>
 <!-- js cho cac tabs -->
-<script type="text/javascript">
-    var buttons = document.getElementsByClassName('tablinks');
-    var contents = document.getElementsByClassName('tabcontent');
-    function showContent(id){
-        for (var i = 0; i < contents.length; i++) {
-            contents[i].style.display = 'none';
-        }
-        var content = document.getElementById(id);
-        content.style.display = 'block';
-    }
-    for (var i = 0; i < buttons.length; i++) {
-        buttons[i].addEventListener("click", function(){
-            var id = this.textContent;
-            for (var i = 0; i < buttons.length; i++) {
-                buttons[i].classList.remove("active");
-            }
-            this.className += " active";
-            showContent(id);
-        });
-    }
-    showContent('Crush');
-</script>
+
 
     </div>
     
