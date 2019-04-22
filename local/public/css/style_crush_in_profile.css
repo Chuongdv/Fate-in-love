@@ -1,12 +1,12 @@
 
 
 .profilet {
-  width: 200px;
-  height: 50px;
+  width: 260px;
+  height:70px;
   top: auto;
-  left: auto;
-  margin-left: 10px;
-  margin-top: 10px;
+  left: 0;
+ padding-left: 10px;
+  margin-top: 20px;
 
   position: relative;
   overflow: hidden;
@@ -24,10 +24,11 @@
   height: 50px;
   border-radius: 50%;
   
-  border: 5px solid #fafafa;
+  border: 2px solid #fafafa;
   background-color: #fafafa;
-  margin-left: 0px;
+  padding-left: 0px;
   box-shadow: 0 0 0.5rem #babbbc;
+  
 
 }
 
@@ -40,5 +41,14 @@
   height: 100%;
   top: 0;
   left: 0;
+  margin-left: 70px;
 }
 
+.profilet .content h1{
+    position: absolute;
+    color: pink;
+} 
+
+.p20{
+  margin-top: 60px;
+}

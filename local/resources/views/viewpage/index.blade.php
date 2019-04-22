@@ -15,18 +15,11 @@
 		<a href="#default" class="logo""><img src="image/logo/logo_fil_zoom.png"></a>
 		<div class="header-right">
 
-              <a href="/myprofile/{{$user->id}}" style="color: #bf0000;" >{{$user->name}}</a>
-                     
-<<<<<<< HEAD
-            <a href="/logout" style="color: #bf0000;">Đăng xuất</a>
-			<a href="/home" style="color: #bf0000;">Trang chủ</a>
-			<a href="#contact" style="color: #bf0000;">Liên hệ</a>
-=======
-            <a href="/logout" >Đăng xuất</a>
-			<a href="/home" class="avtive">Trang chủ</a>
+              <a href="/myprofile/{{$user->id}}">{{$user->name}}</a>
+                    
+            <a href="/logout">Đăng xuất</a>
+			<a href="/home" >Trang chủ</a>
 			<a href="#contact" >Liên hệ</a>
->>>>>>> a36332f218cfeaae189235949a743bb897600bb9
-			
 			
 		</div>
 	</div>
@@ -37,27 +30,21 @@
                 <li class="menu listmenu">
                 	Menu
                 </li>
-<<<<<<< HEAD
-				<li href="#" class="listmenu" style="text-align: left;">
-					<a href="/myprofile/{{$user->id}}" class="rowmenu"style="color: #bf0000;"><img src="image/profile/{{$user->image}}"width="30" height= "30" />
-=======
 				<li href="#" class="listmenu" >
-					<a href="/myprofile/{{$user->id}}" class="rowmenu""><img src="image/profile/{{$user->image}}"width="30" height= "30" />
->>>>>>> a36332f218cfeaae189235949a743bb897600bb9
-						
+					<a href="/myprofile/{{$user->id}}" class="rowmenu""><img src="image/profile/{{$user->image}}"width="30" height= "30" />		
                 	Trang cá nhân</a>
          
                 </li>
                 <li href="#" class="listmenu">
-					<a href="" class="rowmenu" style="color: #bf0000;"><img src="image/chat.png" width="30" height= "30"/>
+					<a href="" class="rowmenu" ><img src="image/chat.png" width="30" height= "30"/>
                 	Chat</a>
                 </li>
                 <li href="#" class="listmenu">
-					<a href="#" class="rowmenu"style="color: #bf0000;"><image src="image/ghepdoi.png" width="30"  height= "30">
+					<a href="#" class="rowmenu"><image src="image/ghepdoi.png" width="30"  height= "30">
                 	Ghép đôi</a>
                 </li>
                 <li href="#" class="listmenu">
-					<a href="#" class="rowmenu"style="color: #bf0000;"><image src="image/thongbao.png" width="30"  height= "30">
+					<a href="#" class="rowmenu""><image src="image/thongbao.png" width="30"  height= "30">
                 	Thông báo</a>
                 </li>
             </ul>

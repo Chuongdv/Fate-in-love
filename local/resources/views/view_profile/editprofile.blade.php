@@ -6,22 +6,24 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet"  href="{{ asset('css/new_page.css') }}" /> 
 <link rel="stylesheet"  href="{{ asset('css/2style.css') }}" /> 
-<link rel="stylesheet" type="text/css" href="{{ asset('css/profile.css') }}">
+<link rel="stylesheet"  href="{{ asset('css/style.css') }}" /> 
+<link rel="stylesheet"  href="{{ asset('css/btn_changeprofile.css') }}" /> 
    <link rel="stylesheet"  href="{{ asset('css/changeprofile.css') }}" /> 
 <link rel="stylesheet"  href="{{ asset('css/new.css') }}" /> 
 <base href="{{asset('')}}">
 
 </head>
 <body>
+  <style type="text/css">body{overflow: scroll;}</style>
  <div class="header" >
     <a href="#default" class="logo""><img src="image/logo/logo_fil_zoom.png"></a>
     <div class="header-right">
 
-              <a href="/myprofile/{{$user_edit->id}}" style="color: #bf0000;" >{{$user_edit->name}}</a>
+              <a href="/myprofile/{{$user_edit->id}}" >{{$user_edit->name}}</a>
                      
-            <a href="/logout" style="color: #bf0000;">Đăng xuất</a>
-      <a href="/home" style="color: #bf0000;">Trang chủ</a>
-      <a href="#contact" style="color: #bf0000;">Liên hệ</a>
+            <a href="/logout">Đăng xuất</a>
+      <a href="/home">Trang chủ</a>
+      <a href="#contact">Liên hệ</a>
       
       
     </div>
@@ -34,34 +36,45 @@
                 <li class="menu listmenu">
                   Menu
                 </li>
-        <li href="#" class="listmenu" style="text-align: left;">
-          <a href="/myprofile/{{$user_edit->id}}" class="rowmenu"style="color: #bf0000;"><img src="image/profile/{{$user_edit->image}}"width="30" height= "30" />
+        <li href="#" class="listmenu" >
+          <a href="/myprofile/{{$user_edit->id}}" class="rowmenu""><img src="image/profile/{{$user_edit->image}}"width="30" height= "30" />
             
                   Tên</a>
          
                 </li>
                 <li href="#" class="listmenu">
-          <a href="" class="rowmenu" style="color: #bf0000;"><img src="image/chat.png" width="30" height= "30"/>
+          <a href="" class="rowmenu"><img src="image/chat.png" width="30" height= "30"/>
                   Chat</a>
                 </li>
                 <li href="#" class="listmenu">
-          <a href="#" class="rowmenu"style="color: #bf0000;"><image src="image/ghepdoi.png" width="30"  height= "30">
+          <a href="#" class="rowmenu"><image src="image/ghepdoi.png" width="30"  height= "30">
                   Ghép đôi</a>
                 </li>
                 <li href="#" class="listmenu">
-          <a href="#" class="rowmenu"style="color: #bf0000;"><image src="image/thongbao.png" width="30"  height= "30">
+          <a href="#" class="rowmenu"><image src="image/thongbao.png" width="30"  height= "30">
                   Thông báo</a>
                 </li>
             </ul>
         </nav>
 
-    <div>
-      <div class="content">
+    
+      <div class="content" style="width: 80%;">
   <div class="card">
     <div class="firstinfo">
-     
-    <img src="image/profile/{{$user_edit->image}}" class="image_profile" />
-  
+    <table>
+      
+      <tr><td>
+        <img src="image/profile/{{$user_edit->image}}" class="image_profile" />
+      </td></tr>
+
+      <tr><td style="text-align: center;">
+        <div class="button_container">
+              <button class="btn" style="margin-top: 50px; border-radius: 50px;"><span>sửa ảnh!</span></button>
+              </div>
+
+      </td></tr>
+    </table> 
+    
 
         <!-- CHANGE A PHOTO-->
       <div class="profileinfo">
@@ -85,7 +98,7 @@
 
                         @endif
 
-<form action="" method="post">
+<!--form action="" method="post">
    <input type="hidden" name="_token" value="{{csrf_token()}}"/> 
 <label for="user">Name:</label> 
 <input type="text" name="name" value="{{$user_edit->name}}"><br /> 
@@ -110,7 +123,44 @@
       
         
 <input type="submit" name="submitbutton" id="submitbutton" value="Edit" /> 
+</form-->
+
+<form action="" method="post">
+   <input type="hidden" name="_token" value="{{csrf_token()}}"/> 
+<label for="user">Họ tên:</label> 
+<input type="text" name="name" value="{{$user_edit->name}}"><br /> 
+
+<label for="user">Ngày sinh:</label> 
+<input type="date" name="name" value="{{$user_edit->birthdate}}"><br /> 
+
+
+<label>Email:</label> 
+<input type="text" name="email" value="{{$user_edit->email}}"><br /> 
+<label>Quê quán:</label> 
+<input type="text" name="home" value="{{$user_edit->home}}"><br /> 
+
+ 
+        <label>Trường:        </label>
+
+          <select class="old-select" name="school">
+             @foreach($school as $sch)
+                                <option 
+                                @if($user_edit->sid== $sch->id) 
+                                {{"selected"}}
+                                @endif
+
+                                value="{{$sch->id}}">{{$sch->name}}</option>
+                                @endforeach
+          </select>
+           <br/>
+      
+<label>Giới thiệu:</label> 
+<textarea name="introduce" placeholder="{{$user_edit->introduce}}"></textarea><br /> 
+
+<input type="submit" name="submitbutton" id="submitbutton" value="Edit" /> 
 </form>
+
+
 </ul>       
 
       </div>
@@ -121,7 +171,6 @@
   </section>
 <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
 
-    <script src="js/index.js"></script>
-
+    
 </body>
 </html>
