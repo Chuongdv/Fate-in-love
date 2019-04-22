@@ -28,3 +28,42 @@ Route::get('/profile/{id}','PageController@getProfile');
 
 Route::get('/editprofile/{id}','PageController@getEditProfile');
 Route::post('/editprofile/{id}','PageController@postEditProfile');
+
+
+//admin
+
+//Route::get('admin/dangnhap','UserController@getDangnhapAdmin');
+//Route::post('admin/dangnhap','UserController@postDangnhapAdmin');
+//Route::get('admin/logout','UserController@getDangXuatAdmin');
+
+Route::group(['prefix'=>'manager'],function(){
+	Route::group(['prefix'=>'admin'],function(){
+		Route::get('danhsach','AdminController@getDanhSach');
+
+		Route::get('sua/{id}','AdminController@getSua');
+		Route::post('sua/{id}','AdminController@postSua');
+
+		Route::get('them','AdminController@getThem');
+		Route::post('them','AdminController@postThem');
+
+		Route::get('xoa/{id}','AdminController@getXoa');
+	});
+	Route::group(['prefix'=>'user'],function(){
+		Route::get('danhsach','ManagerUserController@getDanhSach');
+
+		Route::get('chitiet/{id}','ManagerUserController@getChiTiet');
+
+		Route::get('xoa/{id}','ManagerUserController@getXoa');
+	});
+	Route::group(['prefix'=>'school'],function(){
+		Route::get('danhsach','SchoolController@getDanhSach');
+
+		Route::get('sua/{id}','SchoolController@getSua');
+		Route::post('sua/{id}','SchoolController@postSua');
+
+		Route::get('them','SchoolController@getThem');
+		Route::post('them','SchoolController@postThem');
+
+		Route::get('xoa/{id}','SchoolController@getXoa');
+	});
+});
