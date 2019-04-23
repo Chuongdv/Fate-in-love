@@ -89,4 +89,7 @@ class PageController extends Controller
         return redirect('editprofile/'.$id)->with('thongbao','Bạn đã cập nhật thông tin cá nhân mới!');
     }
 
+    function crush(){
+      return view('viewpage.crush');
+    }
 }

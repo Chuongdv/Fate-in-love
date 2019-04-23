@@ -28,3 +28,5 @@ Route::get('/profile/{id}','PageController@getProfile');
 
 Route::get('/editprofile/{id}','PageController@getEditProfile');
 Route::post('/editprofile/{id}','PageController@postEditProfile');
+
+Route::get('/crush','PageController@crush');
