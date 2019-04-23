@@ -63,21 +63,21 @@
           </td></tr>
           <tr><td style="text-align: center;">
             <div class="button_container">
-              <button onclick = "myClick()" id="fl" class="btn" style="width: 150px; border-radius: 50px; margin-top: 50px;"><span>Theo dõi</span></button>
-              <button class="btn draw-border">Nhắn tin</button>
+              <button style="background-image: url('image/love_follow.png')" onclick = "myClick()" id="fl" class="btn" style="width: 150px; border-radius: 50px; margin-top: 50px;"><span>Theo dõi</span></button>
+              <button class="btn draw-border" >Nhắn tin</button>
               </div>
               <script type="text/javascript">
-                function{
+                function myclick(){
                     var imgPath = new String();
                     imgPath = document.getElementById("fl").style.backgroundImage;
 
-                    if(imgPath == "url(images/blue.gif)" || imgPath == "")
+                    if(imgPath == "url('image/love_follow.png')" || imgPath == "")
                     {
-                        document.getElementById("div1").style.backgroundImage = "url(images/green.gif)";
+                        document.getElementById("div1").style.backgroundImage = "url('image/love_follow.png')";
                     }
                     else
                     {
-                        document.getElementById("div1").style.backgroundImage = "url(images/blue.gif)";
+                        document.getElementById("div1").style.backgroundImage = "url('image/love_unfollow.png')";
                     }
                   }
               </script>
