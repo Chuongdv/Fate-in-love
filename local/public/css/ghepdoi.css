@@ -1,0 +1,132 @@
+.container_ghepdoi{
+	position: absolute;
+    margin-left: 18%;
+    margin-top: 10px;
+    background-color: white;
+    width: 80%;
+   	height: 560px;
+   	border-radius: 10px;
+}
+
+.container_ghepdoi .list_crush{
+	position: relative;
+	width: 20%;
+	height: 98%;
+	margin-top: 5px;
+	margin-bottom: 1px;
+	float: right;
+	background-color: #FFCCFF;
+	overflow-y: scroll;
+	border-radius: 10px;
+	margin-right: 10px;
+	opacity: 0.8;
+}
+.container_ghepdoi .list_crush:hover{
+	opacity: 1;
+}
+
+.container_ghepdoi .list_crush .name_list{
+	padding-left: 10px;
+	color: black;
+	font-weight: bold;
+}
+.container_ghepdoi .right-container{
+	
+}
+.container_ghepdoi .right-container .list_school{
+	position: absolute;
+	width: 78%;
+	height: 200px;
+	background-color:#CCFFFF; 
+	margin-top: 5px;
+	margin-left: 10px;
+	overflow-x:scroll;
+	overflow-y: hidden;
+
+	float: left;
+	border-radius: 10px;
+}
+.container_ghepdoi .right-container .ghepdoi{
+	position: absolute;
+	width: 78%;
+	height: 342px;
+	background-color:#E6E6FA; 
+	margin-top: 210px;
+	float: left;
+	margin-left: 10px;
+	border-radius: 10px;
+}
+
+.container_ghepdoi .right-container .list_school .item_school{
+	height: 170px;
+	width: 150px; 
+	background-color: #D0BAED;
+	float: left;
+	margin-top: 5px; 
+    margin-left: 10px;
+    border-radius: 10px;
+    text-align: center;
+}
+.container_ghepdoi .right-container .list_school .item_school p{
+	color: black;
+}
+
+.btn-item{
+	width: 34px;
+	height: 34px;
+	background-repeat: no-repeat;
+	background-size: 30px 30px;
+	border-radius: 50%;
+	border: #ff0000 solid 2px;
+}
+
+.container_ghepdoi .right-container .ghepdoi .avatar{
+	margin-top: 10px;
+	margin-left: 10px;
+	position: absolute;
+}
+
+.container_ghepdoi .right-container .ghepdoi .avatar img{
+	border-radius: 10px;
+}
+
+.container_ghepdoi .right-container .ghepdoi .avatar img:hover{
+
+}
+
+.container_ghepdoi .right-container .ghepdoi .info{
+	position: absolute;
+	margin-left: 370px; 
+	margin-top: 10px;
+}
+
+.container_ghepdoi .right-container .ghepdoi .info p{
+	color: black;
+	font-size: 25px;
+	font-family: arial;
+
+}
+
+.container_ghepdoi .right-container .ghepdoi .btn_love_cancel{
+	 position: absolute;
+	margin-left: 85%;
+	
+}
+.container_ghepdoi .right-container .ghepdoi .btn_love_cancel img{
+	width: 80px;
+	height: 80px;
+	border-radius: 50%;
+}
+
+.container_ghepdoi .right-container .ghepdoi .btn_love_cancel img:hover{
+	transform: translateY(4px);
+  transition: 0.4s all ease;
+}
+
+.mt{
+	margin-top: 190px;
+}
+
+.mt2{
+	margin-top: 70px;
+}

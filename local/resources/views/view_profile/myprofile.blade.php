@@ -44,7 +44,7 @@
                   <a href="#" class="rowmenu" ><img src="image/chat.png" width="30" height= "30"/>
                   Chat</a>
                 </li>
-                <li href="#" class="listmenu">
+                <li href="/crush/{{$my->id}}" class="listmenu">
                    <a href="#" class="rowmenu"><image src="image/ghepdoi.png" width="30"  height= "30">
                   Ghép đôi</a>
                 </li>
@@ -95,120 +95,71 @@
 <div id="Crush" class="tabcontent">
     <!--chi cho 4 hinh thoi-->
     <div>
+<?php
+$data = DB::table('users')->join('crush', 'users.id', '=', 'crush.cid')->get();
+        $data_crush = $data->where('uid',$my->id)->sortByDesc('created_at')->take(3);
+        $count_crush = DB::table('crush')->where('uid',$my->id)->count('cid');
+        ?>
+@foreach($data_crush as $cr)
+<?php
+$count = DB::table('crush')->where('cid',$cr->cid)->count('uid');
 
+?>
       <div class="profilet p20">
-          <a href="#"><img src="https://images.headlines.pw/topnews-2017/imgs/fd/c2/fdc2905c434afd3909038a88dc0437982d744884.jpg" class="photot"/>
+          <a href="/profile/{{$cr->cid}}"><img src="image/profile/{{$cr->image}}" class="photot"/>
           
           <div class="contentt">
-              <h1 style="font-size: 15px;">Phạm Hoài Lâm</h1>
-              <h2 style="font-size: 10px;">1000 người theo dõi</h2>
+              <h1 style="font-size: 15px;">{{$cr->name}}</h1>
+              <h2 style="font-size: 10px;">Số người quan tâm: {{$count}}</h2>
           </div>  
               
             </a>     
           
       </div>
-      <div class="profilet">
-          <a href="#"><img src="https://images.headlines.pw/topnews-2017/imgs/fd/c2/fdc2905c434afd3909038a88dc0437982d744884.jpg" class="photot"/>
-          
-          <div class="contentt">
-              <h1 style="font-size: 15px;">Phạm Hoài Lâm</h1>
-              <h2 style="font-size: 10px;">1000 người theo dõi</h2>
-          </div>  
-              
-            </a>     
-          
-      </div>
-      <div class="profilet">
-          <a href="#"><img src="https://images.headlines.pw/topnews-2017/imgs/fd/c2/fdc2905c434afd3909038a88dc0437982d744884.jpg" class="photot"/>
-          
-          <div class="contentt">
-              <h1 style="font-size: 15px;">Phạm Hoài Lâm</h1>
-              <h2 style="font-size: 10px;">1000 người theo dõi</h2>
-          </div>  
-              
-            </a>     
-          
-      </div>
-      <div class="profilet">
-          <a href="#"><img src="https://images.headlines.pw/topnews-2017/imgs/fd/c2/fdc2905c434afd3909038a88dc0437982d744884.jpg" class="photot"/>
-          
-          <div class="contentt">
-              <h1 style="font-size: 15px;">Phạm Hoài Lâm</h1>
-              <h2 style="font-size: 10px;">1000 người theo dõi</h2>
-          </div>  
-              
-            </a>     
-          
-      </div>
-
-         
-
-
-
-
-
+      @endforeach
 
 
     </div>
 
-  <p>Đã quan tâm <a href="#">20 crush</a></p>
+  <p>Đã quan tâm <a href="/crush/{{$my->id}}">{{$count_crush}} người</a></p>
 
 
 
 </div>
  
 <div id="School" class="tabcontent">
+  <?php
+  $data_sch = DB::table('schools')->join('fschool', 'schools.id', '=', 'fschool.sid')->get();
+        $data_school = $data_sch->where('uid',$my->id)->sortByDesc('created_at')->take(3);
+         $count_school = DB::table('fschool')->where('uid',$my->id)->count('sid');
+
+        ?>
+@foreach($data_school as $sch)
+<?php
+$count1 = DB::table('fschool')->where('sid',$sch->sid)->count('uid');
+
+?>
    <div class="profilet p20">
-          <a href="#"><img src="https://images.headlines.pw/topnews-2017/imgs/fd/c2/fdc2905c434afd3909038a88dc0437982d744884.jpg" class="photot"/>
+          <a href="/profile_school/{{$sch->sid}}"><img src="image/logo/{{$sch->logo}}" class="photot"/>
           
           <div class="contentt">
-              <h1 style="font-size: 15px;">Bách Khoa Hà Nội</h1>
-              <h2 style="font-size: 10px;">1000 sinh viên</h2>
+              <h1 style="font-size: 15px;">{{$sch->name}}</h1>
+              <h2 style="font-size: 10px;">{{$count1}} sinh viên</h2>
           </div>  
               
             </a>     
           
       </div>
 
-     <div class="profilet">
-          <a href="#"><img src="https://images.headlines.pw/topnews-2017/imgs/fd/c2/fdc2905c434afd3909038a88dc0437982d744884.jpg" class="photot"/>
-          
-          <div class="contentt">
-              <h1 style="font-size: 15px;">Đại Học Xây Dựng</h1>
-              <h2 style="font-size: 10px;">1000 sinh viên</h2>
-          </div>  
-              
-            </a>     
-          
-      </div>
+    @endforeach
 
-      <div class="profilet">
-          <a href="#"><img src="https://images.headlines.pw/topnews-2017/imgs/fd/c2/fdc2905c434afd3909038a88dc0437982d744884.jpg" class="photot"/>
-          
-          <div class="contentt">
-              <h1 style="font-size: 15px;">Đại học Mỏ</h1>
-              <h2 style="font-size: 10px;">200 sinh viên</h2>
-          </div>  
-              
-            </a>     
-          
-      </div>
+      
 
-      <div class="profilet">
-          <a href="#"><img src="https://images.headlines.pw/topnews-2017/imgs/fd/c2/fdc2905c434afd3909038a88dc0437982d744884.jpg" class="photot"/>
-          
-          <div class="contentt">
-              <h1 style="font-size: 15px;">Kinh Tế Quốc Dân</h1>
-              <h2 style="font-size: 10px;">1000 sinh viên</h2>
-          </div>  
-              
-            </a>     
-          
-      </div>
+     
 
 
      
-     <p>Đã quan tâm <a href ="#">5 trường</a></p>
+     <p>Đã quan tâm <a href ="/crush/{{$my->id}}">{{$count_school}} trường</a></p>
 </div>
  
 

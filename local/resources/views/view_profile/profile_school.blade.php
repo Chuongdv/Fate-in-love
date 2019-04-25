@@ -59,12 +59,11 @@
     <div class="firstinfo">
       <table>
           <tr><td>
-               <img src="image/profile/{{$user_page->image}}" class="image_profile" />
+               <img src="image/logo/{{$school->logo}}" class="image_profile" />
           </td></tr>
           <tr><td style="text-align: center;">
             <div class="button_container">
               <button style="background-image: url('image/love_follow.png')" onclick = "myClick()" id="fl" class="btn" style="width: 150px; border-radius: 50px; margin-top: 50px;"><span>Theo dõi</span></button>
-              <button class="btn draw-border" >Nhắn tin</button>
               </div>
               <script type="text/javascript">
                 function myclick(){
@@ -87,17 +86,14 @@
 
 
       </table>
-     <?php
-         $count_crush = DB::table('crush')->where('cid',$user_page->id)->count('uid');
-        ?>
+     
         <div class="profileinfo" style="margin-left: 100px;">
         <h1></h1>
-        <h1 style="color:  #CC0066;">{{$user_page->name}}</h1>
-        <h3 style="color:  #CC0066;">{{$user_page->birthday}}</h3>
-        <p class="bio"><img class="img" src="image/profile/{{$user_page->image}}"/>{{$user_page->introduce}}</p> 
-        <p class="bio"><img class="img" src="image/logo/logosch.jpg"/>{{$user_page->school->name}}</p>
-        <p class="bio"><img class="img" src="image/logo/logodc.jpg"/>Sống tại {{$user_page->home}}</p>
-        <p class="bio"><img class="img" src="image/logo/logocr.jpg"/> có {{$count_crush}} người crush</p>
+      
+        
+        <p class="bio"><img class="img" src="image/logo/logosch.jpg"/>{{$school->name}}</p>
+        <p class="bio"><img class="img" src="image/logo/logodc.jpg"/>{{$school->address}}</p>
+        <p class="bio"><img class="img" src="image/logo/logocr.jpg"/> có 0 người quan tâm</p>
         
       </div>
     

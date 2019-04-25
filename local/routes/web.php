@@ -21,17 +21,17 @@ Route::get('/signup_and_login','UserController@getSignUp');
 Route::post('/signup_and_login','UserController@postSignUp');
 Route::post('/login','UserController@postLogin');
 Route::get('/logout','UserController@getLogout');
-
+Route::get('/home_school/{id}','PageController@home_school');
 Route::get('/home','PageController@page');
 Route::get('/myprofile/{id}','PageController@getMyProfile');
 Route::get('/profile/{id}','PageController@getProfile');
+Route::get('/profile_school/{id}','PageController@getProfile_School');
 
 Route::get('/editprofile/{id}','PageController@getEditProfile');
 Route::post('/editprofile/{id}','PageController@postEditProfile');
-
-
-//admin
-
+Route::get('/crush/{id}','PageController@crush');
+Route::get('/follow/{id}','PageController@follow');
+Route::get('/unfollow/{uid}','PageController@unfollow');
 //Route::get('admin/dangnhap','UserController@getDangnhapAdmin');
 //Route::post('admin/dangnhap','UserController@postDangnhapAdmin');
 //Route::get('admin/logout','UserController@getDangXuatAdmin');
@@ -67,3 +67,4 @@ Route::group(['prefix'=>'manager'],function(){
 		Route::get('xoa/{id}','SchoolController@getXoa');
 	});
 });
+

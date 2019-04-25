@@ -37,14 +37,6 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-    public function crush(){
-        return $this->hasMany('App\Crush','cid','id');
-    }
-
-    public function Follow(){
-        return $this->hasMany('App\Follow','uid','id');
-    }
-
     public function school(){
         return $this->beLongsTo('App\Schools','sid','id');
     }
