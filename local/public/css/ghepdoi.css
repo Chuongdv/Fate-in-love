@@ -42,9 +42,9 @@
 	margin-left: 10px;
 	overflow-x:scroll;
 	overflow-y: hidden;
-
 	float: left;
 	border-radius: 10px;
+	white-space: nowrap;
 }
 .container_ghepdoi .right-container .ghepdoi{
 	position: absolute;
@@ -57,18 +57,28 @@
 	border-radius: 10px;
 }
 
+/*.container_ghepdoi .right-container .list_school .list_container_item{
+	height: 342px;
+	width: 1000px;
+	overflow-x: scroll;
+}*/
+
 .container_ghepdoi .right-container .list_school .item_school{
-	height: 170px;
-	width: 150px; 
-	background-color: #D0BAED;
-	float: left;
+	height: 190px;
+	width: 210px; 
+	background-color: #f4efe6;
 	margin-top: 5px; 
     margin-left: 10px;
     border-radius: 10px;
     text-align: center;
+	display: inline-block;
 }
-.container_ghepdoi .right-container .list_school .item_school p{
-	color: black;
+.container_ghepdoi .right-container .list_school  .item_school p{
+	color: #0d4a84;
+}
+.container_ghepdoi .right-container .list_school  .item_school:hover{
+	background-color: #f7c4b4;
+		
 }
 
 .btn-item{
@@ -90,8 +100,11 @@
 	border-radius: 10px;
 }
 
-.container_ghepdoi .right-container .ghepdoi .avatar img:hover{
-
+.container_ghepdoi .right-container .ghepdoi .avatar img:before{
+	opacity: 0;
+}
+.container_ghepdoi .right-container .ghepdoi .avatar img:after{
+	opacity: 1;
 }
 
 .container_ghepdoi .right-container .ghepdoi .info{
@@ -101,9 +114,12 @@
 }
 
 .container_ghepdoi .right-container .ghepdoi .info p{
-	color: black;
+	color: #3515ea;
 	font-size: 25px;
 	font-family: arial;
+
+}
+.container_ghepdoi .right-container .ghepdoi .info p:hover{
 
 }
 
@@ -129,4 +145,8 @@
 
 .mt2{
 	margin-top: 70px;
+}
+
+::-webkit-scrollbar { 
+    display: none; 
 }

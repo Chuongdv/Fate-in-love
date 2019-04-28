@@ -10,7 +10,11 @@
 <link rel="stylesheet"  href="css/style_crush_in_profile.css" />
 <link rel="stylesheet"  href="css/ghepdoi.css" />
 
-
+<style>
+  .btn-item{
+    background-image: url('image/love_follow.png');
+  }
+</style>
 	
 </head>
 <body>
@@ -61,22 +65,18 @@
                 <div class="list_school">
                         <!-- cho vong lap foreach o day-->
                     <div class="item_school">
-                        <div style="margin-top: 2px;"><img src="https://upload.wikimedia.org/wikipedia/commons/a/a1/Logo_Hust.png" width="50" height="50"></div>
-                        <div style="margin-top: -12px;">
+                        <div style="margin-top: 5px;"><img src="https://upload.wikimedia.org/wikipedia/commons/a/a1/Logo_Hust.png" width="50" height="50"></div>
+                        <div>
                             <p>Đại học Bách Khoa Hà Nội</p>
                             <p style="font-size: 10px; margin-top: -10px;">1000 sinh viên</p>
-                            <button class="btn-item" style="background-image: url('image/love_follow.png');"></button>
+                            <button id="btn1" class="btn-item" value="false"></button>
+                            
                         </div>
                     </div>
-                    <div class="item_school">
-                        <div style="margin-top: 2px;"><img src="https://upload.wikimedia.org/wikipedia/commons/a/a1/Logo_Hust.png" width="50" height="50"></div>
-                        <div style="margin-top: -12px;">
-                            <p>Đại học Bách Khoa Hà Nội</p>
-                            <p style="font-size: 10px; margin-top: -10px;">1000 sinh viên</p>
-                            <button class="btn-item" style="background-image: url('image/love_unfollow.png');"></button>
-                        </div>
-                    </div>
-                   
+
+
+                    
+                    
 
 
 
@@ -110,7 +110,7 @@
             <div class="list_crush">
                 <div class="name_list"><p>Danh sách các crush </p></div>
                 <!-- foreach cac crush-->
-                <div class="profilet" style="width: 190px; height: 50px; margin-left: 5px; margin-top: 5px;">
+                <div class="profilet" style="width: 210px; height: 50px; margin-left: 5px; margin-top: 5px;">
                       <a href="#"><img src="https://images.headlines.pw/topnews-2017/imgs/fd/c2/fdc2905c434afd3909038a88dc0437982d744884.jpg" class="photot"/>
                       
                       <div class="contentt">
@@ -121,7 +121,7 @@
                         </a>     
                       
                   </div>
-                  <div class="profilet" style="width: 190px; height: 50px; margin-left: 5px; margin-top: 5px;">
+                  <div class="profilet" style="width: 210px; height: 50px; margin-left: 5px; margin-top: 5px;">
                       <a href="#"><img src="https://images.headlines.pw/topnews-2017/imgs/fd/c2/fdc2905c434afd3909038a88dc0437982d744884.jpg" class="photot"/>
                       
                       <div class="contentt">
@@ -132,7 +132,7 @@
                         </a>     
                       
                   </div>
-                  <div class="profilet" style="width: 190px; height: 50px; margin-left: 5px; margin-top: 5px;">
+                  <div class="profilet" style="width: 210px; height: 50px; margin-left: 5px; margin-top: 5px;">
                       <a href="#"><img src="https://images.headlines.pw/topnews-2017/imgs/fd/c2/fdc2905c434afd3909038a88dc0437982d744884.jpg" class="photot"/>
                       
                       <div class="contentt">
@@ -143,7 +143,7 @@
                         </a>     
                       
                   </div>
-                  <div class="profilet" style="width: 190px; height: 50px; margin-left: 5px; margin-top: 5px;">
+                  <div class="profilet" style="width: 210px; height: 50px; margin-left: 5px; margin-top: 5px;">
                       <a href="#"><img src="https://images.headlines.pw/topnews-2017/imgs/fd/c2/fdc2905c434afd3909038a88dc0437982d744884.jpg" class="photot"/>
                       
                       <div class="contentt">
@@ -154,7 +154,87 @@
                         </a>     
                       
                   </div>
-                  <div class="profilet" style="width: 190px; height: 50px; margin-left: 5px; margin-top: 5px;">
+                  <div class="profilet" style="width: 210px; height: 50px; margin-left: 5px; margin-top: 5px;">
+                      <a href="#"><img src="https://images.headlines.pw/topnews-2017/imgs/fd/c2/fdc2905c434afd3909038a88dc0437982d744884.jpg" class="photot"/>
+                      
+                      <div class="contentt">
+                          <p style="font-size: 15px;">Phạm Hoài Lâm</p>
+                          
+                      </div>  
+                          
+                        </a>     
+                      
+                  </div><div class="profilet" style="width: 210px; height: 50px; margin-left: 5px; margin-top: 5px;">
+                      <a href="#"><img src="https://images.headlines.pw/topnews-2017/imgs/fd/c2/fdc2905c434afd3909038a88dc0437982d744884.jpg" class="photot"/>
+                      
+                      <div class="contentt">
+                          <p style="font-size: 15px;">Phạm Hoài Lâm</p>
+                          
+                      </div>  
+                          
+                        </a>     
+                      
+                  </div><div class="profilet" style="width: 210px; height: 50px; margin-left: 5px; margin-top: 5px;">
+                      <a href="#"><img src="https://images.headlines.pw/topnews-2017/imgs/fd/c2/fdc2905c434afd3909038a88dc0437982d744884.jpg" class="photot"/>
+                      
+                      <div class="contentt">
+                          <p style="font-size: 15px;">Phạm Hoài Lâm</p>
+                          
+                      </div>  
+                          
+                        </a>     
+                      
+                  </div><div class="profilet" style="width: 210px; height: 50px; margin-left: 5px; margin-top: 5px;">
+                      <a href="#"><img src="https://images.headlines.pw/topnews-2017/imgs/fd/c2/fdc2905c434afd3909038a88dc0437982d744884.jpg" class="photot"/>
+                      
+                      <div class="contentt">
+                          <p style="font-size: 15px;">Phạm Hoài Lâm</p>
+                          
+                      </div>  
+                          
+                        </a>     
+                      
+                  </div><div class="profilet" style="width: 210px; height: 50px; margin-left: 5px; margin-top: 5px;">
+                      <a href="#"><img src="https://images.headlines.pw/topnews-2017/imgs/fd/c2/fdc2905c434afd3909038a88dc0437982d744884.jpg" class="photot"/>
+                      
+                      <div class="contentt">
+                          <p style="font-size: 15px;">Phạm Hoài Lâm</p>
+                          
+                      </div>  
+                          
+                        </a>     
+                      
+                  </div><div class="profilet" style="width: 210px; height: 50px; margin-left: 5px; margin-top: 5px;">
+                      <a href="#"><img src="https://images.headlines.pw/topnews-2017/imgs/fd/c2/fdc2905c434afd3909038a88dc0437982d744884.jpg" class="photot"/>
+                      
+                      <div class="contentt">
+                          <p style="font-size: 15px;">Phạm Hoài Lâm</p>
+                          
+                      </div>  
+                          
+                        </a>     
+                      
+                  </div><div class="profilet" style="width: 210px; height: 50px; margin-left: 5px; margin-top: 5px;">
+                      <a href="#"><img src="https://images.headlines.pw/topnews-2017/imgs/fd/c2/fdc2905c434afd3909038a88dc0437982d744884.jpg" class="photot"/>
+                      
+                      <div class="contentt">
+                          <p style="font-size: 15px;">Phạm Hoài Lâm</p>
+                          
+                      </div>  
+                          
+                        </a>     
+                      
+                  </div><div class="profilet" style="width: 210px; height: 50px; margin-left: 5px; margin-top: 5px;">
+                      <a href="#"><img src="https://images.headlines.pw/topnews-2017/imgs/fd/c2/fdc2905c434afd3909038a88dc0437982d744884.jpg" class="photot"/>
+                      
+                      <div class="contentt">
+                          <p style="font-size: 15px;">Phạm Hoài Lâm</p>
+                          
+                      </div>  
+                          
+                        </a>     
+                      
+                  </div><div class="profilet" style="width: 210px; height: 50px; margin-left: 5px; margin-top: 5px;">
                       <a href="#"><img src="https://images.headlines.pw/topnews-2017/imgs/fd/c2/fdc2905c434afd3909038a88dc0437982d744884.jpg" class="photot"/>
                       
                       <div class="contentt">
@@ -165,116 +245,7 @@
                         </a>     
                       
                   </div>
-                  <div class="profilet" style="width: 190px; height: 50px; margin-left: 5px; margin-top: 5px;">
-                      <a href="#"><img src="https://images.headlines.pw/topnews-2017/imgs/fd/c2/fdc2905c434afd3909038a88dc0437982d744884.jpg" class="photot"/>
-                      
-                      <div class="contentt">
-                          <p style="font-size: 15px;">Phạm Hoài Lâm</p>
-                          
-                      </div>  
-                          
-                        </a>     
-                      
-                  </div>
-                  <div class="profilet" style="width: 190px; height: 50px; margin-left: 5px; margin-top: 5px;">
-                      <a href="#"><img src="https://images.headlines.pw/topnews-2017/imgs/fd/c2/fdc2905c434afd3909038a88dc0437982d744884.jpg" class="photot"/>
-                      
-                      <div class="contentt">
-                          <p style="font-size: 15px;">Phạm Hoài Lâm</p>
-                          
-                      </div>  
-                          
-                        </a>     
-                      
-                  </div>
-                  <div class="profilet" style="width: 190px; height: 50px; margin-left: 5px; margin-top: 5px;">
-                      <a href="#"><img src="https://images.headlines.pw/topnews-2017/imgs/fd/c2/fdc2905c434afd3909038a88dc0437982d744884.jpg" class="photot"/>
-                      
-                      <div class="contentt">
-                          <p style="font-size: 15px;">Phạm Hoài Lâm</p>
-                          
-                      </div>  
-                          
-                        </a>     
-                      
-                  </div>
-                  <div class="profilet" style="width: 190px; height: 50px; margin-left: 5px; margin-top: 5px;">
-                      <a href="#"><img src="https://images.headlines.pw/topnews-2017/imgs/fd/c2/fdc2905c434afd3909038a88dc0437982d744884.jpg" class="photot"/>
-                      
-                      <div class="contentt">
-                          <p style="font-size: 15px;">Phạm Hoài Lâm</p>
-                          
-                      </div>  
-                          
-                        </a>     
-                      
-                  </div>
-                  <div class="profilet" style="width: 190px; height: 50px; margin-left: 5px; margin-top: 5px;">
-                      <a href="#"><img src="https://images.headlines.pw/topnews-2017/imgs/fd/c2/fdc2905c434afd3909038a88dc0437982d744884.jpg" class="photot"/>
-                      
-                      <div class="contentt">
-                          <p style="font-size: 15px;">Phạm Hoài Lâm</p>
-                          
-                      </div>  
-                          
-                        </a>     
-                      
-                  </div>
-                  <div class="profilet" style="width: 190px; height: 50px; margin-left: 5px; margin-top: 5px;">
-                      <a href="#"><img src="https://images.headlines.pw/topnews-2017/imgs/fd/c2/fdc2905c434afd3909038a88dc0437982d744884.jpg" class="photot"/>
-                      
-                      <div class="contentt">
-                          <p style="font-size: 15px;">Phạm Hoài Lâm</p>
-                          
-                      </div>  
-                          
-                        </a>     
-                      
-                  </div>
-                  <div class="profilet" style="width: 190px; height: 50px; margin-left: 5px; margin-top: 5px;">
-                      <a href="#"><img src="https://images.headlines.pw/topnews-2017/imgs/fd/c2/fdc2905c434afd3909038a88dc0437982d744884.jpg" class="photot"/>
-                      
-                      <div class="contentt">
-                          <p style="font-size: 15px;">Phạm Hoài Lâm</p>
-                          
-                      </div>  
-                          
-                        </a>     
-                      
-                  </div>
-                  <div class="profilet" style="width: 190px; height: 50px; margin-left: 5px; margin-top: 5px;">
-                      <a href="#"><img src="https://images.headlines.pw/topnews-2017/imgs/fd/c2/fdc2905c434afd3909038a88dc0437982d744884.jpg" class="photot"/>
-                      
-                      <div class="contentt">
-                          <p style="font-size: 15px;">Phạm Hoài Lâm</p>
-                          
-                      </div>  
-                          
-                        </a>     
-                      
-                  </div>
-                  <div class="profilet" style="width: 190px; height: 50px; margin-left: 5px; margin-top: 5px;">
-                      <a href="#"><img src="https://images.headlines.pw/topnews-2017/imgs/fd/c2/fdc2905c434afd3909038a88dc0437982d744884.jpg" class="photot"/>
-                      
-                      <div class="contentt">
-                          <p style="font-size: 15px;">Phạm Hoài Lâm</p>
-                          
-                      </div>  
-                          
-                        </a>     
-                      
-                  </div>
-                  <div class="profilet" style="width: 190px; height: 50px; margin-left: 5px; margin-top: 5px;">
-                      <a href="#"><img src="https://images.headlines.pw/topnews-2017/imgs/fd/c2/fdc2905c434afd3909038a88dc0437982d744884.jpg" class="photot"/>
-                      
-                      <div class="contentt">
-                          <p style="font-size: 15px;">Phạm Hoài Lâm</p>
-                          
-                      </div>  
-                          
-                        </a>     
-                      
-                  </div>
+                  
                   
                   
 
@@ -288,6 +259,23 @@
         
             
 	</section>
+
+
+  <script type="text/javascript">
+
+    var btn = document.getElementsByClassName('btn-item')[0];
+    btn.onclick=function(){
+      if(btn.value === "false"){
+        
+        btn.style.backgroundImage = "url('image/love_unfollow.png')";
+        btn.value="true"
+      }else{
+        btn.style.backgroundImage = "url('image/love_follow.png')";
+        btn.value="false"
+      }
+    }
+  </script>
+
 
 </body>
 </html>
