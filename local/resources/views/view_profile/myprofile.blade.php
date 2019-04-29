@@ -49,7 +49,7 @@
                   Ghép đôi</a>
                 </li>
                 <li href="#" class="listmenu">
-                   <a href="/chat" class="rowmenu"><image src="image/thongbao.png" width="30"  height= "30">
+                   <a href="/thongbao" class="rowmenu"><image src="image/thongbao.png" width="30"  height= "30">
                   Thông báo</a>
                 </li>
             </ul>
@@ -120,7 +120,6 @@ $data = DB::table('users')->join('crush', 'users.id', '=', 'crush.cid')->get();
 $count = DB::table('crush')->where('cid',$cr->cid)->count('uid');
 
 ?>
-
       <div class="profilet">
           <a href="/profile/{{$cr->cid}}"><img src="image/profile/{{$cr->image}}" class="photot"/>
           
@@ -159,7 +158,7 @@ $count = DB::table('crush')->where('cid',$cr->cid)->count('uid');
           
           <div class="contentt">
               <h1 style="font-size: 15px;">{{$school1->name}}</h1>
-              <h2 style="font-size: 10px;">{{$count2}} sinh viên</h2>
+              <h2 style="font-size: 10px;">Số người quan tâm: {{$count2}}</h2>
           </div>  
               
             </a>     
@@ -177,7 +176,7 @@ $count1 = DB::table('fschool')->where('sid',$sch->sid)->count('uid');
           
           <div class="contentt">
               <h1 style="font-size: 15px;">{{$sch->name}}</h1>
-              <h2 style="font-size: 10px;">{{$count1}} sinh viên</h2>
+              <h2 style="font-size: 10px;">Số người quan tâm: {{$count1}}</h2>
           </div>  
               
             </a>     

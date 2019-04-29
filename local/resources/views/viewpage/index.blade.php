@@ -31,7 +31,7 @@
                 	Menu
                 </li>
 				<li href="#" class="listmenu" >
-					<a href="/myprofile/{{$user->id}}" class="rowmenu""><img src="image/profile/{{$user->image}}"width="30" height= "30" />		
+					<a href="/myprofile/{{$user->id}}" class="rowmenu"><img src="image/profile/{{$user->image}}"width="30" height= "30" />		
                 	Trang cá nhân</a>
          
                 </li>
@@ -44,7 +44,7 @@
                 	Ghép đôi</a>
                 </li>
                 <li href="#" class="listmenu">
-					<a href="#" class="rowmenu""><image src="image/thongbao.png" width="30"  height= "30">
+					<a href="/thongbao" class="rowmenu""><image src="image/thongbao.png" width="30"  height= "30">
                 	Thông báo</a>
                 </li>
             </ul>

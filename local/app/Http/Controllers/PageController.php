@@ -129,4 +129,8 @@ if(Auth::check()){
     function chat(){
       return view('viewpage.chat');
     }
+
+    function thongbao(){
+      return view('viewpage.thongbao');
+    }
 }

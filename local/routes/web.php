@@ -33,6 +33,7 @@ Route::get('/crush/{id}','PageController@crush');
 Route::get('/follow/{id}','PageController@follow');
 Route::get('/unfollow/{id}','PageController@unfollow');
 Route::get('/chat','PageController@chat');
+Route::get('/thongbao','PageController@thongbao');
 //Route::get('admin/dangnhap','UserController@getDangnhapAdmin');
 //Route::post('admin/dangnhap','UserController@postDangnhapAdmin');
 //Route::get('admin/logout','UserController@getDangXuatAdmin');
