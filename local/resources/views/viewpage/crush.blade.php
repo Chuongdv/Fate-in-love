@@ -47,7 +47,7 @@
                   Ghép đôi</a>
                 </li>
                 <li href="#" class="listmenu">
-          <a href="#" class="rowmenu""><image src="image/thongbao.png" width="30"  height= "30">
+          <a href="#" class="rowmenu"><image src="image/thongbao.png" width="30"  height= "30">
                   Thông báo</a>
                 </li>
             </ul>
@@ -70,9 +70,9 @@
                       ?>
                     <div class="item_school">
                      <a href="/home_school/{{$sch->sid}}">   <div style="margin-top: 2px;"><img src="image/logo/{{$sch->logo}}" width="50" height="50"></div></a>
-                        <div style="margin-top: -12px;">
+                        <div style="margin-top: -2px;">
                             <p>{{$sch->name}}</p>
-                            <p style="font-size: 10px; margin-top: -10px;">{{$count1}} sinh viên</p>
+                            <p style="font-size: 10px; margin-top: -4px;">{{$count1}} sinh viên</p>
                             <button class="btn-item" style="background-image: url('image/love_follow.png');"></button>
                         </div>
                     </div>
@@ -143,5 +143,21 @@
             
   </section>
 
+
+
+<script type="text/javascript">
+
+    var btn = document.getElementsByClassName('btn-item');
+    btn.onclick=function(){
+      if(btn.value === "false"){
+        
+        btn.style.backgroundImage = "url('image/love_unfollow.png')";
+        btn.value="true"
+      }else{
+        btn.style.backgroundImage = "url('image/love_follow.png')";
+        btn.value="false"
+      }
+    }
+  </script>
 </body>
 </html>

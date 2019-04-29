@@ -57,18 +57,13 @@
 	border-radius: 10px;
 }
 
-/*.container_ghepdoi .right-container .list_school .list_container_item{
-	height: 342px;
-	width: 1000px;
-	overflow-x: scroll;
-}*/
 
 .container_ghepdoi .right-container .list_school .item_school{
 	height: 190px;
 	width: 210px; 
 	background-color: #f4efe6;
 	margin-top: 5px; 
-    margin-left: 10px;
+    margin-left: 2px;
     border-radius: 10px;
     text-align: center;
 	display: inline-block;
