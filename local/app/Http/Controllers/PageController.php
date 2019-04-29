@@ -109,10 +109,24 @@ if(Auth::check()){
     }
 
    function follow($id){
-      
+            if(Auth::check()){
+        $user = Auth::user();
+      }
+      $user_cr = User::all()->shuffle();
+    $school = Schools::all();
+      return view('viewpage.crush',['user'=>$user,'school'=>$school,'user_cr'=>$user_cr]);    
     }
 
-    public function unfollow(Request $requeest,$uid){
+    public function unfollow($id){
+ if(Auth::check()){
+        $user = Auth::user();
+      }
+      $user_cr = User::all()->shuffle();
+    $school = Schools::all();
+      return view('viewpage.crush',['user'=>$user,'school'=>$school,'user_cr'=>$user_cr]);    
+    }
 
+    function chat(){
+      return view('viewpage.chat');
     }
 }

@@ -59,6 +59,7 @@ class UserController extends Controller
         $user->birthday = $request->birthday;
         $user->gender = $request->gender;
         $user->sid = $request->school;
+        $user->image= 'avatar.jpg';
         $user->save();
 
         return redirect('signup_and_login')->with('thongbao','Đăng ký thành công!!');

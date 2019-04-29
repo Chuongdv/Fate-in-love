@@ -39,7 +39,7 @@
          
                 </li>
                 <li href="#" class="listmenu">
-					<a href="" class="rowmenu" ><img src="image/chat.png" width="30" height= "30"/>
+					<a href="/chat" class="rowmenu" ><img src="image/chat.png" width="30" height= "30"/>
                 	Chat</a>
                 </li>
                 <li href="#" class="listmenu">
@@ -58,7 +58,7 @@
         <div class="container_ghepdoi">
             <div class="right-container">
 
-                <div class="list_school" style="overflow: scroll;">
+                <div class="list_school" style="overflow: auto;">
                         <!-- cho vong lap foreach o day-->
 <?php
   $data_sch = DB::table('schools')->join('fschool', 'schools.id', '=', 'fschool.sid')->get();
@@ -87,7 +87,7 @@ $count = DB::table('crush')->where('cid',$us->id)->count('uid');
 ?>
                 <div class="ghepdoi">
                     <div class="avatar">
-                     <a href="/profile/{{$us->id}}">   <img src="image/profile/{{$us->image}}" width="320" height="320"><a>
+                     <a href="/profile/{{$us->id}}"><img src="image/profile/{{$us->image}}" width="320" height="320"><a>
                     </div>
 
                     <div class="info">
@@ -98,9 +98,11 @@ $count = DB::table('crush')->where('cid',$us->id)->count('uid');
                         <p>Số người quan tâm: {{$count}}</p>
                   
                 </div>
+
                 <div class="btn_love_cancel mt">
-                      <a href="#">  <img src="image/cancel.png"></a>
-                </div>                   
+                      <a href="/unfollow/{{$user->id}}">  <img src="image/cancel.png"></a>
+                </div> 
+                              
                  <div class="btn_love_cancel mt2">
                         <a href="/follow/{{$user->id}}"><img src="image/love_follow.png"> </a>
                     </div>
