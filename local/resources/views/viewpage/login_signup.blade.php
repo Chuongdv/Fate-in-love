@@ -46,8 +46,8 @@
       <input type="email" placeholder="Email" name="email">
       <select name="gender">
           <option value="" disabled selected hidden>Giới tính</option>
-          <option value="nam">Nam</option>
-          <option value="nu">Nữ</option>
+          <option value="Nam">Nam</option>
+          <option value="Nữ">Nữ</option>
 
       </select>
       <input type="birthdate" placeholder="Ngày sinh" name="birthday">

@@ -10,7 +10,7 @@
 <base href="{{asset('')}}">
 	
 </head>
-<body>
+<body style="overflow: scroll;">
 	<div class="header" >
 		<a href="#default" class="logo""><img src="image/logo/logo_fil_zoom.png"></a>
 		<div class="header-right">
@@ -31,7 +31,7 @@
                 	Menu
                 </li>
 				<li href="#" class="listmenu" >
-					<a href="/myprofile/{{$user->id}}" class="rowmenu"><img src="image/profile/{{$user->image}}"width="30" height= "30" />		
+					<a href="/myprofile/{{$user->id}}" class="rowmenu""><img src="image/profile/{{$user->image}}"width="30" height= "30" />		
                 	Trang cá nhân</a>
          
                 </li>
@@ -50,7 +50,7 @@
             </ul>
         </nav>
             <?php
-				$data = $users->where('star',1)->sortByDesc('created_at')->take(8);
+				$data = $users->where('sid',$school->id)->sortByDesc('created_at');
 				?>
 @foreach($data as $user)
 		<div>

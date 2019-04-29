@@ -5,6 +5,8 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use App\User;
 use App\Schools;
+use App\Fschool;
+use App\Crush;
 class PageController extends Controller
 {
     //
@@ -20,22 +22,23 @@ class PageController extends Controller
     	return view ('viewpage.index',['user'=>$user]);
 
     }
+    function home_school($id){
+       if(Auth::check()){
+        $user = Auth::user();
+      }
+      $school = Schools::find($id);
+      return view('viewpage.index_school',['user'=>$user,'school'=>$school]);
+    }
 
    public function getMyProfile($id){
        if(Auth::check()){
         $my = Auth::user();
       }
+      
     	return view ('view_profile.myprofile',['my'=>$my]);
 
     }
-     function editprofile(){
-      if(Auth::check()){
-        $user = Auth::user();
-}
-        return view ('view_profile.editprofile',['user'=>$user]);
-      
-
-    }
+    
    public  function getProfile($id){
     if(Auth::check()){
       $user = Auth::user();
@@ -44,7 +47,14 @@ class PageController extends Controller
     return view('view_profile.profile',['user_page'=>$user_page,'user'=>$user]);
          //return view('view_profile.profile');
      }
+public function getProfile_School($id){
+if(Auth::check()){
+      $user = Auth::user();
+    }
+     $school = Schools::find($id);
+     return view('view_profile.profile_school',['user'=>$user,'school'=>$school]);
 
+}
       public function getEditProfile($id){
         $school = Schools::all();
       if(Auth::check()){
@@ -90,6 +100,19 @@ class PageController extends Controller
     }
 
     function crush(){
-      return view('viewpage.crush');
+      if(Auth::check()){
+        $user = Auth::user();
+      }
+      $user_cr = User::all()->shuffle();
+    $school = Schools::all();
+      return view('viewpage.crush',['user'=>$user,'school'=>$school,'user_cr'=>$user_cr]);
+    }
+
+   function follow($id){
+      
+    }
+
+    public function unfollow(Request $requeest,$uid){
+
     }
 }

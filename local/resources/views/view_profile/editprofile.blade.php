@@ -47,7 +47,7 @@
                   Chat</a>
                 </li>
                 <li href="#" class="listmenu">
-          <a href="#" class="rowmenu"><image src="image/ghepdoi.png" width="30"  height= "30">
+          <a href="/crush/{{user_edit->id}}" class="rowmenu"><image src="image/ghepdoi.png" width="30"  height= "30">
                   Ghép đôi</a>
                 </li>
                 <li href="#" class="listmenu">

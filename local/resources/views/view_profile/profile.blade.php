@@ -46,7 +46,7 @@
                   Chat</a>
                 </li>
                 <li href="#" class="listmenu">
-          <a href="#" class="rowmenu"><image src="image/ghepdoi.png" width="30"  height= "30">
+          <a href="/crush/{{$user->id}}" class="rowmenu"><image src="image/ghepdoi.png" width="30"  height= "30">
                   Ghép đôi</a>
                 </li>
                 <li href="#" class="listmenu">
@@ -134,7 +134,9 @@
 
 
       </table>
-     
+     <?php
+         $count_crush = DB::table('crush')->where('cid',$user_page->id)->count('uid');
+        ?>
         <div class="profileinfo" style="margin-left: 100px;">
         <h1></h1>
         <h1 style="color:  #CC0066;">{{$user_page->name}}</h1>
@@ -142,7 +144,7 @@
         <p class="bio"><img class="img" src="image/profile/{{$user_page->image}}"/>{{$user_page->introduce}}</p> 
         <p class="bio"><img class="img" src="image/logo/logosch.jpg"/>{{$user_page->school->name}}</p>
         <p class="bio"><img class="img" src="image/logo/logodc.jpg"/>Sống tại {{$user_page->home}}</p>
-        <p class="bio"><img class="img" src="image/logo/logocr.jpg"/> có 0 người crush</p>
+        <p class="bio"><img class="img" src="image/logo/logocr.jpg"/> có {{$count_crush}} người crush</p>
         
       </div>
     
