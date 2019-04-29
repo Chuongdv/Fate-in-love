@@ -10,7 +10,7 @@
 <base href="{{asset('')}}">
 	
 </head>
-<body style="overflow: scroll;">
+<body style="overflow: auto;">
 	<div class="header" >
 		<a href="#default" class="logo""><img src="image/logo/logo_fil_zoom.png"></a>
 		<div class="header-right">
@@ -23,7 +23,6 @@
 			
 		</div>
 	</div>
-
 	<section>
 		<nav>
 			<ul >
@@ -32,11 +31,11 @@
                 </li>
 				<li href="#" class="listmenu" >
 					<a href="/myprofile/{{$user->id}}" class="rowmenu""><img src="image/profile/{{$user->image}}"width="30" height= "30" />		
-                	Trang cá nhân</a>
+                	{{$user->name}}</a>
          
                 </li>
                 <li href="#" class="listmenu">
-					<a href="" class="rowmenu" ><img src="image/chat.png" width="30" height= "30"/>
+					<a href="/chat" class="rowmenu" ><img src="image/chat.png" width="30" height= "30"/>
                 	Chat</a>
                 </li>
                 <li href="#" class="listmenu">
@@ -44,7 +43,7 @@
                 	Ghép đôi</a>
                 </li>
                 <li href="#" class="listmenu">
-					<a href="#" class="rowmenu""><image src="image/thongbao.png" width="30"  height= "30">
+					<a href="/thongbao" class="rowmenu""><image src="image/thongbao.png" width="30"  height= "30">
                 	Thông báo</a>
                 </li>
             </ul>

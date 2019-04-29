@@ -16,7 +16,7 @@
 <body>
   <style type="text/css">body{overflow: scroll;}</style>
  <div class="header" >
-    <a href="#default" class="logo""><img src="image/logo/logo_fil_zoom.png"></a>
+    <a href="#default" class="logo"><img src="image/logo/logo_fil_zoom.png"></a>
     <div class="header-right">
 
               <a href="/myprofile/{{$user_edit->id}}" >{{$user_edit->name}}</a>
@@ -39,19 +39,19 @@
         <li href="#" class="listmenu" >
           <a href="/myprofile/{{$user_edit->id}}" class="rowmenu""><img src="image/profile/{{$user_edit->image}}"width="30" height= "30" />
             
-                  Tên</a>
+                  {{$user_edit->name}}</a>
          
                 </li>
                 <li href="#" class="listmenu">
-          <a href="" class="rowmenu"><img src="image/chat.png" width="30" height= "30"/>
+          <a href="/chat" class="rowmenu"><img src="image/chat.png" width="30" height= "30"/>
                   Chat</a>
                 </li>
                 <li href="#" class="listmenu">
-          <a href="/crush/{{user_edit->id}}" class="rowmenu"><image src="image/ghepdoi.png" width="30"  height= "30">
+          <a href="/crush/{{$user_edit->id}}" class="rowmenu"><image src="image/ghepdoi.png" width="30"  height= "30">
                   Ghép đôi</a>
                 </li>
                 <li href="#" class="listmenu">
-          <a href="#" class="rowmenu"><image src="image/thongbao.png" width="30"  height= "30">
+          <a href="/thongbao" class="rowmenu"><image src="image/thongbao.png" width="30"  height= "30">
                   Thông báo</a>
                 </li>
             </ul>

@@ -41,15 +41,15 @@
                 </li>
                 
                 <li href="#" class="listmenu">
-                  <a href="#" class="rowmenu" ><img src="image/chat.png" width="30" height= "30"/>
+                  <a href="/chat" class="rowmenu" ><img src="image/chat.png" width="30" height= "30"/>
                   Chat</a>
                 </li>
-                <li href="/crush/{{$my->id}}" class="listmenu">
-                   <a href="#" class="rowmenu"><image src="image/ghepdoi.png" width="30"  height= "30">
+                <li href="#" class="listmenu">
+                   <a href="/crush/{{$my->id}}" class="rowmenu"><image src="image/ghepdoi.png" width="30"  height= "30">
                   Ghép đôi</a>
                 </li>
                 <li href="#" class="listmenu">
-                   <a href="#" class="rowmenu"><image src="image/thongbao.png" width="30"  height= "30">
+                   <a href="/thongbao" class="rowmenu"><image src="image/thongbao.png" width="30"  height= "30">
                   Thông báo</a>
                 </li>
             </ul>
@@ -99,7 +99,22 @@
 $data = DB::table('users')->join('crush', 'users.id', '=', 'crush.cid')->get();
         $data_crush = $data->where('uid',$my->id)->sortByDesc('created_at')->take(4);
         $count_crush = DB::table('crush')->where('uid',$my->id)->count('cid');
+        $crush1 = $data_crush->shift();
+        $count1 = DB::table('crush')->where('cid',$crush1->cid)->count('uid');
+
         ?>
+
+        <div class="profilet p20">
+          <a href="/profile/{{$crush1->cid}}"><img src="image/profile/{{$crush1->image}}" class="photot"/>
+          
+          <div class="contentt">
+              <h1 style="font-size: 15px;">{{$crush1->name}}</h1>
+              <h2 style="font-size: 10px;">Số người quan tâm:{{$count1}}</h2>
+          </div>  
+              
+            </a>     
+          
+      </div>
 @foreach($data_crush as $cr)
 <?php
 $count = DB::table('crush')->where('cid',$cr->cid)->count('uid');
@@ -132,8 +147,25 @@ $count = DB::table('crush')->where('cid',$cr->cid)->count('uid');
   $data_sch = DB::table('schools')->join('fschool', 'schools.id', '=', 'fschool.sid')->get();
         $data_school = $data_sch->where('uid',$my->id)->sortByDesc('created_at')->take(4);
          $count_school = DB::table('fschool')->where('uid',$my->id)->count('sid');
+ $school1 = $data_school->shift();
+        $count2 = DB::table('fschool')->where('sid',$school1->sid)->count('uid');
+
+
 
         ?>
+         <div class="profilet p20">
+          <a href="/profile_school/{{$school1->sid}}"><img src="image/logo/{{$school1->logo}}" class="photot"/>
+          
+          <div class="contentt">
+              <h1 style="font-size: 15px;">{{$school1->name}}</h1>
+              <h2 style="font-size: 10px;">Số người quan tâm: {{$count2}}</h2>
+          </div>  
+              
+            </a>     
+          
+      </div>
+
+
 @foreach($data_school as $sch)
 <?php
 $count1 = DB::table('fschool')->where('sid',$sch->sid)->count('uid');
@@ -144,7 +176,7 @@ $count1 = DB::table('fschool')->where('sid',$sch->sid)->count('uid');
           
           <div class="contentt">
               <h1 style="font-size: 15px;">{{$sch->name}}</h1>
-              <h2 style="font-size: 10px;">{{$count1}} sinh viên</h2>
+              <h2 style="font-size: 10px;">Số người quan tâm: {{$count1}}</h2>
           </div>  
               
             </a>     

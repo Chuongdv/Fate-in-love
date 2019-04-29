@@ -39,15 +39,17 @@
          
                 </li>
                 <li href="#" class="listmenu">
-          <a href="" class="rowmenu" ><img src="image/chat.png" width="30" height= "30"/>
-                  Chat</a>
+					<a href="/chat" class="rowmenu" ><img src="image/chat.png" width="30" height= "30"/>
+                	Chat</a>
                 </li>
                 <li href="#" class="listmenu">
           <a href="/crush/{{$user->id}}" class="rowmenu"><image src="image/ghepdoi.png" width="30"  height= "30">
                   Ghép đôi</a>
                 </li>
                 <li href="#" class="listmenu">
-          <a href="#" class="rowmenu"><image src="image/thongbao.png" width="30"  height= "30">
+
+          <a href="/thongbao" class="rowmenu"><image src="image/thongbao.png" width="30"  height= "30">
+
                   Thông báo</a>
                 </li>
             </ul>
@@ -76,18 +78,18 @@
                             <button class="btn-item" style="background-image: url('image/love_follow.png');"></button>
                         </div>
                     </div>
-                   
-                  
-                   @endforeach
+                     @endforeach
+                  </div>
+                 
 
-                    </div>
-                  @foreach($user_cr as $us)
+                  
+        @foreach($user_cr as $us)
                   <?php
                   $count = DB::table('crush')->where('cid',$us->id)->count('uid');
                   ?>
                 <div class="ghepdoi">
                     <div class="avatar">
-                     <a href="/profile/{{$us->id}}">   <img src="image/profile/{{$us->image}}" width="320" height="320"><a>
+                     <a href="/profile/{{$us->id}}"><img src="image/profile/{{$us->image}}" width="320" height="320"><a>
                     </div>
 
                     <div class="info">
@@ -100,7 +102,8 @@
                 </div>
 
                 <div class="btn_love_cancel mt">
-                      <a href="#">  <img src="image/cancel.png"></a>
+
+                      <a href="/unfollow/{{$user->id}}">  <img src="image/cancel.png"></a>
                 </div> 
                               
                  <div class="btn_love_cancel mt2">
@@ -110,6 +113,7 @@
                 </div>
                 @endforeach
             </div>
+
             <div class="list_crush">
                 <div class="name_list"><p>Danh sách các crush </p></div>
                 <!-- foreach cac crush-->
@@ -139,7 +143,7 @@
             
 </div>
 
-        
+      
             
   </section>
 
