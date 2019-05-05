@@ -69,7 +69,7 @@
 
       <tr><td style="text-align: center;">
         <div class="button_container">
-              <button class="btn" style="margin-top: 50px; border-radius: 50px;"><span>sửa ảnh!</span></button>
+              <a href="/edit_avatar/{{$user_edit->id}}"><button class="btn" style="margin-top: 50px; border-radius: 50px;"><span>sửa ảnh!</span></button></a>
               </div>
 
       </td></tr>
@@ -126,12 +126,12 @@
 </form-->
 
 <form action="" method="post">
-   <input type="hidden" name="_token" value="{{csrf_token()}}"/> 
-<label for="user">Họ tên:</label> 
+ <input type="hidden" name="_token" value="{{csrf_token()}}"/> 
+<label>Tên:</label> 
 <input type="text" name="name" value="{{$user_edit->name}}"><br /> 
 
 <label for="user">Ngày sinh:</label> 
-<input type="date" name="name" value="{{$user_edit->birthdate}}"><br /> 
+<input type="text" name="birthday" value="{{$user_edit->birthday}}"><br /> 
 
 
 <label>Email:</label> 
@@ -139,9 +139,8 @@
 <label>Quê quán:</label> 
 <input type="text" name="home" value="{{$user_edit->home}}"><br /> 
 
- 
-        <label>Trường:        </label>
-
+        <label>Trường:   </label> 
+        <!--    
           <select class="old-select" name="school">
              @foreach($school as $sch)
                                 <option 
@@ -152,8 +151,24 @@
                                 value="{{$sch->id}}">{{$sch->name}}</option>
                                 @endforeach
           </select>
+        -->
+
+         <select class="form-control" name="school">
+           @foreach($school as $sch)
+                               <option value="" disabled selected hidden style="color: #C3C3D8;font-weight: bold;">{{$user_edit->school->name}}</option>
+                               
+                                <option 
+                                @if($user_edit->sid== $sch->id) 
+                                {{"selected"}}
+                                @endif
+
+                                value="{{$sch->id}}">{{$sch->name}}</option>
+                                @endforeach
+                                </select>
+        
            <br/>
-      
+           <br>
+           
 <label>Giới thiệu:</label> 
 <textarea name="introduce" placeholder="{{$user_edit->introduce}}"></textarea><br /> 
 

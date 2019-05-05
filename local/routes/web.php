@@ -29,9 +29,12 @@ Route::get('/profile_school/{id}','PageController@getProfile_School');
 
 Route::get('/editprofile/{id}','PageController@getEditProfile');
 Route::post('/editprofile/{id}','PageController@postEditProfile');
+Route::get('/edit_avatar/{id}','PageController@getEditAvatar');
+Route::post('/edit_avatar/{id}','PageController@postEditAvatar');
+
 Route::get('/crush/{id}','PageController@crush');
-Route::get('/follow/{id}','PageController@follow');
-Route::get('/unfollow/{id}','PageController@unfollow');
+Route::get('/follow/{id}/{cid}','PageController@follow');
+Route::get('/unfollow/{id}/{cid}','PageController@unfollow');
 Route::get('/chat','PageController@chat');
 Route::get('/thongbao','PageController@thongbao');
 //Route::get('admin/dangnhap','UserController@getDangnhapAdmin');

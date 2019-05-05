@@ -35,7 +35,7 @@
                 </li>
         <li href="#" class="listmenu" >
           <a href="/myprofile/{{$user->id}}" class="rowmenu"><img src="image/profile/{{$user->image}}"width="30" height= "30" />    
-                  Trang cá nhân</a>
+                  {{$user->name}}</a>
          
                 </li>
                 <li href="#" class="listmenu">
@@ -80,41 +80,48 @@
                     </div>
                      @endforeach
                   </div>
-                 
+                 <?php
+                $cids = array();
+                $crushIds = array();
+                $cids = DB::table('crush')->select('cid')->where('uid', '=', $user->id)->get();
+               foreach ($cids as $key) { 
+                 array_push($crushIds, $key->cid);
+               }
+               $results = DB::table('users')->whereNotIn('id', $crushIds)->get()->shuffle();
 
-                  
-        @foreach($user_cr as $us)
+                 ?>
+        @foreach($results as $u)
                   <?php
-                  $count = DB::table('crush')->where('cid',$us->id)->count('uid');
+                  $count = DB::table('crush')->where('cid',$u->id)->count('uid');
+
                   ?>
                 <div class="ghepdoi">
                     <div class="avatar">
-                     <a href="/profile/{{$us->id}}"><img src="image/profile/{{$us->image}}" width="320" height="320"><a>
+                     <a href="/profile/{{$u->id}}"><img src="image/profile/{{$u->image}}" width="320" height="320"><a>
                     </div>
 
                     <div class="info">
-                    <p>{{$us->name}}<p>
-                    <p>{{$us->introduce}}</p>    
-                    <p>{{$us->school->name}}</p>
-                    <p>{{$us->home}}</p>
+                    <p>{{$u->name}}<p>
+                    <p>{{$u->introduce}}</p>    
+                    <p>{{$u->home}}</p>
                         <p>Số người quan tâm: {{$count}}</p>
                   
                 </div>
 
                 <div class="btn_love_cancel mt">
 
-                      <a href="/unfollow/{{$user->id}}">  <img src="image/cancel.png"></a>
+                      <a href="/unfollow/{{$user->id}}/{{$u->id}}">  <img src="image/cancel.png"></a>
                 </div> 
-                              
+                        
                  <div class="btn_love_cancel mt2">
-                        <a href="/follow/{{$user->id}}"><img src="image/love_follow.png"> </a>
+                        <a href="/follow/{{$user->id}}/{{$u->id}}"><img src="image/love_follow.png"> </a>
                     </div>
                 
                 </div>
                 @endforeach
             </div>
 
-            <div class="list_crush">
+            <div class="list_crush" style="overflow: auto;">
                 <div class="name_list"><p>Danh sách các crush </p></div>
                 <!-- foreach cac crush-->
                 <?php

@@ -12,11 +12,12 @@
 	<head>
 		<title>Chat</title>
 
-		 <link rel="stylesheet"  href="css/new_page.css" /> 
-		<link rel="stylesheet"  href="css/back_ground.css" /> 
-		<link rel="stylesheet" type="text/css" href="css/profile.css">
-		<link rel="stylesheet"  href="css/chat.css" />
+		 <link rel="stylesheet"  href="{{asset('css/new_page.css')}}" /> 
+		<link rel="stylesheet"  href="{{asset('css/back_ground.css')}}" /> 
+		<link rel="stylesheet" type="text/css" href="{{asset('css/profile.css')}}">
+		<link rel="stylesheet"  href="{{asset('css/chat.css')}}" />
 
+<base href="{{asset('')}}">
 
 	</head>
 
@@ -27,7 +28,7 @@
     <a href="#default" class="logo"><img src="image/logo/logo_fil_zoom.png"></a>
     <div class="header-right">
 
-              <a href="">name</a>
+              <a href="/myprofile/{{$user->id}}">{{$user->name}}</a>
                     
             <a href="/logout">Đăng xuất</a>
       <a href="/home" >Trang chủ</a>
@@ -43,8 +44,8 @@
                   Menu
                 </li>
         <li href="#" class="listmenu" >
-          <a href="" class="rowmenu"><img src=""width="30" height= "30" />    
-                  Trang cá nhân</a>
+          <a href="/myprofile/{{$user->id}}" class="rowmenu"><img src="image/profile/{{$user->image}}"width="30" height= "30" />      
+                {{$user->name}}</a>
          
                 </li>
                 <li href="#" class="listmenu">
@@ -52,7 +53,7 @@
                 	Chat</a>
                 </li>
                 <li href="#" class="listmenu">
-          <a href="" class="rowmenu"><image src="image/ghepdoi.png" width="30"  height= "30">
+          <a href="/crush/{{$user->id}}" class="rowmenu"><image src="image/ghepdoi.png" width="30"  height= "30">
                   Ghép đôi</a>
                 </li>
                 <li href="#" class="listmenu">
@@ -72,7 +73,7 @@
        		</div>
        	<div class="right-container">
        		<div class="chat-person">
-       			<img src="">
+       			<img src="image/profile/avatar.jpg">
 	       			<div class="inf">
 	       			<p class="name">Phạm Hoài Lâm</p>
 	       			<p class="on">đang online</p>
@@ -81,7 +82,7 @@
 
 
        		</div><div class="chat-person">
-       			<img src="">
+       			<img src="image/profile/avatar.jpg">
 	       			<div class="inf">
 	       			<p class="name">Phạm Hoài Lâm</p>
 	       			<p class="on">đang online</p>
@@ -90,7 +91,7 @@
 
 
        		</div><div class="chat-person">
-       			<img src="">
+       			<img src="image/profile/avatar.jpg">
 	       			<div class="inf">
 	       			<p class="name">Phạm Hoài Lâm</p>
 	       			<p class="on">đang online</p>
@@ -99,7 +100,7 @@
 
 
        		</div><div class="chat-person">
-       			<img src="">
+       			<img src="image/profile/avatar.jpg">
 	       			<div class="inf">
 	       			<p class="name">Phạm Hoài Lâm</p>
 	       			<p class="on">đang online</p>
@@ -108,7 +109,7 @@
 
 
        		</div><div class="chat-person">
-       			<img src="">
+       			<img src="image/profile/avatar.jpg">
 	       			<div class="inf">
 	       			<p class="name">Phạm Hoài Lâm</p>
 	       			<p class="on">đang online</p>
@@ -117,7 +118,7 @@
 
 
        		</div><div class="chat-person">
-       			<img src="">
+       			<img src="image/profile/avatar.jpg">
 	       			<div class="inf">
 	       			<p class="name">Phạm Hoài Lâm</p>
 	       			<p class="on">đang online</p>
@@ -132,7 +133,7 @@
 
        	<div class="left-container">
        		<div class="top-left-container">
-       			<img src="">
+       			<img src="image/profile/avatar.jpg">
        			<div class=" inf-chat">
        				<p class="inf-chat-name">Phạm Hoài Lâm</p>
        				<p class="inf-chat-name-count">1000 tin nhắn</p>
@@ -143,7 +144,7 @@
        			<!--tin nhan tu ban than-->
        			<div class="chat-form-me">
        				<div class="avt">
-       					<img src="">
+       					<img src="image/profile/avatar.jpg">
        				</div>
 
        				<div class="messenger"> <p>hello sssssssssss s s s s </p></div>
@@ -151,32 +152,32 @@
        			<!--tin nhan tu nguoi dang chat voi minh-->
        			<div class="chat-form-crush">
        				<div class="avt">
-       					<img src="">
+       					<img src="image/profile/avatar.jpg">
        				</div>
 
        				<div class="messenger"> <p>hello sssssssssss s s s s </p></div>
        			</div>
        			<div class="chat-form-crush">
        				<div class="avt">
-       					<img src="">
+       					<img src="image/profile/avatar.jpg">
        				</div>
 
        				<div class="messenger"> <p>hello sssssssssss s s s s </p></div>
        			</div><div class="chat-form-crush">
        				<div class="avt">
-       					<img src="">
+       					<img src="image/profile/avatar.jpg">
        				</div>
 
        				<div class="messenger"> <p>hello sssssssssss s s s s </p></div>
        			</div><div class="chat-form-crush">
        				<div class="avt">
-       					<img src="">
+       					<img src="image/profile/avatar.jpg">
        				</div>
 
        				<div class="messenger"> <p>hello sssssssssss s s s s </p></div>
        			</div><div class="chat-form-crush">
        				<div class="avt">
-       					<img src="">
+       					<img src="image/profile/avatar.jpg">
        				</div>
 
        				<div class="messenger"> <p>hello sssssssssss s s s s </p></div>

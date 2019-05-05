@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 use Illuminate\Support\Facades\Auth;
+use DB;
 use Illuminate\Http\Request;
 use App\User;
 use App\Schools;
@@ -15,6 +16,7 @@ class PageController extends Controller
     	$users = User::all();
     	view()->share('users',$users);
     }
+
      function page(){
          if(Auth::check()){
         $user = Auth::user();
@@ -22,6 +24,7 @@ class PageController extends Controller
     	return view ('viewpage.index',['user'=>$user]);
 
     }
+
     function home_school($id){
        if(Auth::check()){
         $user = Auth::user();
@@ -43,6 +46,7 @@ class PageController extends Controller
     if(Auth::check()){
       $user = Auth::user();
     }
+
     $user_page= User::find($id); 
     return view('view_profile.profile',['user_page'=>$user_page,'user'=>$user]);
          //return view('view_profile.profile');
@@ -60,8 +64,44 @@ if(Auth::check()){
       if(Auth::check()){
         $user_edit = Auth::user();
       }
+
        return view('view_profile.editprofile',['user_edit'=>$user_edit,'school'=>$school]);
         //return view('view_profile.editprofile',['school'=>$school]);
+    }
+    public function getEditAvatar($id){
+     
+      if(Auth::check()){
+        $user_edit = Auth::user();
+      }
+       
+       return view('view_profile.edit_avatar',['user_edit'=>$user_edit]);
+        //return view('view_profile.editprofile',['school'=>$school]);
+    }
+    public function postEditAvatar(Request $request, $id){
+       if(Auth::check()){
+        $user_edit = Auth::user();
+      }
+        if($request->hasFile('image')){
+            $file = $request->file('image');
+            $name = $file->getClientOriginalName();
+            $image = str_random(4)."_".$name;
+
+            while (file_exists("image/profile/".$image)) {
+                $hinh = str_random(4)."_".$name;
+            }
+
+
+            $file->move("image/profile",$image);
+            unlink("image/profile/".$user_edit->image);
+            $user_edit->image = $image;
+        
+        }
+    
+        $user_edit->save();
+
+        return redirect('/edit_avatar/'.$id)->with('thongbao','Bạn vừa cập nhật ảnh đại diện!!!');
+
+
     }
 
     public function postEditProfile(Request $request,$id){
@@ -97,37 +137,68 @@ if(Auth::check()){
         $user_edit->save();
 
         return redirect('editprofile/'.$id)->with('thongbao','Bạn đã cập nhật thông tin cá nhân mới!');
+    
     }
 
     function crush(){
       if(Auth::check()){
         $user = Auth::user();
       }
-      $user_cr = User::all()->shuffle();
-    $school = Schools::all();
-      return view('viewpage.crush',['user'=>$user,'school'=>$school,'user_cr'=>$user_cr]);
+       $school = Schools::all();
+      /*
+    $crushes = Crush::all()->where('uid', $user->id);
+    $users = User::all();
+    $cids = array();
+    $results = array();
+   
+
+    foreach ($crushes->cid as $number) {
+      $cids[] = $number;
     }
 
-   function follow($id){
+    foreach ($users as $us) {
+     if( ! in_array($us->id, $cids)){
+      $results[] = $us;
+     }
+    }
+    */
+
+      return view('viewpage.crush',['user'=>$user,'school'=>$school, ]);
+    }
+
+   function follow($uid,$cid){
             if(Auth::check()){
         $user = Auth::user();
       }
       $user_cr = User::all()->shuffle();
     $school = Schools::all();
+
+    $crush = DB::table('crush')->insertGetId(
+    ['uid'=>$uid,'cid' => $cid]
+);
       return view('viewpage.crush',['user'=>$user,'school'=>$school,'user_cr'=>$user_cr]);    
     }
 
-    public function unfollow($id){
- if(Auth::check()){
+   function unfollow($uid,$cid){
+    if(Auth::check()){
         $user = Auth::user();
       }
-      $user_cr = User::all()->shuffle();
+    $user_cr = User::all()->shuffle();
     $school = Schools::all();
+
+   $crush = DB::table('crush')->where([
+    ['uid', '=', $uid],
+    ['cid', '=', $cid],
+    ])->delete();
+
       return view('viewpage.crush',['user'=>$user,'school'=>$school,'user_cr'=>$user_cr]);    
     }
 
     function chat(){
-      return view('viewpage.chat');
+      if(Auth::check()){
+        $user = Auth::user();
+      }
+      return view('viewpage.chat',['user'=>$user]);
     }
 
     function thongbao(){
