@@ -9,7 +9,7 @@
 <link rel="stylesheet" type="text/css" href="{{asset('css/profile.css')}}">
 <link rel="stylesheet"  href="{{asset('css/style_crush_in_profile.css')}}" />
 <link rel="stylesheet"  href="{{asset('css/ghepdoi.css')}}" />
-
+<link rel="shortcut icon" type="image/png" href="/image/logo/logo_fav.png"/>
 <base href="{{asset('')}}">
   
 </head>
@@ -75,7 +75,7 @@
                         <div style="margin-top: -2px;">
                             <p>{{$sch->name}}</p>
                             <p style="font-size: 10px; margin-top: -4px;">{{$count1}} sinh viên</p>
-                            <button class="btn-item" style="background-image: url('image/love_follow.png');"></button>
+                            <button value="false"  class="btn-item" style="background-image: url('image/love_follow.png');"></button>
                         </div>
                     </div>
                      @endforeach
@@ -158,8 +158,29 @@
 
 <script type="text/javascript">
 
+
     var btn = document.getElementsByClassName('btn-item');
+    for(var i = 0; i<btn.length; i++){
+        var b=btn[i];
+        b.onclick = function(){
+          if(b.value == "false"){
+            
+            b.style.backgroundImage = "url('image/love_unfollow.png')";
+            b.value="true"
+          }else{
+            b.style.backgroundImage = "url('image/love_follow.png')";
+            b.value="false"
+          }
+
+
+
+    }}
+
+    
+    
+    /*var btn = document.getElementsByClassName('btn-item')[1];
     btn.onclick=function(){
+      
       if(btn.value === "false"){
         
         btn.style.backgroundImage = "url('image/love_unfollow.png')";
@@ -168,7 +189,7 @@
         btn.style.backgroundImage = "url('image/love_follow.png')";
         btn.value="false"
       }
-    }
+    }*/
   </script>
 </body>
 </html>

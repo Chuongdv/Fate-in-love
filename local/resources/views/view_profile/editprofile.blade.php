@@ -14,7 +14,7 @@
 
 </head>
 <body>
-  <style type="text/css">body{overflow: scroll;}</style>
+  
  <div class="header" >
     <a href="#default" class="logo"><img src="image/logo/logo_fil_zoom.png"></a>
     <div class="header-right">
@@ -37,7 +37,7 @@
                   Menu
                 </li>
         <li href="#" class="listmenu" >
-          <a href="/myprofile/{{$user_edit->id}}" class="rowmenu""><img src="image/profile/{{$user_edit->image}}"width="30" height= "30" />
+          <a href="/myprofile/{{$user_edit->id}}" class="rowmenu"><img src="image/profile/{{$user_edit->image}}"width="30" height= "30" />
             
                   {{$user_edit->name}}</a>
          
@@ -126,7 +126,7 @@
 </form-->
 
 <form action="" method="post">
- <input type="hidden" name="_token" value="{{csrf_token()}}"/> 
+ <input type="hidden" name="_token" value="{{csrf_token()}}" /> 
 <label>Tên:</label> 
 <input type="text" name="name" value="{{$user_edit->name}}"><br /> 
 
@@ -153,7 +153,7 @@
           </select>
         -->
 
-         <select class="form-control" name="school">
+         <select class="form-control" name="school" >
            @foreach($school as $sch)
                                <option value="" disabled selected hidden style="color: #C3C3D8;font-weight: bold;">{{$user_edit->school->name}}</option>
                                
@@ -170,9 +170,9 @@
            <br>
            
 <label>Giới thiệu:</label> 
-<textarea name="introduce" placeholder="{{$user_edit->introduce}}"></textarea><br /> 
+<textarea name="introduce" placeholder="{{$user_edit->introduce}}" style="width: 300px;"></textarea><br /> 
 
-<input type="submit" name="submitbutton" id="submitbutton" value="Edit" /> 
+<input type="submit" name="submitbutton" id="submitbutton" value="Lưu" style="width: 300px;" /> 
 </form>
 
 

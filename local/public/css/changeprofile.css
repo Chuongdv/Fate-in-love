@@ -14,10 +14,44 @@ list-style-type: none;
 
 
 .change input{
-	font-size: 1.5em;
+	font-size: 18px;
 color: #009688;
+width: 300px;
+}
+
+textarea{
+	font-size: 18px;
+	color: #009688;
+	width: 300px;
+	height: 190px;
+}
+
+select{
+	font-size: 18px;
+	color: #009688;
+	width: 300px !important;
+}
+
+form{
+	margin-left: 50px;
+}
+#submitbutton{
+	border-radius: 10px;
+	height: 40px;
+	background-color: black;
+	color: white;
+	font-weight: bold;
+		border: none;
+	width: 300px;
+}
+
+#submitbutton:hover{
+	transform: translateY(5px);
+	transition: 0.5s all ease;
+	background-color:#009688; 
 
 }
+
 .text-350{
 	width: 340px;
 
