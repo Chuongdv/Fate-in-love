@@ -91,6 +91,28 @@
             @endforeach
 
 
+          <?php
+            $data = DB::table('users')->join('crush', 'users.id', '=', 'crush.uid');
+            $contacts = $data->where('cid',$user->id)->get();
+            $count = 1;
+          ?>
+
+            @foreach($contacts as $becrush)
+            <div class="chat-person" id="{{$becrush->id}}">
+              <img src="image/profile/avatar.jpg">
+              <div class="inf">
+              @if($becrush->gender == "Nam")
+              <p class="name">{{"silly boy" . $count}}</p>
+              $count += 1;
+              @elseif($becrush->gender == "Nữ")
+              <p class="name">{{"silly girl" .$count}}</p>
+               $count += 1;
+              @endif
+              <p class="on">đang online</p>
+              </div>
+            </div>
+            @endforeach
+ 
             
        		</div>
        		
