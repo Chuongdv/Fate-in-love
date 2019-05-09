@@ -73,3 +73,8 @@ Route::group(['prefix'=>'manager'],function(){
 	});
 });
 
+//chat
+
+Route::get('/contacts', 'ChatsController@get');
+Route::get('/conversation/{id}', 'ContactsController@getMessagesFor');
+Route::post('/conversation/send', 'ContactsController@send');

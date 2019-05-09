@@ -3,7 +3,10 @@
 <head>
     <meta charset="utf-8">
     
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <script src="https://js.pusher.com/4.4/pusher.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
    
 </head>
 <body>
@@ -72,60 +75,23 @@
        		<img src="https://media.istockphoto.com/vectors/loupe-icon-vector-magnifier-in-flat-style-search-sign-concept-vector-id818978848?b=1&k=6&m=818978848&s=170x170&h=W5QWk-Hq8wJOSWprczUC4OrSguaNRzgUvmaLdEadJkc=" width="40" height="40">
        		</div>
        	<div class="right-container">
-       		<div class="chat-person">
-       			<img src="image/profile/avatar.jpg">
-	       			<div class="inf">
-	       			<p class="name">Phạm Hoài Lâm</p>
-	       			<p class="on">đang online</p>
-		       		</div>
+          <?php
+            $data = DB::table('users')->join('crush', 'users.id', '=', 'crush.cid');
+            $contacts = $data->where('uid',$user->id)->get();
+          ?>
+
+            @foreach($contacts as $crush)
+            <div class="chat-person" id="{{$crush->id}}">
+              <img src="image/profile/{{$crush->image}}">
+              <div class="inf">
+              <p class="name">{{$crush->name}}</p>
+              <p class="on">đang online</p>
+              </div>
+            </div>
+            @endforeach
 
 
-
-       		</div><div class="chat-person">
-       			<img src="image/profile/avatar.jpg">
-	       			<div class="inf">
-	       			<p class="name">Phạm Hoài Lâm</p>
-	       			<p class="on">đang online</p>
-		       		</div>
-
-
-
-       		</div><div class="chat-person">
-       			<img src="image/profile/avatar.jpg">
-	       			<div class="inf">
-	       			<p class="name">Phạm Hoài Lâm</p>
-	       			<p class="on">đang online</p>
-		       		</div>
-
-
-
-       		</div><div class="chat-person">
-       			<img src="image/profile/avatar.jpg">
-	       			<div class="inf">
-	       			<p class="name">Phạm Hoài Lâm</p>
-	       			<p class="on">đang online</p>
-		       		</div>
-
-
-
-       		</div><div class="chat-person">
-       			<img src="image/profile/avatar.jpg">
-	       			<div class="inf">
-	       			<p class="name">Phạm Hoài Lâm</p>
-	       			<p class="on">đang online</p>
-		       		</div>
-
-
-
-       		</div><div class="chat-person">
-       			<img src="image/profile/avatar.jpg">
-	       			<div class="inf">
-	       			<p class="name">Phạm Hoài Lâm</p>
-	       			<p class="on">đang online</p>
-		       		</div>
-
-
-
+            
        		</div>
        		
 
@@ -133,9 +99,9 @@
 
        	<div class="left-container">
        		<div class="top-left-container">
-       			<img src="image/profile/avatar.jpg">
+       			<img src="image/profile/<?php if(isset($contacts[0])) echo $contacts[0]->image ?>">
        			<div class=" inf-chat">
-       				<p class="inf-chat-name">Phạm Hoài Lâm</p>
+       				<p class="inf-chat-name"><?php if(isset($contacts[0])) echo $contacts[0]->name ?></p>
        				<p class="inf-chat-name-count">1000 tin nhắn</p>
        			</div>
 
@@ -238,16 +204,16 @@
        </div>
 
 
+  <script>
+  $(document).ready(function () {
 
+    });
+  </script>
         
         
       
   </section>
 
-
-
-
-
-
 </body>
 </html>
+
