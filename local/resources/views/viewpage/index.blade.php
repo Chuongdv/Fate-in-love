@@ -32,7 +32,7 @@
                 </li>
 				<li href="#" class="listmenu" >
 					<a href="/myprofile/{{$user->id}}" class="rowmenu"><img src="image/profile/{{$user->image}}"width="30" height= "30" />		
-                	Trang cá nhân</a>
+                	{{$user->name}}</a>
          
                 </li>
                 <li href="#" class="listmenu">
@@ -40,11 +40,11 @@
                 	Chat</a>
                 </li>
                 <li href="#" class="listmenu">
-					<a href="/crush/{{$user->id}}" class="rowmenu"><image src="image/ghepdoi.png" width="30"  height= "30">
+					<a href="/crush/{{$user->id}}" class="rowmenu"><image src="image/ghepdoi.png" width="30"  height= "30"/>
                 	Ghép đôi</a>
                 </li>
                 <li href="#" class="listmenu">
-					<a href="/thongbao" class="rowmenu"><image src="image/thongbao.png" width="30"  height= "30">
+					<a href="/thongbao" class="rowmenu"><image src="image/thongbao.png" width="30"  height= "30"/>
                 	Thông báo</a>
                 </li>
             </ul>
