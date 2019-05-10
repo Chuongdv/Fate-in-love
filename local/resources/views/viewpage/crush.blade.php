@@ -163,7 +163,10 @@
     for(var i = 0; i<btn.length; i++){
         var b=btn[i];
         b.onclick = function(){
-          if(b.value == "false"){
+
+          alert("ssss");
+
+          /*if(b.value == "false"){
             
             b.style.backgroundImage = "url('image/love_unfollow.png')";
             b.value="true"
@@ -171,7 +174,7 @@
             b.style.backgroundImage = "url('image/love_follow.png')";
             b.value="false"
           }
-
+*/
 
 
     }}

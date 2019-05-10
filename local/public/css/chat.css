@@ -283,12 +283,29 @@ min-width: 300px;
 }
 
 .chat-person{
-    background-color: rgba(0,0,0,0.2);
+    
 	
 	height: 100px;
 	margin-top: 10px;
 
 }
+
+.chat-person:hover{
+	background-color: rgba(0,0,220,0.4);
+}
+
+.choose{
+	background-color: rgba(0,0,220,0.4);
+}
+
+.unchoose{
+	background-color: rgba(0,0,0,0.2);
+}
+
+.new_message{
+	background-color:  rgba(255,255,0,0.5);
+}
+
 .chat-person img{
 	margin-top: 10px;
 	margin-left: 10px;
@@ -345,6 +362,16 @@ min-width: 300px;
 	border-bottom-right-radius: 10px;
 }
 
+
+.left-container .send_message textarea{
+	position: absolute;
+}
+
+.left-container .send_message img{
+	margin-top: 2px;
+	margin-right: 10px;
+	float: right;
+}
 
 .left-container .top-left-container .inf-chat .inf-chat-name{
 	font-size: 20px;

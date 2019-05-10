@@ -20,8 +20,8 @@ body {
 .header a {
   float: left;
   color: black;
-  text-align: center;
-  padding: 7px;
+  text-align:unset;
+  padding: 10px;
   text-decoration: none;
   font-size: 22px; 
   border: 1px;
@@ -33,8 +33,8 @@ body {
 .header a.logo img{
   font-size: 25px;
   font-weight: bold;
-   width: 160px;
-  height: 50px;
+   width: 130px;
+  height: 35px;
   border-radius: 10px;
   
 }
