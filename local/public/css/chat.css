@@ -416,6 +416,7 @@ min-width: 300px;
 .left-container .chatting .chat-form-me .messenger p{
 	text-align: center;
 	padding-top: 0px;
+
 }
 
 .left-container .chatting .chat-form-crush{
@@ -424,9 +425,10 @@ min-width: 300px;
 	min-height: 50px;
 	margin-top: 5px;
 	float: left;	
+	position: relative;
 }
 
-.left-container .chatting .chat-form-crush img{
+.left-container .chatting .chat-form-crush .avt img{
 	width: 30px;
 	height: 30px;
 	border-radius: 50%;
@@ -439,12 +441,13 @@ min-width: 300px;
 	width: all;
 	min-width: 30px;
 	min-height: 50px;
-	background-color: #6c9df0;
+	background-color: #ff77ec;
 	border-radius: 10px;
 	margin-left: 5px;
 	padding-left: 5px;
 	padding-right: 5px;
 	float: left;
+
 }
 .left-container .chatting .chat-form-crush .messenger p{
 	text-align: center;

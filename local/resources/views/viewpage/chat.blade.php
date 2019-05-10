@@ -141,78 +141,53 @@
        		<div class="chatting">
        			<!--tin nhan tu ban than-->
        			<div class="chat-form-me">
-       				<div class="avt">
-       					<img src="image/profile/avatar.jpg">
-       				</div>
+       				
 
        				<div class="messenger"> <p>h</p></div>
        			</div>
        			<!--tin nhan tu nguoi dang chat voi minh-->
        			<div class="chat-form-crush">
-       				<div class="avt">
-       					<img src="image/profile/avatar.jpg">
-       				</div>
+       				
 
        				<div class="messenger"> <p>hello sssssssssss s s s s </p></div>
        			</div>
-       			<div class="chat-form-crush">
-       				<div class="avt">
-       					<img src="image/profile/avatar.jpg">
-       				</div>
+       			
 
-       				<div class="messenger"> <p>hello sssssssssss s s s s </p></div>
-       			</div><div class="chat-form-crush">
-       				<div class="avt">
-       					<img src="image/profile/avatar.jpg">
-       				</div>
 
-       				<div class="messenger"> <p>hello ssss</p></div>
-       			</div><div class="chat-form-crush">
-       				<div class="avt">
-       					<img src="image/profile/avatar.jpg">
-       				</div>
+            <div class="chat-form-crush">
+              
 
-       				<div class="messenger"> <p>hello sssssssssss s s s s </p></div>
-       			</div><div class="chat-form-crush">
-       				<div class="avt">
-       					<img src="image/profile/avatar.jpg">
-       				</div>
+              <div class="messenger"> <p>hello sssssssssss s s s s </p></div>
+            </div>
+            <div class="chat-form-crush">
+              
 
-       				<div class="messenger"> <p>hello sssssssssss s s s s </p></div>
-       			</div>
-       			<div class="chat-form-me">
-              <div class="avt">
-                <img src="image/profile/avatar.jpg">
-              </div>
+              <div class="messenger"> <p>hello sssssssssss s s s s </p></div>
+            </div>
+            <div class="chat-form-crush">
+              
+
+              <div class="messenger"> <p>hello sssssssssss s s s shello sssssssssss s s s shello sssssssssss s s s shello sssssssssss s s s shello sssssssssss s s s shello sssssssssss s s s shello sssssssssss s s s shello sssssssssss s s s shello sssssssssss s s s shello sssssssssss s s s shello sssssssssss s s s shello sssssssssss s s s shello sssssssssss s s s s </p></div>
+            </div>
+
+
+            <div class="chat-form-me">
+              
 
               <div class="messenger"> <p>h</p></div>
             </div><div class="chat-form-me">
-              <div class="avt">
-                <img src="image/profile/avatar.jpg">
-              </div>
+              
 
               <div class="messenger"> <p>h</p></div>
             </div><div class="chat-form-me">
-              <div class="avt">
-                <img src="image/profile/avatar.jpg">
-              </div>
+              
 
-              <div class="messenger"> <p>h</p></div>
+              <div class="messenger"> <p>h ssssssss s s s shello sssssssssss s s s shello sssssssssss s s s shello sssssssssss s s s shello sssssssssss s s s shello sssssssssss s s s shello sssssssssss s s s shello sssssssssss s s s shello sssssssssss s s s shello sssssssssss s s s shello sssssssssss s s </p></div>
             </div><div class="chat-form-me">
-              <div class="avt">
-                <img src="image/profile/avatar.jpg">
-              </div>
+              
 
               <div class="messenger"> <p>h</p></div>
             </div>
-            
-
-
-
-
-
-
-
 
 
 
