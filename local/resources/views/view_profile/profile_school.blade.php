@@ -8,20 +8,21 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
  <link rel="stylesheet"  href="{{ asset('css/new_page.css') }}" /> 
 <link rel="stylesheet"  href="{{ asset('css/2style.css') }}" /> 
+<link rel="shortcut icon" type="image/png" href="/image/logo/logo_fav.png"/>
 
   <base href="{{asset('')}}">
 
 </head>
 <body>
   <div class="header" >
-    <a href="#default" class="logo"><img src="image/logo/logo_fil_zoom.png"></a>
+    <a href="/home" class="logo"><img src="image/logo/logo_fil_zoom.png"></a>
     <div class="header-right">
 
               <a href="/myprofile/{{$user->id}}" >{{$user->name}}</a>
                      
             <a href="/logout">Đăng xuất</a>
       <a href="/home">Trang chủ</a>
-      <a href="#contact">Liên hệ</a>
+      <a href="/contact">Liên hệ</a>
       
       
     </div>
@@ -93,7 +94,10 @@
         
         <p class="bio"><img class="img" src="image/logo/logosch.jpg"/>{{$school->name}}</p>
         <p class="bio"><img class="img" src="image/logo/logodc.jpg"/>{{$school->address}}</p>
-        <p class="bio"><img class="img" src="image/logo/logocr.jpg"/> có 0 người quan tâm</p>
+        <?php
+          $count_users = DB::table('fschool')->where('sid',$school->id)->count('uid');
+        ?>
+        <p class="bio"><img class="img" src="image/logo/logocr.jpg"/> có {{$count_users}} người quan tâm</p>
         
       </div>
     

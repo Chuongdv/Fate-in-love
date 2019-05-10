@@ -7,19 +7,21 @@
 	<link rel="stylesheet"  href="{{ asset('css/new_page.css') }}" /> 
 <link rel="stylesheet"  href="{{ asset('css/back_ground.css') }}" /> 
 <link rel="stylesheet" type="text/css" href="{{ asset('css/profile.css') }}">
+<link rel="shortcut icon" type="image/png" href="/image/logo/logo_fav.png"/>
+
 <base href="{{asset('')}}">
 	
 </head>
 <body style="overflow: auto;">
 	<div class="header" >
-		<a href="#default" class="logo""><img src="image/logo/logo_fil_zoom.png"></a>
+		<a href="/home" class="logo""><img src="image/logo/logo_fil_zoom.png"></a>
 		<div class="header-right">
 
               <a href="/myprofile/{{$user->id}}">{{$user->name}}</a>
                     
             <a href="/logout">Đăng xuất</a>
 			<a href="/home" >Trang chủ</a>
-			<a href="#contact" >Liên hệ</a>
+			<a href="/contact" >Liên hệ</a>
 			
 		</div>
 	</div>

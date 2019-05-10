@@ -23,14 +23,13 @@ Route::post('/login','UserController@postLogin');
 Route::get('/logout','UserController@getLogout');
 Route::get('/home_school/{id}','PageController@home_school');
 Route::get('/home','PageController@page');
+Route::get('/contact','PageController@contact');
 Route::get('/myprofile/{id}','PageController@getMyProfile');
 Route::get('/profile/{id}','PageController@getProfile');
 Route::get('/profile_school/{id}','PageController@getProfile_School');
 
 Route::get('/editprofile/{id}','PageController@getEditProfile');
 Route::post('/editprofile/{id}','PageController@postEditProfile');
-Route::get('/edit_avatar/{id}','PageController@getEditAvatar');
-Route::post('/edit_avatar/{id}','PageController@postEditAvatar');
 
 Route::get('/crush/{id}','PageController@crush');
 Route::get('/follow/{id}/{cid}','PageController@follow');

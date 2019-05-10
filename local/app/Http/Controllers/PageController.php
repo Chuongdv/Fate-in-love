@@ -24,6 +24,13 @@ class PageController extends Controller
     	return view ('viewpage.index',['user'=>$user]);
 
     }
+    function contact(){
+      if(Auth::check()){
+        $user = Auth::user();
+      }
+      return view ('viewpage.contact',['user'=>$user]);
+
+    }
 
     function home_school($id){
        if(Auth::check()){
@@ -68,42 +75,6 @@ if(Auth::check()){
        return view('view_profile.editprofile',['user_edit'=>$user_edit,'school'=>$school]);
         //return view('view_profile.editprofile',['school'=>$school]);
     }
-    public function getEditAvatar($id){
-     
-      if(Auth::check()){
-        $user_edit = Auth::user();
-      }
-       
-       return view('view_profile.edit_avatar',['user_edit'=>$user_edit]);
-        //return view('view_profile.editprofile',['school'=>$school]);
-    }
-    public function postEditAvatar(Request $request, $id){
-       if(Auth::check()){
-        $user_edit = Auth::user();
-      }
-        if($request->hasFile('image')){
-            $file = $request->file('image');
-            $name = $file->getClientOriginalName();
-            $image = str_random(4)."_".$name;
-
-            while (file_exists("image/profile/".$image)) {
-                $hinh = str_random(4)."_".$name;
-            }
-
-
-            $file->move("image/profile",$image);
-            unlink("image/profile/".$user_edit->image);
-            $user_edit->image = $image;
-        
-        }
-    
-        $user_edit->save();
-
-        return redirect('/edit_avatar/'.$id)->with('thongbao','Bạn vừa cập nhật ảnh đại diện!!!');
-
-
-    }
-
     public function postEditProfile(Request $request,$id){
        $this->validate($request,
              ['name'=>'required|min:5|max:20',
@@ -134,6 +105,27 @@ if(Auth::check()){
         $user_edit->home =$request->home;
         $user_edit->introduce = $request->introduce;
         $user_edit->sid = $request->school;
+
+           if($request->hasFile('image')){
+            $file = $request->file('image');
+            $name = $file->getClientOriginalName();
+            $image = str_random(4)."_".$name;
+
+            while (file_exists("/image/profile/".$image)) {
+                $image = str_random(4)."_".$name;
+            }
+
+
+            $file->move("/image/profile/",$image);
+
+            if($user_edit->image == null){
+                $user_edit->image = $image;
+            }else{
+            unlink("/image/profile/".$user_edit->image);
+            $user_edit->image = $image;
+        }
+        }
+    
         $user_edit->save();
 
         return redirect('editprofile/'.$id)->with('thongbao','Bạn đã cập nhật thông tin cá nhân mới!');

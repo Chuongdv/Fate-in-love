@@ -8,11 +8,13 @@
 <link rel="stylesheet"  href="{{ asset('css/new_page.css') }}" /> 
 <link rel="stylesheet"  href="{{ asset('css/2style.css') }}" />
  <link rel="stylesheet"  href="{{ asset('css/style_crush_in_profile.css') }}" />
+ <link rel="shortcut icon" type="image/png" href="/image/logo/logo_fav.png"/>
+
 <base href="{{asset('')}}">
 </head>
 <body>
   <div class="header" >
-    <a href="#default" class="logo"><img src="image/logo/logo_fil_zoom.png"></a>
+    <a href="/home" class="logo"><img src="image/logo/logo_fil_zoom.png"></a>
     <div class="header-right">
               
               <a href="/myprofile/{{$my->id}}">{{$my->name}}</a>
@@ -20,7 +22,7 @@
                    
        <a href="/logout" >Đăng xuất</a>
       <a href="/home" class="avtive">Trang chủ</a>
-      <a href="#contact" >Liên hệ</a>
+      <a href="/contact" >Liên hệ</a>
       
     </div>
   </div>
@@ -77,7 +79,10 @@
         <p class="bio"><img class="img" src="image/logo/logosch.jpg"/>{{$my->school->name}}</p>
         <p class="bio"><img class="img" src="image/logo/logodc.jpg"/> Sống tại {{$my->home}}</p> 
 
-        <p class="bio"><img class="img" src="image/logo/logocr.jpg"/> có 0 người crush</p>
+<?php
+$count_crushs = DB::table('crush')->where('uid',$my->id)->count('cid');
+?>
+        <p class="bio"><img class="img" src="image/logo/logocr.jpg"/> có {{$count_crushs}} người quan tâm</p>
         <p class="bio" style="width: 350px;"><img class="img" src="image/profile/{{$my->image}}"/> {{$my->introduce}}</p>
         <a href="/editprofile/{{$my->id}}"><p class="bio"><img class="img" src="image/logo/logoedit.jpg"/> Chỉnh sửa</p></a>
       </div>

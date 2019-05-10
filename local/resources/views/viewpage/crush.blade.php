@@ -15,14 +15,14 @@
 </head>
 <body>
   <div class="header" >
-    <a href="#default" class="logo"><img src="image/logo/logo_fil_zoom.png"></a>
+    <a href="/home" class="logo"><img src="image/logo/logo_fil_zoom.png"></a>
     <div class="header-right">
 
               <a href="/myprofile/{{$user->id}}">{{$user->name}}</a>
                     
             <a href="/logout">Đăng xuất</a>
       <a href="/home" >Trang chủ</a>
-      <a href="#contact" >Liên hệ</a>
+      <a href="/contact" >Liên hệ</a>
       
     </div>
   </div>
@@ -79,6 +79,30 @@
                         </div>
                     </div>
                      @endforeach
+                     <!-- list chưa quan tâm-->
+                  <?php
+                $sids = array();
+                $schoolIds = array();
+                $sids = DB::table('fschool')->select('sid')->where('sid', '=', $user->school->id)->get();
+               foreach ($sids as $key) { 
+                 array_push($schoolIds, $key->sid);
+               }
+               $results_school = DB::table('schools')->whereNotIn('id', $schoolIds)->get()->shuffle();
+                 ?>
+                  @foreach($results_school as $sch1)
+                      <?php
+                      $count1s = DB::table('fschool')->where('sid',$sch1->id)->count('uid');
+
+                      ?>
+                 <div class="item_school">
+                     <a href="/home_school/{{$sch1->id}}">   <div style="margin-top: 2px;"><img src="image/logo/{{$sch1->logo}}" width="50" height="50"></div></a>
+                        <div style="margin-top: -2px;">
+                            <p>{{$sch1->name}}</p>
+                            <p style="font-size: 10px; margin-top: -4px;">{{$count1s}} sinh viên</p>
+                            <button value="false"  class="btn-item" style="background-image: url('image/love_unfollow.png');"></button>
+                        </div>
+                    </div>
+           @endforeach
                   </div>
                  <?php
                 $cids = array();
@@ -88,9 +112,9 @@
                  array_push($crushIds, $key->cid);
                }
                $results = DB::table('users')->whereNotIn('id', $crushIds)->get()->shuffle();
-
+                $results_new = $results->where('gender','!=',$user->gender);
                  ?>
-        @foreach($results as $u)
+        @foreach($results_new as $u)
                   <?php
                   $count = DB::table('crush')->where('cid',$u->id)->count('uid');
 
@@ -104,7 +128,7 @@
                     <p>{{$u->name}}<p>
                     <p>{{$u->introduce}}</p>    
                     <p>{{$u->home}}</p>
-                        <p>Số người quan tâm: {{$count}}</p>
+                    <p>Số người quan tâm: {{$count}}</p>
                   
                 </div>
 

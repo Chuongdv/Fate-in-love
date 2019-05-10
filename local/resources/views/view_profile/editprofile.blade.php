@@ -10,20 +10,22 @@
 <link rel="stylesheet"  href="{{ asset('css/btn_changeprofile.css') }}" /> 
    <link rel="stylesheet"  href="{{ asset('css/changeprofile.css') }}" /> 
 <link rel="stylesheet"  href="{{ asset('css/new.css') }}" /> 
+<link rel="shortcut icon" type="image/png" href="/image/logo/logo_fav.png"/>
+
 <base href="{{asset('')}}">
 
 </head>
 <body>
   
  <div class="header" >
-    <a href="#default" class="logo"><img src="image/logo/logo_fil_zoom.png"></a>
+    <a href="/home" class="logo"><img src="image/logo/logo_fil_zoom.png"></a>
     <div class="header-right">
 
               <a href="/myprofile/{{$user_edit->id}}" >{{$user_edit->name}}</a>
                      
             <a href="/logout">Đăng xuất</a>
       <a href="/home">Trang chủ</a>
-      <a href="#contact">Liên hệ</a>
+      <a href="/contact">Liên hệ</a>
       
       
     </div>
@@ -65,13 +67,6 @@
       
       <tr><td>
         <img src="image/profile/{{$user_edit->image}}" class="image_profile" />
-      </td></tr>
-
-      <tr><td style="text-align: center;">
-        <div class="button_container">
-              <a href="/edit_avatar/{{$user_edit->id}}"><button class="btn" style="margin-top: 50px; border-radius: 50px;"><span>sửa ảnh!</span></button></a>
-              </div>
-
       </td></tr>
     </table> 
     
@@ -171,7 +166,10 @@
            
 <label>Giới thiệu:</label> 
 <textarea name="introduce" placeholder="{{$user_edit->introduce}}" style="width: 300px;"></textarea><br /> 
-
+<label>Ảnh đại diện: </label>
+<p>
+<input type="file" name="image" value="{{$user_edit->image}}">
+</p>
 <input type="submit" name="submitbutton" id="submitbutton" value="Lưu" style="width: 300px;" /> 
 </form>
 
