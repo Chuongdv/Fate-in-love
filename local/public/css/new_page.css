@@ -24,8 +24,7 @@ body {
   text-decoration: none;
   font-size: 22px; 
   border: 1px;
-  border-bottom-right-radius: 10px;
-  border-bottom-left-radius: 10px;
+  transition: 0.4s all ease;
   font-family: Bookman, Tahoma, Verdana;
  }
 
@@ -39,8 +38,10 @@ body {
 }
 
 .header a:hover {
-  background-color: pink;
-  color: white;
+  color: red;
+  
+   
+   font-size: 21px;
 }
 
 .header a.active {
@@ -55,9 +56,11 @@ body {
 .menu {
   color: black;
   text-align: center;
+  transition: 0.4s;
 }
 .menu:hover{
   font-size: 20px;
+
 }
 
 .listmenu{

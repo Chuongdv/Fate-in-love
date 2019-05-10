@@ -72,6 +72,8 @@
   box-shadow: 0 8px 40px rgba(0, 0, 0, 0.2);
   margin-top: 10px;
   margin-left: 5px;
+
+  transition: 0.8s all ease;
 }
 .wrapper .top-icons i {
   color: #080911;
@@ -98,8 +100,8 @@
   -moz-transform: scale(1.1,1.1);
   -o-transform: scale(1.1,1.1);
   -ms-transform: scale(1.1,1.1);
-    transition: 0.8s all ease;
-border-radius: 10px;
+    
+
 
 }
 .wrapper .profile:after {

@@ -11,6 +11,14 @@
 <link rel="stylesheet"  href="{{asset('css/ghepdoi.css')}}" />
 <link rel="shortcut icon" type="image/png" href="/image/logo/logo_fav.png"/>
 <base href="{{asset('')}}">
+<style type="text/css">
+  .love{
+    background-image: url('image/love_follow.png');"
+  }
+  .unlove{
+    background-image: url('image/love_unfollow.png');"
+  }
+</style>
   
 </head>
 <body>
@@ -75,7 +83,7 @@
                         <div style="margin-top: -2px;">
                             <p>{{$sch->name}}</p>
                             <p style="font-size: 10px; margin-top: -4px;">{{$count1}} sinh viên</p>
-                            <button value="false"  class="btn-item" style="background-image: url('image/love_follow.png');"></button>
+                            <button class="btn-item love"></button>
                         </div>
                     </div>
                      @endforeach
@@ -159,40 +167,17 @@
 <script type="text/javascript">
 
 
-    var btn = document.getElementsByClassName('btn-item');
-    for(var i = 0; i<btn.length; i++){
-        var b=btn[i];
-        b.onclick = function(){
+    var list = document.getElementsByClassName('btn-item');
 
-          alert("ssss");
 
-          /*if(b.value == "false"){
-            
-            b.style.backgroundImage = "url('image/love_unfollow.png')";
-            b.value="true"
-          }else{
-            b.style.backgroundImage = "url('image/love_follow.png')";
-            b.value="false"
+    for(var x = 0; x < list.length; x++) {
+        list[x].addEventListener('click', function(ev) {
+          if (ev.target.tagName === 'BUTTON') {
+            ev.target.classList.toggle('unlove');
           }
-*/
-
-
-    }}
-
-    
-    
-    /*var btn = document.getElementsByClassName('btn-item')[1];
-    btn.onclick=function(){
-      
-      if(btn.value === "false"){
-        
-        btn.style.backgroundImage = "url('image/love_unfollow.png')";
-        btn.value="true"
-      }else{
-        btn.style.backgroundImage = "url('image/love_follow.png')";
-        btn.value="false"
-      }
-    }*/
+        }, false);
+    }
   </script>
 </body>
 </html>
+
