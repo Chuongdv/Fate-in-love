@@ -28,9 +28,9 @@
     <a href="#default" class="logo"><img src="image/logo/logo_fil_zoom.png"></a>
     <div class="header-right">
 
-              <a href="/myprofile/{{$user->id}}">{{$user->name}}</a>
-                    
+             <a href="/myprofile/{{$user->id}}">{{$user->name}}</a>        
             <a href="/logout">Đăng xuất</a>
+             
       <a href="/home" >Trang chủ</a>
       <a href="#contact" >Liên hệ</a>
       

@@ -139,7 +139,10 @@ if(Auth::check()){
     }
 
     function chat(){
-      return view('viewpage.chat');
+      if(Auth::check()){      
+        $user = Auth::user(); 
+      } 
+      return view('viewpage.chat',['user'=>$user]);
     }
 
     function thongbao(){
