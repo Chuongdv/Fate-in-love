@@ -2,6 +2,8 @@
 
 namespace App\Events;
 
+use App\Messages;
+
 use Illuminate\Broadcasting\Channel;
 use Illuminate\Queue\SerializesModels;
 use Illuminate\Broadcasting\PrivateChannel;
@@ -14,14 +16,16 @@ class NewMessage
 {
     use Dispatchable, InteractsWithSockets, SerializesModels;
 
+    public $message;
+
     /**
      * Create a new event instance.
      *
      * @return void
      */
-    public function __construct()
+    public function __construct(Messages $message)
     {
-        //
+        $this->message = $message;
     }
 
     /**
@@ -31,6 +35,13 @@ class NewMessage
      */
     public function broadcastOn()
     {
-        return new PrivateChannel('channel-name');
+        return new PrivateChannel('messages.' . $this->message->destination);
     }
+
+  //  public function broadcastWith()
+  //  {
+ //       $this->message->load('sourceContact');
+//
+//        return ["message" => $this->message];
+//    }
 }

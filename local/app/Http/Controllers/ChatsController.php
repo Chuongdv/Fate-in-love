@@ -21,40 +21,50 @@ class ChatsController extends Controller
         foreach ($cids as $key) { 
         	array_push($crushIds, $key->cid);
         }
-        $contacts = DB::table('users')->whereNotIn('id', $crushIds)->select('users.name', 'users.image')->get();
-
-        echo $contacts;
-        //return response()->json($contacts);
+    //    $contacts = DB::table('users')->whereNotIn('id', $crushIds)->select('users.name', 'users.image')->get();
+   //     return response()->json($contacts);
     }
 
     public function getMessagesFor($id)
     {
+
         // mark all messages with the selected contact as read
-        Message::where('from', $id)->where('to', auth()->id())->update(['read' => true]);
+       
+       DB::table('messages')->where('source', '=', auth()->id())->where('destination','=', $id)->update(['seen' =>'1']);
 
         // get all messages between the authenticated user and the selected user
-        $messages = Message::where(function($q) use ($id) {
-            $q->where('from', auth()->id());
-            $q->where('to', $id);
-        })->orWhere(function($q) use ($id) {
-            $q->where('from', $id);
-            $q->where('to', auth()->id());
-        })
-        ->get();
+        $idc = null;
+    	if((int) auth()->id() > (int) $id)
+          	 $idc = auth()->id() . $id;
+         else
+             $idc = $id . auth()->id() ;    
 
-        return response()->json($messages);
+        $message = DB::table('messages')->where('idc', '=', $idc)->get();
+
+        return response()->json($message);
     }
 
     public function send(Request $request)
     {
-        $message = Message::create([
-            'from' => auth()->id(),
-            'to' => $request->contact_id,
-            'text' => $request->text
-        ]);
+    	$idc = null;
+    	if((int) auth()->id() > (int) $request->crushId)
+          	 $idc = auth()->id() . $request->crushId;
+         else
+             $idc = $request->crushId . auth()->id() ;
 
-        broadcast(new NewMessage($message));
 
-        return response()->json($message);
+
+
+         DB::table('messages')->insert(['idc'=> $idc, 'source' =>auth()->id(), 'destination' => $request->crushId, 
+         	'message' => $request->message]);
+
+	
+
+         $mess = DB::table('messages')->where('source', '=', auth()->id())->where('destination', '=', $request->crushId)->get()->last();
+
+         broadcast(new NewMessage($mess));
+         
+       
+      return $mess->message;
     }
 }
