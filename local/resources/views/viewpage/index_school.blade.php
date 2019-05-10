@@ -7,22 +7,27 @@
 	<link rel="stylesheet"  href="{{ asset('css/new_page.css') }}" /> 
 <link rel="stylesheet"  href="{{ asset('css/back_ground.css') }}" /> 
 <link rel="stylesheet" type="text/css" href="{{ asset('css/profile.css') }}">
+<<<<<<< HEAD
+<link rel="shortcut icon" type="image/png" href="/image/logo/logo_fav.png"/>
+
+=======
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+>>>>>>> 997d61248db016ad41378dd667f4c8e72109be74
 <base href="{{asset('')}}">
 	
 </head>
 <body style="overflow: auto;">
 	<div class="header" >
-		<a href="#default" class="logo""><img src="image/logo/logo_fil_zoom.png"></a>
+		<a href="/home" class="logo""><img src="image/logo/logo_fil_zoom.png"></a>
 		<div class="header-right">
 
               <a href="/myprofile/{{$user->id}}">{{$user->name}}</a>
                     
             <a href="/logout">Đăng xuất</a>
 			<a href="/home" >Trang chủ</a>
-			<a href="#contact" >Liên hệ</a>
+			<a href="/contact" >Liên hệ</a>
 			
 		</div>
 	</div>

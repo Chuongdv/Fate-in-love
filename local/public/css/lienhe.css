@@ -1,0 +1,32 @@
+.container_contact{
+  width: 80%;
+  height: 500px;
+  background-color: rgba(240,248,255,0.6);
+  position: relative;
+  float: left;
+  margin-top: 10px;
+  margin-left: 20px;
+  border-radius: 10px;
+}
+
+.container_contact .logo img{
+  border-radius: 10px;
+}
+
+.container_contact .contact-logo{
+  text-align: center;
+}
+.container_contact .contact-logo p{
+  color: black;
+  font-size: 40px;
+  margin-top: -30px;
+  font-weight: bold;
+}
+
+.container_contact .contact-logo .info p{
+  font-size: 20px;
+  margin-top: 10px;
+  color: #444444;
+  text-align: left;
+margin-left: 20%;
+}

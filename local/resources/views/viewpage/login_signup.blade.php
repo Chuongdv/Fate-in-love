@@ -7,7 +7,8 @@
   <title>FateInLove</title>
  
 <link rel="stylesheet"  href="{{ asset('css/signup_login.css') }}" /> 
-  
+  <link rel="shortcut icon" type="image/png" href="/image/logo/logo_fav.png"/>
+
 </head>
 
 <body>
