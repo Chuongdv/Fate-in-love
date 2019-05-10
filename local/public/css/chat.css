@@ -242,6 +242,7 @@ margin-bottom: 15px !important;
     margin-top: 10px;
     background-color: rgba(0,0,0,0.2);
     width: 30%;
+    min-width: 300px;
    	height: 450px;
    	border-radius: 10px 0px 0px 10px;
    	border:1px solid grey;
@@ -261,13 +262,16 @@ margin-bottom: 15px !important;
 .search{
 	border-radius: 10px;
 	border:1px solid grey;
-	
+	min-width: 300px;
 	width: 30%;
 	height: 100px;
 }
 .search img{
 	border-radius: 50%;
 	margin-top: -20px;
+}
+.search input{
+min-width: 300px;
 }
 
 .form-control{
@@ -279,12 +283,29 @@ margin-bottom: 15px !important;
 }
 
 .chat-person{
-    background-color: rgba(0,0,0,0.2);
+    
 	
 	height: 100px;
 	margin-top: 10px;
 
 }
+
+.chat-person:hover{
+	background-color: rgba(0,0,220,0.4);
+}
+
+.choose{
+	background-color: rgba(0,0,220,0.4);
+}
+
+.unchoose{
+	background-color: rgba(0,0,0,0.2);
+}
+
+.new_message{
+	background-color:  rgba(255,255,0,0.5);
+}
+
 .chat-person img{
 	margin-top: 10px;
 	margin-left: 10px;
@@ -342,6 +363,16 @@ margin-bottom: 15px !important;
 }
 
 
+.left-container .send_message textarea{
+	position: absolute;
+}
+
+.left-container .send_message img{
+	margin-top: 2px;
+	margin-right: 10px;
+	float: right;
+}
+
 .left-container .top-left-container .inf-chat .inf-chat-name{
 	font-size: 20px;
 	margin-left: 40px;
@@ -355,11 +386,12 @@ margin-bottom: 15px !important;
 
 
 .left-container .chatting .chat-form-me{
-	max-width: 60%;
+	width: 70%;
 	min-width: 55%;
 	min-height: 50px;
 	margin-top: 5px;
 	float: right;
+
 }
 .left-container .chatting .chat-form-me img{
 	width: 30px;
@@ -371,14 +403,20 @@ margin-bottom: 15px !important;
 	border: 1px solid white;
 }
 .left-container .chatting .chat-form-me .messenger{
-	width: 90%;
+	margin-right: 5px;
+	width: all;
+	min-width: 30px;
 	min-height: 50px;
 	background-color: #6c9df7;
 	border-radius: 10px;
+	float: right;
+	padding-left: 5px;
+	padding-right: 5px;
 }
 .left-container .chatting .chat-form-me .messenger p{
 	text-align: center;
-	padding-top: 12px;
+	padding-top: 0px;
+
 }
 
 .left-container .chatting .chat-form-crush{
@@ -387,9 +425,10 @@ margin-bottom: 15px !important;
 	min-height: 50px;
 	margin-top: 5px;
 	float: left;	
+	position: relative;
 }
 
-.left-container .chatting .chat-form-crush img{
+.left-container .chatting .chat-form-crush .avt img{
 	width: 30px;
 	height: 30px;
 	border-radius: 50%;
@@ -399,13 +438,18 @@ margin-bottom: 15px !important;
 	border: 1px solid white;
 }
 .left-container .chatting .chat-form-crush .messenger{
-	width: 90%;
+	width: all;
+	min-width: 30px;
 	min-height: 50px;
-	background-color: #6c9df0;
+	background-color: #ff77ec;
 	border-radius: 10px;
-	margin-left: 10%;
+	margin-left: 5px;
+	padding-left: 5px;
+	padding-right: 5px;
+	float: left;
+
 }
 .left-container .chatting .chat-form-crush .messenger p{
 	text-align: center;
-	padding-top: 12px;
+	
 }

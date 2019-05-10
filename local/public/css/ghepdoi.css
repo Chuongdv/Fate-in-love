@@ -60,7 +60,7 @@
 
 .container_ghepdoi .right-container .list_school .item_school{
 	height: 190px;
-	width: 210px; 
+	width: 250px; 
 	background-color: #f4efe6;
 	margin-top: 5px; 
     margin-left: 2px;
@@ -112,6 +112,7 @@
 	color: #3515ea;
 	font-size: 25px;
 	font-family: arial;
+	max-width: 350px;
 
 }
 .container_ghepdoi .right-container .ghepdoi .info p:hover{

@@ -7,8 +7,14 @@
 	<link rel="stylesheet"  href="{{ asset('css/new_page.css') }}" /> 
 <link rel="stylesheet"  href="{{ asset('css/back_ground.css') }}" /> 
 <link rel="stylesheet" type="text/css" href="{{ asset('css/profile.css') }}">
+<<<<<<< HEAD
 <link rel="shortcut icon" type="image/png" href="/image/logo/logo_fav.png"/>
 
+=======
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+>>>>>>> 997d61248db016ad41378dd667f4c8e72109be74
 <base href="{{asset('')}}">
 	
 </head>
@@ -32,7 +38,7 @@
                 	Menu
                 </li>
 				<li href="#" class="listmenu" >
-					<a href="/myprofile/{{$user->id}}" class="rowmenu""><img src="image/profile/{{$user->image}}"width="30" height= "30" />		
+					<a href="/myprofile/{{$user->id}}" class="rowmenu"><img src="image/profile/{{$user->image}}"width="30" height= "30" />		
                 	{{$user->name}}</a>
          
                 </li>
@@ -45,15 +51,23 @@
                 	Ghép đôi</a>
                 </li>
                 <li href="#" class="listmenu">
-					<a href="/thongbao" class="rowmenu""><image src="image/thongbao.png" width="30"  height= "30">
+					<a href="/thongbao" class="rowmenu"><image src="image/thongbao.png" width="30"  height= "30">
                 	Thông báo</a>
                 </li>
             </ul>
+
+            <form class="form-inline" action="">
+            	<div class="form-group" style="margin-left: 5px;margin-top: 10px;">
+					<input type="text" style="width: 200px;" class="form-control" placeholder="Tên crush ..." name="name" value="{{ \Request::get('name' )}}">
+				</div>
+				<button type="submit" class="btn btn-default" style="margin-left: 5px;margin-top: 10px;">Tìm kiếm</button>
+            </form>
         </nav>
             <?php
 				$data = $users->where('sid',$school->id)->sortByDesc('created_at');
-				?>
-@foreach($data as $user)
+			?>
+		
+		@foreach($userSr as $user)
 		<div>
 			<div class="wrapper" >
 				

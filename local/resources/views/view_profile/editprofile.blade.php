@@ -17,7 +17,8 @@
 </head>
 <body>
   
- <div class="header" >
+
+ <div class="header" style="margin-top: 8px; margin-left: 8px;">
     <a href="/home" class="logo"><img src="image/logo/logo_fil_zoom.png"></a>
     <div class="header-right">
 
@@ -33,7 +34,7 @@
 
   <section>
   
-       <nav>
+       <nav style="margin-left: 8px;">
       <ul >
                 <li class="menu listmenu">
                   Menu

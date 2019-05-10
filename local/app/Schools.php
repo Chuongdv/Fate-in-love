@@ -2,11 +2,14 @@
 
 namespace App;
 
+use Illuminate\Notifications\Notifiable;
 use Illuminate\Database\Eloquent\Model;
 
 class Schools extends Model
 {
     //
+    use Notifiable;
+    protected $guarded = ['*'];
 
     protected $table = 'Schools';
 

@@ -46,7 +46,7 @@
                 	Ghép đôi</a>
                 </li>
                 <li href="#" class="listmenu">
-					<a href="/thongbao" class="rowmenu""><image src="image/thongbao.png" width="30"  height= "30">
+					<a href="/thongbao" class="rowmenu"><image src="image/thongbao.png" width="30"  height= "30">
                 	Thông báo</a>
                 </li>
             </ul>

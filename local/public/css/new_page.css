@@ -10,8 +10,7 @@ body {
 .header {
   overflow: hidden;
   padding: 0px ;
-  
-  margin-right: 10px;
+    margin-right: 10px;
   background-color: #FDFEFF;
   opacity: 0.8;
   border-radius: 10px;
@@ -20,28 +19,29 @@ body {
 .header a {
   float: left;
   color: black;
-  text-align: center;
-  padding: 7px;
+  text-align:unset;
+  padding: 10px;
   text-decoration: none;
   font-size: 22px; 
   border: 1px;
-  border-bottom-right-radius: 10px;
-  border-bottom-left-radius: 10px;
+  transition: 0.4s all ease;
   font-family: Bookman, Tahoma, Verdana;
  }
 
 .header a.logo img{
   font-size: 25px;
   font-weight: bold;
-   width: 160px;
-  height: 50px;
+   width: 130px;
+  height: 35px;
   border-radius: 10px;
   
 }
 
 .header a:hover {
-  background-color: pink;
-  color: white;
+  color: red;
+  
+   
+   font-size: 21px;
 }
 
 .header a.active {
@@ -56,9 +56,11 @@ body {
 .menu {
   color: black;
   text-align: center;
+  transition: 0.4s;
 }
 .menu:hover{
   font-size: 20px;
+
 }
 
 .listmenu{
