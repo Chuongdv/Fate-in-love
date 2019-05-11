@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
+use DB;
 use App\User;
 use App\Schools;
 use App\Fschool;
@@ -149,22 +150,31 @@ if(Auth::check()){
       return view('viewpage.crush',['user'=>$user,'school'=>$school,'user_cr'=>$user_cr]);
     }
 
-   function follow($id){
+    function follow($uid,$cid){
             if(Auth::check()){
         $user = Auth::user();
       }
       $user_cr = User::all()->shuffle();
-    $school = Schools::all();
-      return view('viewpage.crush',['user'=>$user,'school'=>$school,'user_cr'=>$user_cr]);    
+  
+    $crush = DB::table('crush')->insertGetId(
+    ['uid'=>$uid,'cid' => $cid]
+     );
+      return view('viewpage.crush',['user'=>$user,'user_cr'=>$user_cr]);    
     }
 
-    public function unfollow($id){
+   function unfollow($uid,$cid){
+   
  if(Auth::check()){
         $user = Auth::user();
       }
+    $user_cr = User::all()->shuffle();
       $user_cr = User::all()->shuffle();
-    $school = Schools::all();
-      return view('viewpage.crush',['user'=>$user,'school'=>$school,'user_cr'=>$user_cr]);    
+
+   $crush = DB::table('crush')->where([
+    ['uid', '=', $uid],
+    ['cid', '=', $cid],
+    ])->delete();
+      return view('viewpage.crush',['user'=>$user,'user_cr'=>$user_cr]);    
     }
 
     function chat(){
