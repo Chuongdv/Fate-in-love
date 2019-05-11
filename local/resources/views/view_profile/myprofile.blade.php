@@ -108,15 +108,18 @@ $data = DB::table('users')->join('crush', 'users.id', '=', 'crush.cid')->get();
         $data_crush = $data->where('uid',$my->id)->sortByDesc('created_at')->take(4);
         $count_crush = DB::table('crush')->where('uid',$my->id)->count('cid');
         $crush1 = $data_crush->shift();
-        $count1 = DB::table('crush')->where('cid',$crush1->cid)->count('uid');
+        $count1 = 0;
+        if($crush1 != null)
+            $count1 = DB::table('crush')->where('cid',$crush1->cid)->count('uid');
 
         ?>
 
         <div class="profilet p20">
+          @if($crush1 != null)
           <a href="/profile/{{$crush1->cid}}"><img src="image/profile/{{$crush1->image}}" class="photot"/>
-          
+          @endif
           <div class="contentt">
-              <h1 style="font-size: 15px;">{{$crush1->name}}</h1>
+              <h1 style="font-size: 15px;">@if($crush1 != null) {{$crush1->name}} @endif</h1>
               <h2 style="font-size: 10px;">Số người quan tâm:{{$count1}}</h2>
           </div>  
               
@@ -156,16 +159,21 @@ $count = DB::table('crush')->where('cid',$cr->cid)->count('uid');
         $data_school = $data_sch->where('uid',$my->id)->sortByDesc('created_at')->take(4);
          $count_school = DB::table('fschool')->where('uid',$my->id)->count('sid');
  $school1 = $data_school->shift();
-        $count2 = DB::table('fschool')->where('sid',$school1->sid)->count('uid');
+        $count2 = 0;
+        if( $school1 != null)
+            $count2 = DB::table('fschool')->where('sid',$school1->sid)->count('uid');
 
 
 
         ?>
          <div class="profilet p20">
+          @if($school1 != null)
           <a href="/profile_school/{{$school1->sid}}"><img src="image/logo/{{$school1->logo}}" class="photot"/>
-          
+          @endif
           <div class="contentt">
+          @if($school1 != null) 
               <h1 style="font-size: 15px;">{{$school1->name}}</h1>
+          @endif
               <h2 style="font-size: 10px;">Số người quan tâm: {{$count2}}</h2>
           </div>  
               
