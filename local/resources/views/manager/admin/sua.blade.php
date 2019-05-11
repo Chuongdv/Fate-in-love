@@ -10,7 +10,11 @@
                     <small>{{$admin[0]->name}}</small>
                 </h1>
             </div>
-            <!-- /.col-lg-12 -->
+                @if(session('thongbao'))
+                    <div class="alert alert-success">
+                        {{session('thongbao')}}
+                    </div>
+                @endif
 
                 <form action="manager/admin/sua/{{$admin[0]->id}}" method="POST">
                     <input type="hidden" name="_token" value="{{csrf_token()}}">

@@ -18,12 +18,12 @@
                         @endforeach()  
                     </div>
                 @endif
-                
+                -->
                 @if(session('thongbao'))
                     <div class="alert alert-success">
                         {{session('thongbao')}}
                     </div>
-                @endif --}} -->
+                @endif --}} 
                 <form action="" method="POST">
                     <input type="hidden" name="_token" value="{{csrf_token()}}">
                     <div class="form-group">
