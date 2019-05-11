@@ -11,6 +11,9 @@
  <link rel="shortcut icon" type="image/png" href="/image/logo/logo_fav.png"/>
 
 <base href="{{asset('')}}">
+
+
+<style type="text/css">a{text-decoration: none;}</style>
 </head>
 <body>
   <div class="header" >
