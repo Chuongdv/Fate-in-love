@@ -33,7 +33,7 @@
                         <h3 class="panel-title">Please Sign In</h3>
                     </div>
                     <div class="panel-body">
-                       <!--  @if(count($errors) > 0)
+                        @if(count($errors) > 0)
                             <div class="alert alert-danger">
                                 @foreach($errors->all() as $err)
                                     {{$err}}<br>
@@ -43,7 +43,7 @@
                         
                         @if(session('thongbao'))
                             {{session('thongbao')}}
-                        @endif -->
+                        @endif
                         <form role="form" action="admin/dangnhap" method="POST">
                             <input type="hidden" name="_token" value="{{csrf_token()}}">
                             <fieldset>
