@@ -66,9 +66,16 @@
 
 
         <div class="container_ghepdoi">
+
+
             <div class="right-container">
 
-                <div class="list_school" >
+
+                <div class="list_school" id="id_list_school">
+
+
+
+
                         <!-- cho vong lap foreach o day-->
                       <?php
                         $data_sch = DB::table('schools')->join('fschool', 'schools.id', '=', 'fschool.sid')->get();
@@ -112,6 +119,12 @@
                     </div>
            @endforeach
                   </div>
+
+                  
+                      <!-- <input type="button" name="s" id="btttn" class="button-hide" > -->
+              
+
+
                  <?php
                 $cids = array();
                 $crushIds = array();
@@ -127,7 +140,7 @@
                   $count = DB::table('crush')->where('cid',$u->id)->count('uid');
 
                   ?>
-                <div class="ghepdoi">
+                <div class="ghepdoi" id="id_ghep_doi">
                     <div class="avatar">
                      <a href="/profile/{{$u->id}}"><img src="image/profile/{{$u->image}}" width="320" height="320"><a>
                     </div>
@@ -201,7 +214,21 @@
           }
         }, false);
     }
+
+
   </script>
+
+
+<script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.12.0.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js" ></script>
+  <script>
+   $(document).ready(function(){
+        $("#btttn").click(function(){
+            $("#id_list_school").slideToggle(500);
+            $(".ghepdoi").height(500);
+        })
+    })
+</script>
 </body>
 </html>
 

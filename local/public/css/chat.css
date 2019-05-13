@@ -391,7 +391,8 @@ min-width: 300px;
 	min-height: 50px;
 	margin-top: 5px;
 	float: right;
-
+	display: flex;
+	justify-content: flex-end;
 }
 .left-container .chatting .chat-form-me img{
 	width: 30px;
@@ -420,12 +421,14 @@ min-width: 300px;
 }
 
 .left-container .chatting .chat-form-crush{
-	max-width: 60%;
+	max-width: 70%;
 	min-width: 55%;
 	min-height: 50px;
 	margin-top: 5px;
 	float: left;	
 	position: relative;
+	display: flex;
+	justify-content: flex-start;
 }
 
 .left-container .chatting .chat-form-crush .avt img{
@@ -457,7 +460,7 @@ min-width: 300px;
 
 
 ::-webkit-scrollbar {
-    width: 1em;
+    width: 0.8em;
 }
  
 ::-webkit-scrollbar-track {

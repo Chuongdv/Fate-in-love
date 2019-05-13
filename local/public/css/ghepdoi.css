@@ -58,6 +58,17 @@
 }
 
 
+.container_ghepdoi .right-container .button-hide{
+	position: absolute;
+	color: black;
+	width: 40px;
+	height: 40px;
+	background-color: black;
+	margin-top: 5px;
+	margin-left: 10px;
+}
+
+
 .container_ghepdoi .right-container .list_school .item_school{
 	height: 190px;
 	width: 250px; 
