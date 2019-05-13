@@ -32,9 +32,10 @@
                         <td>{{$tr->id}}</td>
                         <td>{{$tr->name}}</td>
                         <td>{{$tr->email}}</td>
-                        @endforeach;
+                        
                         <td class="center"><i class="fa fa-trash-o  fa-fw"></i><a href="manager/admin/xoa/{{$tr->id}}"> Delete</a></td>
                         <td class="center"><i class="fa fa-pencil fa-fw"></i> <a href="manager/admin/sua/{{$tr->id}}">Edit</a></td>
+                        @endforeach
                     </tr>
                 </tbody>
             </table>

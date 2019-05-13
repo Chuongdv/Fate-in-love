@@ -14,7 +14,7 @@ class Schools extends Model
     protected $table = 'Schools';
 
     public function user(){
-    	return $this->hasMany('App\User','sid','id');
+    	return $this->hasMany('App\User','id','sid');
     }
 
 }

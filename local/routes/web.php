@@ -36,11 +36,11 @@ Route::get('/follow/{id}/{cid}','PageController@follow');
 Route::get('/unfollow/{id}/{cid}','PageController@unfollow');
 Route::get('/chat','PageController@chat');
 Route::get('/thongbao','PageController@thongbao');
-//Route::get('admin/dangnhap','UserController@getDangnhapAdmin');
-//Route::post('admin/dangnhap','UserController@postDangnhapAdmin');
-//Route::get('admin/logout','UserController@getDangXuatAdmin');
+Route::get('admin/dangnhap','AdminController@getDangnhapAdmin');
+Route::post('admin/dangnhap','AdminController@postDangnhapAdmin');
+Route::get('admin/logout','AdminController@getDangXuatAdmin');
 
-Route::group(['prefix'=>'manager'],function(){
+Route::group(['prefix'=>'manager','middleware'=>'adminLogin'],function(){
 	Route::group(['prefix'=>'admin'],function(){
 		Route::get('danhsach','AdminController@getDanhSach');
 

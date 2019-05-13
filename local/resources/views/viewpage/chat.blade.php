@@ -157,7 +157,7 @@
             @if($message->source == $user->id)
             <!--tin nhan tu ban than-->
             <div class="chat-form-me">
-              
+              <!-- //sua doan nay di, t doi cho 2 div class=avt va div class=message -->
               <div class="messenger"> <p>{{$message->message}}</p></div>
               <div class="avt">
                 <img src="image/profile/{{$user->image}}">

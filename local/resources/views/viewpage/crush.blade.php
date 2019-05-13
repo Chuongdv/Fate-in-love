@@ -98,7 +98,7 @@
                   <?php
                 $sids = array();
                 $schoolIds = array();
-                $sids = DB::table('fschool')->select('sid')->where('sid', '=', $user->school->id)->get();
+                $sids = DB::table('fschool')->select('sid')->where('uid', '=', $user->id)->get();
                foreach ($sids as $key) { 
                  array_push($schoolIds, $key->sid);
                }
@@ -138,7 +138,6 @@
         @foreach($results_new as $u)
                   <?php
                   $count = DB::table('crush')->where('cid',$u->id)->count('uid');
-
                   ?>
                 <div class="ghepdoi" id="id_ghep_doi">
                     <div class="avatar">
@@ -146,7 +145,8 @@
                     </div>
 
                     <div class="info">
-                    <p>{{$u->name}}<p>
+                    <p>{{$u->name}}</p>
+                    <p>{{$u->birthday}}</p>
                     <p>{{$u->introduce}}</p>    
                     <p>{{$u->home}}</p>
                     <p>Số người quan tâm: {{$count}}</p>
@@ -189,8 +189,6 @@
                  
 @endforeach
                
-
-
             </div>
             
 </div>
