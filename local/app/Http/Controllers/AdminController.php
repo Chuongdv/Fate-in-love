@@ -44,31 +44,7 @@ class AdminController extends Controller
         DB::table('Admin')->where('id', '=', $id)->delete();
     }
 
-    public function getDangnhapAdmin(){
-        return view('manager.login');
-    }
-    public function postDangnhapAdmin(Request $request){
-        $this->validate($request,
-            [
-                'email'=>'required',
-                'password'=>'required'
-            ],
-            [
-                'email.required'=>'Bạn chưa nhập Email',
-                'password.required'=>'Bạn chưa nhập Password'
-            ]);
-        if(Auth::attempt(['email'=>$request->email,'password'=>$request->password])){
-            //dd($request->password);
-            return redirect('manager/admin/danhsach');
-        }
-        else{
-            return redirect('admin/dangnhap')->with('thongbao','Đăng nhập không thành công');
-        }
-    }
-    public function getDangXuatAdmin(){
-        Auth::logout();
-        return redirect('admin/dangnhap');
-    }
+
 }
 
 

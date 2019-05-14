@@ -27,18 +27,16 @@
                     </tr>
                 </thead>
                 <tbody>
-					@foreach($admin as $tr)
-                    <tr class="odd gradeX" align="center">
-                        
+                    @foreach($admin as $tr)
+                    <tr class="odd gradeX" align="center">   
                         <td>{{$tr->id}}</td>
                         <td>{{$tr->name}}</td>
                         <td>{{$tr->email}}</td>
                         
                         <td class="center"><i class="fa fa-trash-o  fa-fw"></i><a href="manager/admin/xoa/{{$tr->id}}"> Delete</a></td>
                         <td class="center"><i class="fa fa-pencil fa-fw"></i> <a href="manager/admin/sua/{{$tr->id}}">Edit</a></td>
-                        
                     </tr>
-					@endforeach
+                    @endforeach
                 </tbody>
             </table>
         </div>

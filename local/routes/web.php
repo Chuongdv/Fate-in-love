@@ -36,13 +36,17 @@ Route::get('/follow/{id}/{cid}','PageController@follow');
 Route::get('/unfollow/{id}/{cid}','PageController@unfollow');
 Route::get('/chat','PageController@chat');
 Route::get('/thongbao','PageController@thongbao');
-Route::get('admin/dangnhap','AdminController@getDangnhapAdmin');
-Route::post('admin/dangnhap','AdminController@postDangnhapAdmin');
-Route::get('admin/logout','AdminController@getDangXuatAdmin');
 
-Route::group(['prefix'=>'manager','middleware'=>'adminLogin'],function(){
+Route::prefix('authenticate')->group(function(){
+    Route::get('admin/dangnhap','AdminAuthController@getDangnhapAdmin')->name('admin.login');
+	Route::post('admin/dangnhap','AdminAuthController@postDangnhapAdmin');
+	Route::get('admin/logout','AdminAuthController@getDangXuatAdmin');
+});
+
+
+Route::group(['prefix'=>'manager','middleware'=>'CheckLoginAdmin'],function(){
 	Route::group(['prefix'=>'admin'],function(){
-		Route::get('danhsach','AdminController@getDanhSach');
+		Route::get('danhsach','AdminController@getDanhSach')->name('get.admin.danhsach');
 
 		Route::get('sua/{id}','AdminController@getSua');
 		Route::post('sua/{id}','AdminController@postSua');
