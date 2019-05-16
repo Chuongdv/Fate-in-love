@@ -90,7 +90,7 @@
                         <div style="margin-top: -2px;">
                             <p>{{$sch->name}}</p>
                             <p style="font-size: 10px; margin-top: -4px;">{{$count1}} sinh viên</p>
-                            <button class="btn-item love"></button>
+                            <a href="/unfollow_school/{{$user->id}}/{{$sch->sid}}"><button class="btn-item love"></button></a>
                         </div>
                     </div>
                      @endforeach
@@ -114,7 +114,7 @@
                         <div style="margin-top: -2px;">
                             <p>{{$sch1->name}}</p>
                             <p style="font-size: 10px; margin-top: -4px;">{{$count1s}} sinh viên</p>
-                            <button value="false"  class="btn-item" style="background-image: url('image/love_unfollow.png');"></button>
+                           <a href="/follow_school/{{$user->id}}/{{$sch1->id}}"> <button value="false"  class="btn-item" style="background-image: url('image/love_unfollow.png');"></button></a>
                         </div>
                     </div>
            @endforeach
@@ -155,11 +155,11 @@
 
                 <div class="btn_love_cancel mt">
 
-                      <a href="/unfollow/{{$user->id}}/{{$u->id}}">  <img src="image/cancel.png"></a>
+                      <a href="/unfollow_crush/{{$user->id}}/{{$u->id}}">  <img src="image/cancel.png"></a>
                 </div> 
                         
                  <div class="btn_love_cancel mt2">
-                        <a href="/follow/{{$user->id}}/{{$u->id}}"><img src="image/love_follow.png"> </a>
+                        <a href="/follow_crush/{{$user->id}}/{{$u->id}}"><img src="image/love_follow.png"> </a>
                     </div>
                 
                 </div>

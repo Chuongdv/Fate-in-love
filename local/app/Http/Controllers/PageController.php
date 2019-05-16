@@ -150,7 +150,35 @@ if(Auth::check()){
       return view('viewpage.crush',['user'=>$user,'school'=>$school,'user_cr'=>$user_cr]);
     }
 
-    function follow($uid,$cid){
+function unfollow($uid,$did){
+   
+ if(Auth::check()){
+        $user = Auth::user();
+      }
+ $user_page= User::find($did); 
+   $crush = DB::table('crush')->where([
+    ['uid', '=', $uid],
+    ['cid', '=', $did],
+    ])->delete();
+      return view('view_profile.profile',['user'=>$user,'user_page'=>$user_page]);    
+    }
+
+     function follow($uid,$did){
+            if(Auth::check()){
+        $user = Auth::user();
+      }
+      $user_page= User::find($did); 
+  
+    $crush = DB::table('crush')->insertGetId(
+    ['uid'=>$uid,'cid' => $did]
+     );
+      return view('view_profile.profile',['user'=>$user,'user_page'=>$user_page]);    
+    }
+    
+
+    
+
+    function follow_crush($uid,$cid){
             if(Auth::check()){
         $user = Auth::user();
       }
@@ -162,7 +190,7 @@ if(Auth::check()){
       return view('viewpage.crush',['user'=>$user,'user_cr'=>$user_cr]);    
     }
 
-   function unfollow($uid,$cid){
+   function unfollow_crush($uid,$cid){
    
  if(Auth::check()){
         $user = Auth::user();
@@ -173,6 +201,30 @@ if(Auth::check()){
    $crush = DB::table('crush')->where([
     ['uid', '=', $uid],
     ['cid', '=', $cid],
+    ])->delete();
+      return view('viewpage.crush',['user'=>$user,'user_cr'=>$user_cr]);    
+    }
+     function follow_school($uid,$sid){
+            if(Auth::check()){
+        $user = Auth::user();
+      }
+      $user_cr = User::all()->shuffle();
+  
+    $school = DB::table('fschool')->insertGetId(
+    ['uid'=>$uid,'sid' => $sid]
+     );
+      return view('viewpage.crush',['user'=>$user,'user_cr'=>$user_cr]);    
+    }
+    function unfollow_school($uid,$sid){
+   
+ if(Auth::check()){
+        $user = Auth::user();
+      }
+    $user_cr = User::all()->shuffle();
+
+   $school = DB::table('fschool')->where([
+    ['uid', '=', $uid],
+    ['sid', '=', $sid],
     ])->delete();
       return view('viewpage.crush',['user'=>$user,'user_cr'=>$user_cr]);    
     }

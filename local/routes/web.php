@@ -32,8 +32,12 @@ Route::get('/editprofile/{id}','PageController@getEditProfile');
 Route::post('/editprofile/{id}','PageController@postEditProfile');
 
 Route::get('/crush/{id}','PageController@crush');
-Route::get('/follow/{id}/{cid}','PageController@follow');
-Route::get('/unfollow/{id}/{cid}','PageController@unfollow');
+Route::get('/follow_crush/{id}/{cid}','PageController@follow_crush');
+Route::get('/unfollow_crush/{id}/{cid}','PageController@unfollow_crush');
+Route::get('/follow_school/{id}/{sid}','PageController@follow_school');
+Route::get('/unfollow_school/{id}/{sid}','PageController@unfollow_school');
+Route::get('/follow/{id}/{did}','PageController@follow');
+Route::get('/unfollow/{id}/{did}','PageController@unfollow');
 Route::get('/chat','PageController@chat');
 Route::get('/thongbao','PageController@thongbao');
 
