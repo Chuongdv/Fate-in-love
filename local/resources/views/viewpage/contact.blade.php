@@ -66,7 +66,7 @@
       <p>Liên hệ với chúng tôi</p>
       <div class="info">
         <p>Địa chỉ: lớp 108596, Đại học Bách Khoa Hà Nội, số 1 Đại Cồ Việt</p>
-        <p>Tác giả: Phạm Hoài Lâm - Tạ Thị Lan - Đỗ Văn Chưởng - ? Lực Lego - ? Hương</p>
+        <p>Tác giả: Phạm Hoài Lâm - Tạ Thị Lan - Đỗ Văn Chưởng - Hoàng Đình Lực - Đỗ Thị Hương</p>
         <p>gmail: fate_in_love@gmail.com</p>
         <p>gmail: love-in-fate@gmail.com</p>
         <p>SDT: 0232567312 - 1221212121 - 1212312312 - 123123123 - 231231231</p>
