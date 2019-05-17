@@ -50,7 +50,7 @@
           <option value="Nữ">Nữ</option>
 
       </select>
-      <input type="date" placeholder="Ngày sinh" name="birthday">
+      <input type="date" placeholder="Ngày sinh" name="birthday" value="2000-01-01">
 
       <select class="form-control" name="school">
                                 <option value="" disabled selected hidden style="color: #C3C3D8;font-weight: bold;">Chọn trường</option>

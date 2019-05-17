@@ -11,10 +11,11 @@
 
 <base href="{{asset('')}}">
 	
+
 </head>
 <body>
 	<div class="header" >
-		<a href="/home" class="logo""><img src="image/logo/logo_fil_zoom.png"></a>
+		<a href="/home" class="logo"><img src="image/logo/logo_fil_zoom.png"></a>
 		<div class="header-right">
 
               <a href="/myprofile/{{$user->id}}">{{$user->name}}</a>
@@ -27,8 +28,8 @@
 	</div>
 
 	<section>
-		<nav>
-			<ul >
+		<nav class="tutorial">
+			<ul>
                 <li class="menu listmenu">
                 	Menu
                 </li>
@@ -45,9 +46,16 @@
 					<a href="/crush/{{$user->id}}" class="rowmenu"><image src="image/ghepdoi.png" width="30"  height= "30"/>
                 	Ghép đôi</a>
                 </li>
-                <li href="#" class="listmenu">
-					<a href="/thongbao" class="rowmenu"><image src="image/thongbao.png" width="30"  height= "30"/>
-                	Thông báo</a>
+                <li href="#" class="listmenu" >
+					<a href="/thongbao" class="rowmenu"  ><image src="image/thongbao.png" width="30"  height= "30"/>
+                	Thông báo <i class="fa fa-angle-down"></i></a>
+
+                	<ul class="drop">
+				        <li><a href="#"><image src="image/love_follow.png" width="15"  height= "15"/> Abc đã thích bạn</a></li>
+				       
+				    </ul>
+
+
                 </li>
             </ul>
         </nav>
@@ -73,6 +81,9 @@
 		</div>
 		@endforeach
 	</section>
+
+
+	<script src="https://static.codepen.io/assets/editor/live/css_reload-5619dc0905a68b2e6298901de54f73cefe4e079f65a75406858d92924b4938bf.js"></script>
 
 </body>
 </html>
