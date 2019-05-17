@@ -11,8 +11,7 @@ use App\Crush;
 use App\Events\NotifyEvent;
 class PageController extends Controller
 {
-    //
-
+   
     function __construct(){
     	$users = User::all();
     	view()->share('users',$users);
