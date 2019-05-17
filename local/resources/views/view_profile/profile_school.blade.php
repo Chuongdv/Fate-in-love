@@ -22,7 +22,7 @@
               <a href="/myprofile/{{$user->id}}" >{{$user->name}}</a>
                      
             <a href="/logout">Đăng xuất</a>
-      <a href="/home">Trang chủ</a>
+     
       <a href="/contact">Liên hệ</a>
       
       
@@ -86,12 +86,12 @@
               @if($check==1)
             <div class="button_container">
 
-              <a href="/unfollow_fschool/{{$user->id}}/{{$school->id}}"><button style="background-image: url('image/love_follow.png')" onclick = "myClick()" id="fl" class="btn" style="width: 150px; border-radius: 50px; margin-top: 50px;"><span>Đang theo dõi</span></button></a>
+              <a href="/unfollow_fschool/{{$user->id}}/{{$school->id}}"><button style="background-color: rgba(143,188,143); border-radius: 10px; border: none;" onclick = "myClick()" id="fl" class="btn" style="width: 150px; border-radius: 50px; margin-top: 50px;"><span>Đang theo dõi</span></button></a>
               </div>
               @else
              <div class="button_container">
 
-              <a href="/follow_fschool/{{$user->id}}/{{$school->id}}"><button style="background-image: url('image/love_follow.png')" onclick = "myClick()" id="fl" class="btn" style="width: 150px; border-radius: 50px; margin-top: 50px;"><span>Theo dõi</span></button></a>
+              <a href="/follow_fschool/{{$user->id}}/{{$school->id}}"><button style="background-color: rgba(143,188,143); border-radius: 10px; border: none;" onclick = "myClick()" id="fl" class="btn" style="width: 150px; border-radius: 50px; margin-top: 50px;"><span>Theo dõi</span></button></a>
               </div>
                @endif  
             
