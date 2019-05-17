@@ -4,6 +4,7 @@
   <title>FateInLove</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="_token" content="{{csrf_token()}}" />
   <link rel="stylesheet"  href="{{asset('css/new_page.css')}}" /> 
 <link rel="stylesheet"  href="{{asset('css/back_ground.css')}}" /> 
 <link rel="stylesheet" type="text/css" href="{{asset('css/profile.css')}}">
@@ -90,7 +91,7 @@
                         <div style="margin-top: -2px;">
                             <p>{{$sch->name}}</p>
                             <p style="font-size: 10px; margin-top: -4px;">{{$count1}} sinh viên</p>
-                            <a href="/unfollow_school/{{$user->id}}/{{$sch->sid}}"><button class="btn-item love"></button></a>
+                            <a href="/unfollow_school/{{$user->id}}/{{$sch->sid}}" id="love"><button class="btn-item love"></button></a>
                         </div>
                     </div>
                      @endforeach
@@ -220,13 +221,73 @@
 <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.12.0.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js" ></script>
   <script>
-   $(document).ready(function(){
-        $("#btttn").click(function(){
-            $("#id_list_school").slideToggle(500);
-            $(".ghepdoi").height(500);
-        })
-    })
-</script>
+   /* 
+  $(document).ready(function () {
+      var currentCrush = $("#currentCrush").text();
+      var pictureCrush = null;
+      var me = null;
+      var pictureMe = null;
+
+    me = $(".info").find("#infoId").text();
+    pictureMe = $(".info").find("#infoPic").text();
+
+  
+    $(".btn-item love").click(crushSchool);  
+
+    function crushSchool(){
+      var link = $("#love").attr('href');
+      //goi server
+      $.ajaxSetup({
+          headers: {
+                      'X-CSRF-TOKEN': $('meta[name="_token"]').attr('content')
+                  }
+      });
+      $.ajaxSetup({ cache: false });
+      $.ajax({
+          url : link,
+          type : "post",
+          dataType:"text",
+          data : {
+          'message': message,
+          'crushId': currentCrush
+          },
+          success : function (result){
+          alert(result);
+          }
+      });
+    }
+
+/*
+    // xu li realtime khi co tin nhan moi den
+    // Enable pusher logging - don't include this in production
+    Pusher.logToConsole = true;
+
+ var pusher = new Pusher('936d12ed94ff6b0de391', {
+    cluster: 'ap1',
+    encrypted: false
+});
+
+var chanelChat = "messages." + me;
+
+
+// Subscribe to the channel we specified in our Laravel Event
+var channel = pusher.subscribe(chanelChat);
+
+// Bind a function to a Event (the full Laravel class)
+channel.bind('App\\Events\\NewMessage', function(data) {
+    var buff = "";
+    buff = "<div class=\"chat-form-crush\"><div class=\"avt\"><img src=\"";
+    buff += pictureCrush;
+    buff += "\"></div><div class=\"messenger\"> <p>";
+    buff += data.message.message;
+    buff += "</p></div></div>";
+    $(' .chatting').append(buff);
+});
+
+});
+*/
+
+  </script>
 </body>
 </html>
 
