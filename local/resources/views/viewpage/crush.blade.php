@@ -66,9 +66,16 @@
 
 
         <div class="container_ghepdoi">
+
+
             <div class="right-container">
 
-                <div class="list_school" >
+
+                <div class="list_school" id="id_list_school">
+
+
+
+
                         <!-- cho vong lap foreach o day-->
                       <?php
                         $data_sch = DB::table('schools')->join('fschool', 'schools.id', '=', 'fschool.sid')->get();
@@ -83,7 +90,7 @@
                         <div style="margin-top: -2px;">
                             <p>{{$sch->name}}</p>
                             <p style="font-size: 10px; margin-top: -4px;">{{$count1}} sinh viên</p>
-                            <button class="btn-item love"></button>
+                            <a href="/unfollow_school/{{$user->id}}/{{$sch->sid}}"><button class="btn-item love"></button></a>
                         </div>
                     </div>
                      @endforeach
@@ -91,7 +98,7 @@
                   <?php
                 $sids = array();
                 $schoolIds = array();
-                $sids = DB::table('fschool')->select('sid')->where('sid', '=', $user->school->id)->get();
+                $sids = DB::table('fschool')->select('sid')->where('uid', '=', $user->id)->get();
                foreach ($sids as $key) { 
                  array_push($schoolIds, $key->sid);
                }
@@ -107,11 +114,17 @@
                         <div style="margin-top: -2px;">
                             <p>{{$sch1->name}}</p>
                             <p style="font-size: 10px; margin-top: -4px;">{{$count1s}} sinh viên</p>
-                            <button value="false"  class="btn-item" style="background-image: url('image/love_unfollow.png');"></button>
+                           <a href="/follow_school/{{$user->id}}/{{$sch1->id}}"> <button value="false"  class="btn-item" style="background-image: url('image/love_unfollow.png');"></button></a>
                         </div>
                     </div>
            @endforeach
                   </div>
+
+                  
+                      <!-- <input type="button" name="s" id="btttn" class="button-hide" > -->
+              
+
+
                  <?php
                 $cids = array();
                 $crushIds = array();
@@ -125,15 +138,15 @@
         @foreach($results_new as $u)
                   <?php
                   $count = DB::table('crush')->where('cid',$u->id)->count('uid');
-
                   ?>
-                <div class="ghepdoi">
+                <div class="ghepdoi" id="id_ghep_doi">
                     <div class="avatar">
                      <a href="/profile/{{$u->id}}"><img src="image/profile/{{$u->image}}" width="320" height="320"><a>
                     </div>
 
                     <div class="info">
-                    <p>{{$u->name}}<p>
+                    <p>{{$u->name}}</p>
+                    <p>{{$u->birthday}}</p>
                     <p>{{$u->introduce}}</p>    
                     <p>{{$u->home}}</p>
                     <p>Số người quan tâm: {{$count}}</p>
@@ -142,11 +155,11 @@
 
                 <div class="btn_love_cancel mt">
 
-                      <a href="/unfollow/{{$user->id}}/{{$u->id}}">  <img src="image/cancel.png"></a>
+                      <a href="/unfollow_crush/{{$user->id}}/{{$u->id}}">  <img src="image/cancel.png"></a>
                 </div> 
                         
                  <div class="btn_love_cancel mt2">
-                        <a href="/follow/{{$user->id}}/{{$u->id}}"><img src="image/love_follow.png"> </a>
+                        <a href="/follow_crush/{{$user->id}}/{{$u->id}}"><img src="image/love_follow.png"> </a>
                     </div>
                 
                 </div>
@@ -176,8 +189,6 @@
                  
 @endforeach
                
-
-
             </div>
             
 </div>
@@ -201,7 +212,21 @@
           }
         }, false);
     }
+
+
   </script>
+
+
+<script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.12.0.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js" ></script>
+  <script>
+   $(document).ready(function(){
+        $("#btttn").click(function(){
+            $("#id_list_school").slideToggle(500);
+            $(".ghepdoi").height(500);
+        })
+    })
+</script>
 </body>
 </html>
 

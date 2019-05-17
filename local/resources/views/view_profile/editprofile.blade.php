@@ -151,7 +151,7 @@
 
          <select class="form-control" name="school" >
            @foreach($school as $sch)
-                               <option value="" disabled selected hidden style="color: #C3C3D8;font-weight: bold;">{{$user_edit->school->name}}</option>
+                               <option value=""  hidden style="color: #C3C3D8;font-weight: bold;">{{$user_edit->school->name}}</option>
                                
                                 <option 
                                 @if($user_edit->sid== $sch->id) 
@@ -166,7 +166,7 @@
            <br>
            
 <label>Giới thiệu:</label> 
-<textarea name="introduce" placeholder="{{$user_edit->introduce}}" style="width: 300px;"></textarea><br /> 
+<textarea name="introduce" placeholder="Viết vài thứ về bạn!" style="width: 300px;">{{$user_edit->introduce}}</textarea><br /> 
 <label>Ảnh đại diện: </label>
 <p>
 <input type="file" name="image" value="{{$user_edit->image}}">

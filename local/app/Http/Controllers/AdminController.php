@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use DB;
 
@@ -29,7 +30,7 @@ class AdminController extends Controller
     }
 
     function postThem(Request $request){
-        $admin = DB::table('admin')=>get();
+        $admin = DB::table('admin')->get();
         foreach($admin as $item){
             if($request->email == $item->id){
                 return redirect('manager/admin/them')->with('thongbao', 'Thêm thất bại do email này đã sử dụng');
@@ -42,6 +43,8 @@ class AdminController extends Controller
     function getXoa($id){
         DB::table('Admin')->where('id', '=', $id)->delete();
     }
+
+
 }
 
 

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
+use DB;
 use App\User;
 use App\Schools;
 use App\Fschool;
@@ -149,22 +150,83 @@ if(Auth::check()){
       return view('viewpage.crush',['user'=>$user,'school'=>$school,'user_cr'=>$user_cr]);
     }
 
-   function follow($id){
+function unfollow($uid,$did){
+   
+ if(Auth::check()){
+        $user = Auth::user();
+      }
+ $user_page= User::find($did); 
+   $crush = DB::table('crush')->where([
+    ['uid', '=', $uid],
+    ['cid', '=', $did],
+    ])->delete();
+      return view('view_profile.profile',['user'=>$user,'user_page'=>$user_page]);    
+    }
+
+     function follow($uid,$did){
+            if(Auth::check()){
+        $user = Auth::user();
+      }
+      $user_page= User::find($did); 
+  
+    $crush = DB::table('crush')->insertGetId(
+    ['uid'=>$uid,'cid' => $did]
+     );
+      return view('view_profile.profile',['user'=>$user,'user_page'=>$user_page]);    
+    }
+    
+
+    
+
+    function follow_crush($uid,$cid){
             if(Auth::check()){
         $user = Auth::user();
       }
       $user_cr = User::all()->shuffle();
-    $school = Schools::all();
-      return view('viewpage.crush',['user'=>$user,'school'=>$school,'user_cr'=>$user_cr]);    
+  
+    $crush = DB::table('crush')->insertGetId(
+    ['uid'=>$uid,'cid' => $cid]
+     );
+      return view('viewpage.crush',['user'=>$user,'user_cr'=>$user_cr]);    
     }
 
-    public function unfollow($id){
+   function unfollow_crush($uid,$cid){
+   
  if(Auth::check()){
         $user = Auth::user();
       }
+    $user_cr = User::all()->shuffle();
       $user_cr = User::all()->shuffle();
-    $school = Schools::all();
-      return view('viewpage.crush',['user'=>$user,'school'=>$school,'user_cr'=>$user_cr]);    
+
+   $crush = DB::table('crush')->where([
+    ['uid', '=', $uid],
+    ['cid', '=', $cid],
+    ])->delete();
+      return view('viewpage.crush',['user'=>$user,'user_cr'=>$user_cr]);    
+    }
+     function follow_school($uid,$sid){
+            if(Auth::check()){
+        $user = Auth::user();
+      }
+      $user_cr = User::all()->shuffle();
+  
+    $school = DB::table('fschool')->insertGetId(
+    ['uid'=>$uid,'sid' => $sid]
+     );
+      return view('viewpage.crush',['user'=>$user,'user_cr'=>$user_cr]);    
+    }
+    function unfollow_school($uid,$sid){
+   
+ if(Auth::check()){
+        $user = Auth::user();
+      }
+    $user_cr = User::all()->shuffle();
+
+   $school = DB::table('fschool')->where([
+    ['uid', '=', $uid],
+    ['sid', '=', $sid],
+    ])->delete();
+      return view('viewpage.crush',['user'=>$user,'user_cr'=>$user_cr]);    
     }
 
     function chat(){

@@ -52,7 +52,7 @@
             </ul>
         </nav>
             <?php
-				$data = $users->where('star',1)->shuffle()->take(8);
+				$data = $users->shuffle()->take(8);
 				?>
 @foreach($data as $user)
 		<div>
