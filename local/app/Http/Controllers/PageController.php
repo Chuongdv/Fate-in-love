@@ -8,6 +8,7 @@ use App\User;
 use App\Schools;
 use App\Fschool;
 use App\Crush;
+use App\Events\NotifyEvent;
 class PageController extends Controller
 {
     //
@@ -164,6 +165,8 @@ function unfollow($uid,$did){
     ['uid', '=', $uid],
     ['cid', '=', $did],
     ])->delete();
+    $message = "Ai đó đã không còn crush bạn";
+    broadcast(new NotifyEvent($message, $did, "remove"));
       return view('view_profile.profile',['user'=>$user,'user_page'=>$user_page]);    
     }
 
@@ -176,6 +179,8 @@ function unfollow($uid,$did){
     $crush = DB::table('crush')->insertGetId(
     ['uid'=>$uid,'cid' => $did]
      );
+    $message = "Ai đó đã crush bạn";
+    broadcast(new NotifyEvent($message, $did, "add"));
       return view('view_profile.profile',['user'=>$user,'user_page'=>$user_page]);    
     }
     
@@ -211,10 +216,12 @@ $school = Schools::find($sid);
         $user = Auth::user();
       }
       $user_cr = User::all()->shuffle();
-  
+    
     $crush = DB::table('crush')->insertGetId(
     ['uid'=>$uid,'cid' => $cid]
      );
+    $message = "Ai đó đã crush bạn";
+    broadcast(new NotifyEvent($message, $cid, "add"));
       return view('viewpage.crush',['user'=>$user,'user_cr'=>$user_cr]);    
     }
 
@@ -230,6 +237,8 @@ $school = Schools::find($sid);
     ['uid', '=', $uid],
     ['cid', '=', $cid],
     ])->delete();
+      $message = "Ai đó đã không còn crush bạn";
+      broadcast(new NotifyEvent($message, $cid, "add"));
       return view('viewpage.crush',['user'=>$user,'user_cr'=>$user_cr]);    
     }
      function follow_school($uid,$sid){
