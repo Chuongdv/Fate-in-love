@@ -1,5 +1,3 @@
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,6 +7,7 @@
  <link rel="stylesheet"  href="{{ asset('css/new_page.css') }}" /> 
 <link rel="stylesheet"  href="{{ asset('css/2style.css') }}" /> 
 
+<link rel="shortcut icon" type="image/png" href="/image/logo/logo_fav.png"/>
 
 
 
@@ -17,14 +16,14 @@
 </head>
 <body>
   <div class="header" >
-    <a href="#default" class="logo"><img src="image/logo/logo_fil_zoom.png"></a>
+    <a href="/home" class="logo"><img src="image/logo/logo_fil_zoom.png"></a>
     <div class="header-right">
 
               <a href="/myprofile/{{$user->id}}" >{{$user->name}}</a>
                      
             <a href="/logout">Đăng xuất</a>
       
-      <a href="#contact">Liên hệ</a>
+      <a href="/contact">Liên hệ</a>
       
       
     </div>
@@ -65,8 +64,31 @@
                <img src="image/profile/{{$user_page->image}}" class="image_profile" />
           </td></tr>
           <tr><td style="text-align: center;">
+             <?php
+             $data = DB::table('crush')->select('cid')->where('uid',$user->id)->get()->toArray();
+             $check=0;
+            foreach($data as $cr)
+               if($cr->cid == $user_page->id) {
+                $check=1;
+               }
+             ?>
+
+              
+              @if($check==1)
             <div class="button_container">
-              <button id="follow-button">Đang theo dõi</button>
+              <a href="/unfollow/{{$user->id}}/{{$user_page->id}}"><button id="follow-button">Đang theo dõi</button></a>
+                 <a href="/chat"><button id="follow-button" >Nhắn tin</button></a>
+              </div>
+              @else
+              <div class="button_container">
+              <a href="/follow/{{$user->id}}/{{$user_page->id}}"><button id="follow-button">Theo dõi</button></a>
+<a href="/chat"><button id="follow-button" >Nhắn tin</button></a>
+              </div>
+               @endif  
+
+               </td></tr>
+              
+                </table>
 
                 <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
                 <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js'></script>
@@ -83,7 +105,6 @@
                           "easeInCubic",
                           function() {}
                         );
-
                         // then now we want the button to expand out to it's full state
                         // The left translation is to keep the button centred with it's longer width
                         $("#follow-button").animate(
@@ -93,7 +114,6 @@
                           function() {
                             $("#follow-button").css("color", "#fff");
                             $("#follow-button").text("Theo dõi");
-
                             // Animate the background transition from white to green. Using JQuery Color
                             $("#follow-button").animate(
                               {
@@ -121,19 +141,14 @@
                       }
                     });
                   });
-
                 </script>
 
-
-              <button id="follow-button" >Nhắn tin</button>
-              </div>
-
-          </td></tr>
+         
 
 
 
 
-      </table>
+     
      <?php
          $count_crush = DB::table('crush')->where('cid',$user_page->id)->count('uid');
         ?>
