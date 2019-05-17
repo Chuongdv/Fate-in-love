@@ -7,6 +7,8 @@
 	<link rel="stylesheet"  href="{{ asset('css/new_page.css') }}" /> 
 <link rel="stylesheet"  href="{{ asset('css/back_ground.css') }}" /> 
 <link rel="stylesheet" type="text/css" href="{{ asset('css/profile.css') }}">
+<link rel="shortcut icon" type="image/png" href="/image/logo/logo_fav.png"/>
+
 
 <link rel="shortcut icon" type="image/png" href="/image/logo/logo_fav.png"/>
 
@@ -16,7 +18,7 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 
 <base href="{{asset('')}}">
-	
+	<style type="text/css">a:hover{text-decoration: none;}</style>
 	
 </head>
 <body style="overflow: auto;">
@@ -68,7 +70,7 @@
 				$data = $users->where('sid',$school->id)->sortByDesc('created_at');
 			?>
 		
-		@foreach($userSr as $user)
+		@foreach($data as $user)
 		<div>
 			<div class="wrapper" >
 				

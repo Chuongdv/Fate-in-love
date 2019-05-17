@@ -76,7 +76,11 @@
 
       <div class="profileinfo">
         
-        <h1 style="color:  #CC0066;">{{$my->name}}</h1>
+       @if($my->gender == "Nam")
+        <h1 style="color:  #CC0066;">{{$my->name}}<img class="img" src="image/logo/nam.png"></h1>
+        @else
+        <h1 style="color:  #CC0066;">{{$my->name}}<img class="img" src="image/logo/nu.png"></h1>
+        @endif
         <h3 style="color:  #CC0066;">{{$my->birthday}}</h3>
       
         <p class="bio"><img class="img" src="image/logo/logosch.jpg"/>{{$my->school->name}}</p>
