@@ -8,21 +8,20 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
  <link rel="stylesheet"  href="{{ asset('css/new_page.css') }}" /> 
 <link rel="stylesheet"  href="{{ asset('css/2style.css') }}" /> 
-<link rel="shortcut icon" type="image/png" href="/image/logo/logo_fav.png"/>
 
   <base href="{{asset('')}}">
 
 </head>
 <body>
   <div class="header" >
-    <a href="/home" class="logo"><img src="image/logo/logo_fil_zoom.png"></a>
+    <a href="#default" class="logo"><img src="image/logo/logo_fil_zoom.png"></a>
     <div class="header-right">
 
               <a href="/myprofile/{{$user->id}}" >{{$user->name}}</a>
                      
             <a href="/logout">Đăng xuất</a>
-      <a href="/home">Trang chủ</a>
-      <a href="/contact">Liên hệ</a>
+     
+      <a href="#contact">Liên hệ</a>
       
       
     </div>
@@ -63,28 +62,9 @@
                <img src="image/logo/{{$school->logo}}" class="image_profile" />
           </td></tr>
           <tr><td style="text-align: center;">
-             <?php
-             $data = DB::table('fschool')->select('sid')->where('uid',$user->id)->get()->toArray();
-             $check=0;
-            foreach($data as $cr)
-               if($cr->sid == $school->id) {
-                $check=1;
-               }
-             ?>
-
-              
-              @if($check==1)
             <div class="button_container">
-
-              <a href="/unfollow_fschool/{{$user->id}}/{{$school->id}}"><button style="background-image: url('image/love_follow.png')" onclick = "myClick()" id="fl" class="btn" style="width: 150px; border-radius: 50px; margin-top: 50px;"><span>Đang theo dõi</span></button></a>
+              <button style="background-image: url('image/love_follow.png')" onclick = "myClick()" id="fl" class="btn" style="width: 150px; border-radius: 50px; margin-top: 50px;"><span>Theo dõi</span></button>
               </div>
-              @else
-             <div class="button_container">
-
-              <a href="/follow_fschool/{{$user->id}}/{{$school->id}}"><button style="background-image: url('image/love_follow.png')" onclick = "myClick()" id="fl" class="btn" style="width: 150px; border-radius: 50px; margin-top: 50px;"><span>Theo dõi</span></button></a>
-              </div>
-               @endif  
-            
               <script type="text/javascript">
                 function myclick(){
                     var imgPath = new String();
@@ -113,10 +93,7 @@
         
         <p class="bio"><img class="img" src="image/logo/logosch.jpg"/>{{$school->name}}</p>
         <p class="bio"><img class="img" src="image/logo/logodc.jpg"/>{{$school->address}}</p>
-        <?php
-          $count_users = DB::table('fschool')->where('sid',$school->id)->count('uid');
-        ?>
-        <p class="bio"><img class="img" src="image/logo/logocr.jpg"/> có {{$count_users}} người quan tâm</p>
+        <p class="bio"><img class="img" src="image/logo/logocr.jpg"/> có 0 người quan tâm</p>
         
       </div>
     

@@ -22,7 +22,7 @@
                       
                    
        <a href="/logout" >Đăng xuất</a>
-      <a href="/home" class="avtive">Trang chủ</a>
+      
       <a href="/contact" >Liên hệ</a>
       
     </div>

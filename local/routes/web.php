@@ -88,7 +88,12 @@ Route::group(['prefix'=>'manager','middleware'=>'CheckLoginAdmin'],function(){
 Route::get('/contacts', 'ChatsController@get');
 Route::get('/conversation/{id}', 'ChatsController@getMessagesFor');
 Route::post('/conversation/send','ChatsController@send');
-Route::get('/conversation', 'NotifyControll@notify');
+Route::get('/conversation', function(){
+	$message = "Có thêm một người mới crush bạn";
+	$cid = 432453;
+    broadcast(new App\Events\NotifyEvent($message, $cid));
+    return "hihi";
+});
 
 
 

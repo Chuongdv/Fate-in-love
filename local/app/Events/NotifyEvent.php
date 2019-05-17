@@ -14,15 +14,19 @@ class NotifyEvent implements ShouldBroadcast
 {
     use Dispatchable, InteractsWithSockets, SerializesModels;
 
-    public $notify;
+    public $message;
+    public $id;
+    public $type;
     /**
      * Create a new event instance.
      *
      * @return void
      */
-    public function __construct($message)
+    public function __construct($message, $id, $type)
     {
-        $this->notify = $message;
+        $this->message = $message;
+        $this->id = $id;
+        $this->type = $type;
     }
 
     /**
@@ -32,6 +36,6 @@ class NotifyEvent implements ShouldBroadcast
      */
     public function broadcastOn()
     {
-        return ['messages'];
+        return new Channel('notify.' . $this->id);
     }
 }

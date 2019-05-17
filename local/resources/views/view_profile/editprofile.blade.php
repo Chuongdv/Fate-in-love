@@ -18,14 +18,14 @@
 <body>
   
 
- <div class="header" style="margin-top: 8px; margin-left: 8px;">
+ <div class="header" style="margin-top: 8px; margin-left: 8px; margin-right: 20px;">
     <a href="/home" class="logo"><img src="image/logo/logo_fil_zoom.png"></a>
     <div class="header-right">
 
               <a href="/myprofile/{{$user_edit->id}}" >{{$user_edit->name}}</a>
                      
             <a href="/logout">Đăng xuất</a>
-      <a href="/home">Trang chủ</a>
+      
       <a href="/contact">Liên hệ</a>
       
       

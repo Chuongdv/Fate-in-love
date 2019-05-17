@@ -16,7 +16,7 @@
 <style type="text/css">a{text-decoration: none;}</style>
 </head>
 <body>
-  <div class="header" >
+  <div class="header" style="margin-right: 25px;">
     <a href="/home" class="logo"><img src="image/logo/logo_fil_zoom.png"></a>
     <div class="header-right">
               
@@ -24,7 +24,7 @@
                       
                    
        <a href="/logout" >Đăng xuất</a>
-      <a href="/home" class="avtive">Trang chủ</a>
+      
       <a href="/contact" >Liên hệ</a>
       
     </div>
