@@ -11,8 +11,7 @@ use App\Crush;
 use App\Events\NotifyEvent;
 class PageController extends Controller
 {
-    //
-
+   
     function __construct(){
     	$users = User::all();
     	view()->share('users',$users);
@@ -112,35 +111,18 @@ if(Auth::check()){
    if(Auth::check()){
         $user_edit = Auth::user();
       }
-        $user_edit->name = $request->name;
-        $user_edit->home =$request->home;
-        $user_edit->introduce = $request->introduce;
-        $user_edit->sid = $request->school;
-        $user_edit->birthday = $request->birthday;
+       $name = $user_edit->name;
 
-        if($request->hasFile('new'))
-
-          /* if($request->hasFile('image')){
-            $file = $request->file('image');
-            $name = $file->getClientOriginalName();
-            $image = str_random(4)."_".$name;
-
-            while (file_exists("public/image/profile/".$image)) {
-                $image = str_random(4)."_".$name;
-            }
-
-
-            $file->move("public/image/profile/",$image);
-
-            if($user_edit->image == null){
-                $user_edit->image = $image;
-            }else{
-            unlink("public/image/profile/".$user_edit->image);
-            $user_edit->image = $image;
-        }*/
-        
-    
-        $user_edit->save();
+        if($request->hasFile('new_image')){
+             $file = $request->file('new_image');
+             //File::delete('image/logo/' .)
+            $request->file('new_image')->move('image/profile', $user_edit->id .  "." .$file->getClientOriginalExtension());
+            
+             DB::table('users')->where('id', '=', $id)->update(['name'=>$request->name,'birthday'=>$request->birthday,'introduce'=>$request->introduce, 'sid'=>$request->school,'home'=>$request->home, 'image'=> $user_edit->id . "." . $file->getClientOriginalExtension()]);
+        }
+        else{
+            DB::table('users')->where('id', '=', $id)->update(['name'=>$request->name,'birthday'=>$request->birthday,'introduce'=>$request->introduce, 'sid'=>$request->school,'home'=>$request->home]);
+        }
 
         return redirect('editprofile/'.$id)->with('thongbao','Bạn đã cập nhật thông tin cá nhân mới!');
     }

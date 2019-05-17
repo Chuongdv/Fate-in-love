@@ -121,15 +121,13 @@
 <input type="submit" name="submitbutton" id="submitbutton" value="Edit" /> 
 </form-->
 
-<form action="" method="post">
+<form action="" method="post" enctype="multipart/form-data">
  <input type="hidden" name="_token" value="{{csrf_token()}}" /> 
 <label>Tên:</label> 
 <input type="text" name="name" value="{{$user_edit->name}}"><br /> 
 
-<label for="user">Ngày sinh:</label> 
-<input type="date" name="birthday" value="{{$user_edit->birthday}}"><br /> 
-
-
+<label>Ngày sinh:</label> 
+ <input type="date" name="birthday" value="{{$user_edit->birthday}}"><br>
 <label>Email:</label> 
 <input type="text" name="email" value="{{$user_edit->email}}"><br /> 
 <label>Quê quán:</label> 

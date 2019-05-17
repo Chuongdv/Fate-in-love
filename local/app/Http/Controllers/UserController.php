@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use DB;
 use App\User;
 use App\Schools;
 use Illuminate\Support\Facades\Auth;
@@ -81,6 +81,9 @@ class UserController extends Controller
    	]);
 
  if(Auth::attempt(['email'=>$request->email, 'password'=>$request->password])){
+
+     $user = Auth::user();
+     DB::table('status')->insert(['uid'=>$user->id]);
  	return redirect('home');
  } else{
     return redirect('signup_and_login')->with('thongbao','Email không tồn tại hoặc sai mật khẩu!');
@@ -88,7 +91,10 @@ class UserController extends Controller
    }
 
     public function getLogout(){
+     $user = Auth::user();
+     DB::table('status')->delete();
       Auth::logout();
+     
       return redirect('signup_and_login');
     }
 
