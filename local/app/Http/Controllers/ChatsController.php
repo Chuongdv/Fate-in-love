@@ -8,6 +8,7 @@ use DB;
 use App\User;
 use App\Messages;
 use App\Events\NewMessage;
+use App\Events;
 
 class ChatsController extends Controller
 {
@@ -61,10 +62,8 @@ class ChatsController extends Controller
 	
 
          $mess = DB::table('messages')->where('source', '=', auth()->id())->where('destination', '=', $request->crushId)->get()->last();
-
+         var_dump($mess);
          broadcast(new NewMessage($mess));
-         
-       
-      return $mess->message;
+      return $mess->destination;
     }
 }

@@ -19,7 +19,9 @@
     background-image: url('image/love_unfollow.png');"
   }
 </style>
-  
+   <script src="https://js.pusher.com/4.4/pusher.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+   
 </head>
 <body>
   <div class="header" >

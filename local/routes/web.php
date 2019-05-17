@@ -38,6 +38,9 @@ Route::get('/follow_school/{id}/{sid}','PageController@follow_school');
 Route::get('/unfollow_school/{id}/{sid}','PageController@unfollow_school');
 Route::get('/follow/{id}/{did}','PageController@follow');
 Route::get('/unfollow/{id}/{did}','PageController@unfollow');
+Route::get('/follow_fschool/{id}/{did}','PageController@follow_fschool');
+Route::get('/unfollow_fschool/{id}/{did}','PageController@unfollow_fschool');
+Route::post('/timkiem/{sid}','UserController@timkiem');
 Route::get('/chat','PageController@chat');
 Route::get('/thongbao','PageController@thongbao');
 
@@ -85,3 +88,7 @@ Route::group(['prefix'=>'manager','middleware'=>'CheckLoginAdmin'],function(){
 Route::get('/contacts', 'ChatsController@get');
 Route::get('/conversation/{id}', 'ChatsController@getMessagesFor');
 Route::post('/conversation/send','ChatsController@send');
+Route::get('/conversation', 'NotifyControll@notify');
+
+
+

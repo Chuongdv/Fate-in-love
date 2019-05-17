@@ -159,6 +159,7 @@ function unfollow($uid,$did){
         $user = Auth::user();
       }
  $user_page= User::find($did); 
+  
    $crush = DB::table('crush')->where([
     ['uid', '=', $uid],
     ['cid', '=', $did],
@@ -178,7 +179,31 @@ function unfollow($uid,$did){
       return view('view_profile.profile',['user'=>$user,'user_page'=>$user_page]);    
     }
     
+function unfollow_fschool($uid,$sid){
+   
+ if(Auth::check()){
+        $user = Auth::user();
+      }
+$school = Schools::find($sid);
+   $crush = DB::table('fschool')->where([
+    ['uid', '=', $uid],
+    ['sid', '=', $sid],
+    ])->delete();
+      return view('view_profile.profile_school',['user'=>$user,'school'=>$school]);    
+    }
 
+     function follow_fschool($uid,$sid){
+            if(Auth::check()){
+        $user = Auth::user();
+      }
+      $school = Schools::find($sid);
+  
+    $crush = DB::table('fschool')->insertGetId(
+    ['uid'=>$uid,'sid' => $sid]
+     );
+      return view('view_profile.profile_school',['user'=>$user,'school'=>$school]);    
+    }
+    
     
 
     function follow_crush($uid,$cid){
