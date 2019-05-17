@@ -301,7 +301,6 @@
           type : "post",
           dataType:"text",
           data : {
-         // _token: '{!! csrf_token() !!}',
           'message': message,
           'crushId': currentCrush
           },
@@ -322,15 +321,14 @@
       forceTLS: true
     });
 
-    var chanelChat = "message" + me;
+    var chanelChat = "message." + me;
    
     var channel = pusher.subscribe(chanelChat);
-    channel.bind('NewMessage', addMewMessage);
+    channel.bind('NewMessage', function(data){
+      alert("hehe");
+    });
+  
 
-    function addNewMessasge(data){
-       //alert(JSON.stringify(data));
-       alert("haha");
-    }
 });
 
 

@@ -77,3 +77,4 @@ Route::group(['prefix'=>'manager'],function(){
 Route::get('/contacts', 'ChatsController@get');
 Route::get('/conversation/{id}', 'ChatsController@getMessagesFor');
 Route::post('/conversation/send','ChatsController@send');
+
