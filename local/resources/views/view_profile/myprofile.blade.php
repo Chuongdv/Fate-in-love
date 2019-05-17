@@ -248,13 +248,6 @@ $count1 = DB::table('fschool')->where('sid',$sch->sid)->count('uid');
 </script>
 
     </div>
-      
-
-      
-    
-     
-      
-
     
   </section>
 
