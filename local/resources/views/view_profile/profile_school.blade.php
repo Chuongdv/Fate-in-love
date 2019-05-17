@@ -63,9 +63,28 @@
                <img src="image/logo/{{$school->logo}}" class="image_profile" />
           </td></tr>
           <tr><td style="text-align: center;">
+             <?php
+             $data = DB::table('fschool')->select('sid')->where('uid',$user->id)->get()->toArray();
+             $check=0;
+            foreach($data as $cr)
+               if($cr->sid == $school->id) {
+                $check=1;
+               }
+             ?>
+
+              
+              @if($check==1)
             <div class="button_container">
-              <button style="background-image: url('image/love_follow.png')" onclick = "myClick()" id="fl" class="btn" style="width: 150px; border-radius: 50px; margin-top: 50px;"><span>Theo dõi</span></button>
+
+              <a href="/unfollow_fschool/{{$user->id}}/{{$school->id}}"><button style="background-image: url('image/love_follow.png')" onclick = "myClick()" id="fl" class="btn" style="width: 150px; border-radius: 50px; margin-top: 50px;"><span>Đang theo dõi</span></button></a>
               </div>
+              @else
+             <div class="button_container">
+
+              <a href="/follow_fschool/{{$user->id}}/{{$school->id}}"><button style="background-image: url('image/love_follow.png')" onclick = "myClick()" id="fl" class="btn" style="width: 150px; border-radius: 50px; margin-top: 50px;"><span>Theo dõi</span></button></a>
+              </div>
+               @endif  
+            
               <script type="text/javascript">
                 function myclick(){
                     var imgPath = new String();

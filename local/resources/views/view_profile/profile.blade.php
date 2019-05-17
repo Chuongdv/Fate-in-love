@@ -158,8 +158,11 @@
          $count_crush = DB::table('crush')->where('cid',$user_page->id)->count('uid');
         ?>
         <div class="profileinfo" style="margin-left: 100px;">
-        <h1></h1>
-        <h1 style="color:  #CC0066;">{{$user_page->name}}</h1>
+        @if($user_page->gender == "Nam")
+        <h1 style="color:  #CC0066;">{{$user_page->name}}<img class="img" src="image/logo/nam.png"></h1>
+        @else
+        <h1 style="color:  #CC0066;">{{$user_page->name}}<img class="img" src="image/logo/nu.png"></h1>
+        @endif
         <h3 style="color:  #CC0066;">{{$user_page->birthday}}</h3>
         <p class="bio"><img class="img" src="image/profile/{{$user_page->image}}"/>{{$user_page->introduce}}</p> 
         <p class="bio"><img class="img" src="image/logo/logosch.jpg"/>{{$user_page->school->name}}</p>
