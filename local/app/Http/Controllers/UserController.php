@@ -26,7 +26,6 @@ class UserController extends Controller
          'passwordAgain'=>'required|same:password',
          'birthday'=>'required',
          'gender'=>'required',
-         'id'=>'required|max:8|min:6|unique:users,id',
          'school'=>'required'
 
         ],
@@ -43,16 +42,13 @@ class UserController extends Controller
             'passwordAgain.same'=>'Mật khẩu không trùng khớp',
             'birthday.required'=>'Bạn chưa điền ngày tháng năm sinh',
             'gender.required'=>'Giới tính của bạn là gì???',
-            'id.required'=>'Bạn cần tạo cho mình một mã ID cá nhân',
-            'id.max'=>'Mã ID cá nhân không quá 9 ký tự',
-            'id.min'=>'Mã ID cá nhân bảo mật kém',
             'id.unique'=>'Ai đó đã dùng mã ID cá nhân này',
             'school.required'=>'Bạn đang học tại trường đại học nào??'
 
         ]);
 
         $user = new User;
-        $user->id = $request->id;
+        $user->id = rand();
         $user->name = $request->name;
         $user->email = $request->email;
         $user->password = bcrypt($request->password);
