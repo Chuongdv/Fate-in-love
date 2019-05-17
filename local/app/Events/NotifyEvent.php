@@ -2,7 +2,6 @@
 
 namespace App\Events;
 
-use App\Events\Event;
 use Illuminate\Broadcasting\Channel;
 use Illuminate\Queue\SerializesModels;
 use Illuminate\Broadcasting\PrivateChannel;
@@ -11,11 +10,11 @@ use Illuminate\Foundation\Events\Dispatchable;
 use Illuminate\Broadcasting\InteractsWithSockets;
 use Illuminate\Contracts\Broadcasting\ShouldBroadcast;
 
-class NotifyEvent extends Event implements ShouldBroadcast 
+class NotifyEvent implements ShouldBroadcast 
 {
     use Dispatchable, InteractsWithSockets, SerializesModels;
 
-    $notify;
+    public $notify;
     /**
      * Create a new event instance.
      *
@@ -33,6 +32,6 @@ class NotifyEvent extends Event implements ShouldBroadcast
      */
     public function broadcastOn()
     {
-        return new PrivateChannel('my-channel');
+        return ['messages'];
     }
 }

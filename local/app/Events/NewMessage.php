@@ -14,7 +14,7 @@ use Illuminate\Broadcasting\InteractsWithSockets;
 use Illuminate\Contracts\Broadcasting\ShouldBroadcast;
 use Illuminate\Contracts\Broadcasting\ShouldBroadcastNow;
 
-class NewMessage extends Event implements ShouldBroadcastNow
+class NewMessage implements ShouldBroadcastNow
 {
     use Dispatchable, InteractsWithSockets, SerializesModels;
 
@@ -26,7 +26,7 @@ class NewMessage extends Event implements ShouldBroadcastNow
      * @return void
      */
     public function __construct($message)
-    {
+    { 
         $this->message = $message;
     }
 
@@ -37,7 +37,9 @@ class NewMessage extends Event implements ShouldBroadcastNow
      */
     public function broadcastOn()
     {
-        return new PrivateChannel('messages.' . $this->message->destination);
+        return new Channel('messages.' . $this->message->destination);
+        //return new Channel('messages');
+        //return ['messages'];
     }
 
   //  public function broadcastWith()

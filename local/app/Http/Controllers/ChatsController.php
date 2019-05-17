@@ -63,10 +63,7 @@ class ChatsController extends Controller
 
          $mess = DB::table('messages')->where('source', '=', auth()->id())->where('destination', '=', $request->crushId)->get()->last();
          var_dump($mess);
-         //event(new NewMessage($mess));
-            broadcast(new NewMessage($mess));
-        //  event(new App\Events\NotifyEvent('Hi there Pusher!'));
-         //broadcast(new finalEvent("hello");
+         broadcast(new NewMessage($mess));
       return $mess->destination;
     }
 }

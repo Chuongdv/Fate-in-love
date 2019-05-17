@@ -316,22 +316,28 @@
     // Enable pusher logging - don't include this in production
     Pusher.logToConsole = true;
 
-
-    var pusher = new Pusher('936d12ed94ff6b0de391', {
-      cluster: 'ap1',
-      forceTLS: true
-    });
-
-    var chanelChat = "message." + me;
-   
-    var channel = pusher.subscribe(chanelChat);
-    channel.bind('NewMessage', function(data){
-      alert("hehe");
-    });
-  
-
+ var pusher = new Pusher('936d12ed94ff6b0de391', {
+    cluster: 'ap1',
+    encrypted: false
 });
 
+var chanelChat = "messages." + me;
+
+
+// Subscribe to the channel we specified in our Laravel Event
+var channel = pusher.subscribe(chanelChat);
+
+// Bind a function to a Event (the full Laravel class)
+channel.bind('App\\Events\\NewMessage', function(data) {
+    var buff = "";
+    buff = "<div class=\"chat-form-crush\"><div class=\"avt\"><img src=\"";
+    buff += pictureCrush;
+    buff += "\"></div><div class=\"messenger\"> <p>";
+    buff += data.message.message;
+    buff += "</p></div></div>";
+    $(' .chatting').append(buff);
+});
+});
 
   </script>
       
