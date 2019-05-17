@@ -86,8 +86,15 @@
                               ?>
                       @foreach($data_school as $sch)
                       <?php
+                      if($sch->sid == null){
+                 $count1 = DB::table('users')->where('sid',$sch->id)->count('id');
+                    }
+                      
+                      else {
                       $count1 = DB::table('users')->where('sid',$sch->sid)->count('id');
+                    }
                       ?>
+                    }
                     <div class="item_school">
                      <a href="/home_school/{{$sch->sid}}">   <div style="margin-top: 2px;"><img src="image/logo/{{$sch->logo}}" width="50" height="50"></div></a>
                         <div style="margin-top: -2px;">
@@ -109,7 +116,7 @@
                  ?>
                   @foreach($results_school as $sch1)
                       <?php
-                         $count2 = DB::table('users')->where('sid',$sch->sid)->count('id');
+                           $count2 = DB::table('users')->where('sid',$sch1->id)->count('id');
 
                       ?>
                  <div class="item_school">
