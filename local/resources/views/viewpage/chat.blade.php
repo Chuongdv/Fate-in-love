@@ -9,6 +9,8 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
    
 </head>
+
+
 <body>
 <!DOCTYPE html>
 <html>
@@ -38,7 +40,7 @@
              <a href="/myprofile/{{$user->id}}">{{$user->name}}</a>        
             <a href="/logout">Đăng xuất</a>
              
-      <a href="/home" >Trang chủ</a>
+   
       <a href="/contact" >Liên hệ</a>
       
     </div>
@@ -74,10 +76,7 @@
 
 
        <div class="chat_container">
-       	<div class="search">
-       		<input type="text" placeholder="  Tìm kiếm..." name="" class="form-control search" style="min-width: 260px;">
-       		<img src="" width="40" height="40" style="">
-       		</div>
+       	
        	<div class="right-container">
 
           <?php
@@ -92,6 +91,7 @@
               <p class="name">{{$crush->name}}</p>
               <p class="on">đang online</p>
               </div>
+              <span class="badge" >39</span><!--bien dem tin nhan moi-->
             </div>
             @endforeach
 
@@ -150,7 +150,20 @@
             $messages = DB::table('messages')->get();
           ?>
 
-        <div class="chatting">
+        <div class="chatting" id="ecran" >
+
+            <!-- <div class="chat-form-me ">
+              
+              
+              <div class="messenger tooltip"> <p>ahihi</p> <span class="tooltiptext">11:00 22-10-2019</span></div>
+
+              <div class="avt">
+                <img src="image/profile/{{$user->image}}">
+              </div>
+            
+            </div> -->
+
+
             @if($messages != null && isset($contacts[0]))         
             @foreach($messages as $message)
             @if($message->source ==  $user->id || $message->destination ==  $contacts[0]->id )
@@ -249,11 +262,16 @@
           var buff = "";
           $.each (result, function (key, item){
           if(item['source'] == me){
-            buff = "<div class=\"chat-form-me\"><div class=\"avt\"><img src=\"image/profile/";
+            /*buff = "<div class=\"chat-form-me\"><div class=\"avt\"><img src=\"image/profile/";
             buff += pictureMe;
             buff += "\"></div><div class=\"messenger\"> <p>";
             buff += item['message'];
-            buff += "</p></div></div>";
+            buff += "</p></div></div>";*/
+            buff="<div class=\"chat-form-me\"><div class=\"messenger\"><p>";
+            buff+=item['message'];
+            buff+="</p></div><div class=\"avt\"><img src=\"image/profile/";
+            buff+=pictureMe;
+            buff+="\"></div></div>";
           }
           else{
             buff = "<div class=\"chat-form-crush\"><div class=\"avt\"><img src=\"";
@@ -277,15 +295,14 @@
 
     function sendMessage(){
       if($.trim($(" .send_message").find(" .type_msg").val())){
-
        var message = $(" .send_message").find(" .type_msg").val();
 
       // xu li client
-      var dataInsert = "<div class=\"chat-form-me\"><div class=\"avt\"><img src=\"image/profile/";
-      dataInsert += pictureMe;
-      dataInsert += "\"></div><div class=\"messenger\"> <p>";
+      var dataInsert = "<div class=\"chat-form-me\"><div class=\"messenger\"><p>";
       dataInsert += message;
-      dataInsert += "</p></div></div>"
+      dataInsert += "</p></div><div class=\"avt\"><img src=\"image/profile/";
+      dataInsert += pictureMe;
+      dataInsert += "\"></div></div>";
       //alert(dataInsert)
         $(" .chatting").append(dataInsert); 
       }
@@ -341,6 +358,32 @@ channel.bind('App\\Events\\NewMessage', function(data) {
 
   </script>
       
+
+<script type="text/javascript">
+  /*function ScrollDiv(){
+
+   if(document.getElementById('ecran').scrollTop<(document.getElementById('ecran').scrollHeight-document.getElementById('ecran').offsetHeight)){-1
+         document.getElementById('ecran').scrollTop=document.getElementById('ecran').scrollTop+1
+         }
+   else {document.getElementById('ecran').scrollTop!=0;}
+}
+
+setInterval(ScrollDiv,-20);*/
+
+const out = document.getElementById("ecran")
+let c = 0
+
+setInterval(function() {
+    // allow 1px inaccuracy by adding 1
+    
+}, 500)
+
+function format () {
+  return Array.prototype.slice.call(arguments).join(' ')
+}
+
+</script>
+
   </section>
 
 </body>
