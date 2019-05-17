@@ -47,29 +47,35 @@
   </div>
 
   <section>
-    <nav>
-      <ul >
+    <nav class="tutorial">
+      <ul>
                 <li class="menu listmenu">
                   Menu
                 </li>
         <li href="#" class="listmenu" >
-          <a href="/myprofile/{{$user->id}}" class="rowmenu"><img src="image/profile/{{$user->image}}"width="30" height= "30" />      
-                {{$user->name}}</a>
+          <a href="/myprofile/{{$user->id}}" class="rowmenu"><img src="image/profile/{{$user->image}}"width="30" height= "30" />    
+                  {{$user->name}}</a>
          
                 </li>
                 <li href="#" class="listmenu">
-					<a href="/chat" class="rowmenu" ><img src="image/chat.png" width="30" height= "30"/>
-                	Chat</a>
+          <a href="/chat" class="rowmenu "id="tinnhan"><img src="image/chat.png" width="30" height= "30"/>
+                  Chat</a>
                 </li>
                 <li href="#" class="listmenu">
-          <a href="/crush/{{$user->id}}" class="rowmenu"><image src="image/ghepdoi.png" width="30"  height= "30">
+          <a href="/crush/{{$user->id}}" class="rowmenu"><image src="image/ghepdoi.png" width="30"  height= "30"/>
                   Ghép đôi</a>
                 </li>
-                <li href="#" class="listmenu">
+                <li href="#" class="listmenu" >
 
-          <a href="/thongbao" class="rowmenu"><image src="image/thongbao.png" width="30"  height= "30">
+          <a  class="rowmenu" id="nhapnhay"  ><image src="image/thongbao.png" width="30"  height= "30"/>
 
-                  Thông báo</a>
+                  Thông báo <i class="fa fa-angle-down"></i></a>
+
+                  <ul class="drop">
+
+            </ul>
+
+
                 </li>
             </ul>
         </nav>
@@ -83,7 +89,8 @@
             $data = DB::table('users')->join('crush', 'users.id', '=', 'crush.cid');
             $contacts = $data->where('uid',$user->id)->get();
             $onUser = DB::table('status')->select('uid')->get();
-
+          //  $mess = DB::table('messages')->
+            $dup = 0;
           ?>
 
             @foreach($contacts as $crush)
@@ -91,16 +98,26 @@
               <img src="image/profile/{{$crush->image}}">
               <div class="inf">
               <p class="name">{{$crush->name}}</p>
-               @foreach($onUser as $on)
+              @foreach($onUser as $on)
                 @if($crush->id == $on->uid))
-                  <p class="on">online</p>
-                 @else
-                   <p class="on">offline</p>
+                  <?php $dup = 1; ?>
+                  @break
                 @endif
               @endforeach
+            
+                @if($dup == 1))    
+                  <p class="on">online</p>
+                  <?php $dup = 0; ?>
+                @else
+                  <p class="on">offline</p>
+                @endif
 
               </div>
-              <span class="badge" >39</span><!--bien dem tin nhan moi-->
+
+            <?php 
+              $count = DB::table('messages')->where('source', '=', $user->id)->where('destination','=', $crush->id)->where('seen', '=', '0')->get()->count();
+            ?>
+              <span class="badge" >{{$count}}</span><!--bien dem tin nhan moi-->
             </div>
             @endforeach
 
@@ -128,15 +145,25 @@
 
               @foreach($onUser as $on)
                 @if($becrush->id == $on->uid))
-                  <p class="on">online</p>
-                 @else
-                   <p class="on">offline</p>
+                  <?php $dup = 1; ?>
+                  @break
                 @endif
               @endforeach
-              </div>
+
+                @if($dup == 1))    
+                  <p class="on">online</p>
+                  <?php $dup = 0; ?>
+                @else
+                  <p class="on">offline</p>
+                @endif
+               </div>
+            <?php 
+              $count = DB::table('messages')->where('source', '=', $user->id)->where('destination','=', $becrush->id)->where('seen', '=', '0')->get()->count();
+            ?>
+              <span class="badge" >{{$count}}</span><!--bien dem tin nhan moi-->
             </div>
             @endforeach
- 
+             
             
        		</div>
 
@@ -146,7 +173,7 @@
             <div class=" inf-chat">
               <p hidden id="currentCrush"><?php if(isset($contacts[0])) echo $contacts[0]->id ?></p>
               <p class="inf-chat-name"><?php if(isset($contacts[0])) echo $contacts[0]->name ?></p>
-              <p class="inf-chat-name-count">1000 tin nhắn</p>
+              <p class="inf-chat-name-count">offline</p>
             </div>
 
           </div>
@@ -160,11 +187,9 @@
               else
                 $idc = $contacts[0]->id . $user->id;
             }
+             $messages = DB::table('messages')->where('idc', '=', $idc)->get();
         ?>
 
-          <?php  
-            $messages = DB::table('messages')->get();
-          ?>
 
         <div class="chatting" id="ecran" >
 
@@ -180,13 +205,13 @@
             </div> -->
 
 
-            @if($messages != null && isset($contacts[0]))         
+            @if($messages != null && isset($contacts[0]))  
+          
             @foreach($messages as $message)
-            @if($message->source ==  $user->id || $message->destination ==  $contacts[0]->id )
             @if($message->source == $user->id)
-            <!--tin nhan tu ban than-->
+           
             <div class="chat-form-me">
-              <!-- //sua doan nay di, t doi cho 2 div class=avt va div class=message -->
+             
               <div class="messenger"> <p>{{$message->message}}</p></div>
               <div class="avt">
                 <img src="image/profile/{{$user->image}}">
@@ -194,7 +219,7 @@
             
             </div>
             @else
-            <!--tin nhan tu nguoi dang chat voi minh-->
+            
             <div class="chat-form-crush">
               <div class="avt">
                 <img src="image/profile/{{$contacts[0]->image}}">
@@ -202,9 +227,10 @@
               <div class="messenger"> <p>{{$message->message}} hihi</p></div>
             </div>
             @endif
-            @endif
+
             @endforeach
             @endif
+
         </div>
   
         <div class="send_message">
@@ -340,8 +366,11 @@
           },
           success : function (result){
         //  alert(result);
+;
           }
       });
+
+      $(" .send_message").find(" .type_msg").val("");
     }
 
 
@@ -362,6 +391,7 @@ var channel = pusher.subscribe(chanelChat);
 
 // Bind a function to a Event (the full Laravel class)
 channel.bind('App\\Events\\NewMessage', function(data) {
+   $("#tinnhan").attr('class', 'animate-flicker');
     var buff = "";
     buff = "<div class=\"chat-form-crush\"><div class=\"avt\"><img src=\"";
     buff += pictureCrush;
@@ -370,6 +400,56 @@ channel.bind('App\\Events\\NewMessage', function(data) {
     buff += "</p></div></div>";
     $(' .chatting').append(buff);
 });
+
+  $("#tinnhan").click(function(){
+    $(this).removeAttr('class');
+    $(this).attr('class', 'rowmenu');
+ });
+
+var chanelNotify = "notify." + me;
+
+
+// Subscribe to the channel we specified in our Laravel Event
+var channelN = pusher.subscribe(chanelNotify);
+
+// Bind a function to a Event (the full Laravel class)
+channelN.bind('App\\Events\\NotifyEvent', function(data) {
+  var infomation;
+  if(data.type == "add"){
+    infomation = "<li id=\"\"><image src=\"image/love_follow.png\" width=\"15\"  height= \"15\"/>" + data.message + "</li>";
+  }else{
+    infomation = "<li id=\"\"><image src=\"image/love_unfollow.png\" width=\"15\"  height= \"15\"/>" + data.message + "</li>";
+  }
+  $(".drop").html(infomation);
+  $("#nhapnhay").attr('class', 'animate-flicker');
+});
+
+ $("#nhapnhay").hover(function(){
+    $(this).removeAttr('class');
+    $(this).attr('class', 'rowmenu');
+ });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 });
 
   </script>

@@ -43,7 +43,7 @@
          
                 </li>
                 <li href="#" class="listmenu">
-					<a href="/chat" class="rowmenu " ><img src="image/chat.png" width="30" height= "30"/>
+					<a href="/chat" class="rowmenu "id="tinnhan"><img src="image/chat.png" width="30" height= "30"/>
                 	Chat</a>
                 </li>
                 <li href="#" class="listmenu">
@@ -52,7 +52,7 @@
                 </li>
                 <li href="#" class="listmenu" >
 
-					<a href="/thongbao" class="rowmenu" id="nhapnhay"  ><image src="image/thongbao.png" width="30"  height= "30"/>
+					<a  class="rowmenu" id="nhapnhay"  ><image src="image/thongbao.png" width="30"  height= "30"/>
 
                 	Thông báo <i class="fa fa-angle-down"></i></a>
 
@@ -90,7 +90,7 @@
 
 	<script src="https://static.codepen.io/assets/editor/live/css_reload-5619dc0905a68b2e6298901de54f73cefe4e079f65a75406858d92924b4938bf.js"></script>
 
-	  <script>
+<script>
    
   $(document).ready(function () {
    
@@ -119,11 +119,26 @@ channel.bind('App\\Events\\NotifyEvent', function(data) {
 	$("#nhapnhay").attr('class', 'animate-flicker');
 });
 
+ $("#nhapnhay").hover(function(){
+		$(this).removeAttr('class');
+ 		$(this).attr('class', 'rowmenu');
+ });
+
+var chanelChat = "messages." +  $("#me").html();
+
+
+// Subscribe to the channel we specified in our Laravel Event
+var channelC = pusher.subscribe(chanelChat);
+
+// Bind a function to a Event (the full Laravel class)
+channelC.bind('App\\Events\\NewMessage', function(data) {
+    $("#tinnhan").attr('class', 'animate-flicker');
+});
 
 });
 
 
- $("#nhapnhay").hover(function(){
+  $("#tinnhan").click(function(){
 		$(this).removeAttr('class');
  		$(this).attr('class', 'rowmenu');
  });
