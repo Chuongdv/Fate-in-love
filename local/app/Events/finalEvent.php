@@ -2,9 +2,6 @@
 
 namespace App\Events;
 
-use App\Messages;
-
-use App\Events\Event;
 use Illuminate\Broadcasting\Channel;
 use Illuminate\Queue\SerializesModels;
 use Illuminate\Broadcasting\PrivateChannel;
@@ -12,21 +9,19 @@ use Illuminate\Broadcasting\PresenceChannel;
 use Illuminate\Foundation\Events\Dispatchable;
 use Illuminate\Broadcasting\InteractsWithSockets;
 use Illuminate\Contracts\Broadcasting\ShouldBroadcast;
-use Illuminate\Contracts\Broadcasting\ShouldBroadcastNow;
 
-class NewMessage implements ShouldBroadcastNow
+class finalEvent implements ShouldBroadcast
 {
     use Dispatchable, InteractsWithSockets, SerializesModels;
 
     public $message;
-
     /**
      * Create a new event instance.
      *
      * @return void
      */
     public function __construct($message)
-    { 
+    {
         $this->message = $message;
     }
 
@@ -37,15 +32,6 @@ class NewMessage implements ShouldBroadcastNow
      */
     public function broadcastOn()
     {
-        return new Channel('messages.' . $this->message->destination);
-        //return new Channel('messages');
-        //return ['messages'];
+        return new Channel('channel-name');
     }
-
-  //  public function broadcastWith()
-  //  {
- //       $this->message->load('sourceContact');
-
-  //      return ["message" => $this->message];
-  //  }
 }
