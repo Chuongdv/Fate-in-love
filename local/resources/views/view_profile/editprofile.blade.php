@@ -127,7 +127,7 @@
 <input type="text" name="name" value="{{$user_edit->name}}"><br /> 
 
 <label for="user">Ngày sinh:</label> 
-<input type="text" name="birthday" value="{{$user_edit->birthday}}"><br /> 
+<input type="date" name="birthday" value="{{$user_edit->birthday}}"><br /> 
 
 
 <label>Email:</label> 
@@ -168,9 +168,7 @@
 <label>Giới thiệu:</label> 
 <textarea name="introduce" placeholder="Viết vài thứ về bạn!" style="width: 300px;">{{$user_edit->introduce}}</textarea><br /> 
 <label>Ảnh đại diện: </label>
-<p>
-<input type="file" name="image" value="{{$user_edit->image}}">
-</p>
+<input type="file" name="new_image" />
 <input type="submit" name="submitbutton" id="submitbutton" value="Lưu" style="width: 300px;" /> 
 </form>
 

@@ -8,7 +8,6 @@
  
 <link rel="stylesheet"  href="{{ asset('css/signup_login.css') }}" /> 
   <link rel="shortcut icon" type="image/png" href="/image/logo/logo_fav.png"/>
-
 </head>
 
 <body>
@@ -43,7 +42,7 @@
                         @endif
     <form action='signup_and_login' method="post">
       <input type="hidden" name="_token" value="{{csrf_token()}}"/> 
-      <input type="text" placeholder="Tên" name="name">
+      <input type="text" placeholder="Tên tài khoản" name="name">
       <input type="email" placeholder="Email" name="email">
       <select name="gender">
           <option value="" disabled selected hidden>Giới tính</option>
@@ -51,7 +50,8 @@
           <option value="Nữ">Nữ</option>
 
       </select>
-      <input type="birthdate" placeholder="Ngày sinh" name="birthday">
+      <input type="date" placeholder="Ngày sinh" name="birthday">
+
       <select class="form-control" name="school">
                                 <option value="" disabled selected hidden style="color: #C3C3D8;font-weight: bold;">Chọn trường</option>
                                 @foreach($school as $sch)
@@ -60,7 +60,6 @@
                                 </select>
       <input type="password" placeholder="Mật khẩu" name="password">
       <input type="password" placeholder="Nhập lại mật khẩu" name="passwordAgain">
-      <input type="text" placeholder="Nhập ID cá nhân(không quá 8 ký tự)" name="id">
          
       <button class="button" type="submit">Đăng ký</button>
     </form>
