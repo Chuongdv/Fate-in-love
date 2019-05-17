@@ -22,7 +22,6 @@
               <a href="/myprofile/{{$user->id}}" >{{$user->name}}</a>
                      
             <a href="/logout">Đăng xuất</a>
-
       <a href="/contact">Liên hệ</a>
       
       
