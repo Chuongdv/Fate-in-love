@@ -13,18 +13,7 @@ use App\Events;
 class ChatsController extends Controller
 {
     
-    public function get()
-    {
-        // get all users except the authenticated one
-        $cids = array();
-        $crushIds = array();
-        $cids = DB::table('crush')->select('cid')->where('uid', '=', auth()->id())->get();
-        foreach ($cids as $key) { 
-        	array_push($crushIds, $key->cid);
-        }
-    //    $contacts = DB::table('users')->whereNotIn('id', $crushIds)->select('users.name', 'users.image')->get();
-   //     return response()->json($contacts);
-    }
+
 
     public function getMessagesFor($id)
     {
@@ -47,6 +36,9 @@ class ChatsController extends Controller
 
     public function send(Request $request)
     {
+
+        DB::table('messages')->where('source', '=', auth()->id())->where('destination','=', $request->crushId)->update(['seen' =>'1']);
+
     	$idc = null;
     	if((int) auth()->id() > (int) $request->crushId)
           	 $idc = auth()->id() . $request->crushId;
@@ -54,10 +46,8 @@ class ChatsController extends Controller
              $idc = $request->crushId . auth()->id() ;
 
 
-
-
          DB::table('messages')->insert(['idc'=> $idc, 'source' =>auth()->id(), 'destination' => $request->crushId, 
-         	'message' => $request->message]);
+         	'message' => $request->message, 'seen'=>'0']);
 
 	
 

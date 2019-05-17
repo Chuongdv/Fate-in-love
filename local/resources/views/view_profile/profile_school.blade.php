@@ -9,6 +9,9 @@
 <link rel="shortcut icon" type="image/png" href="/image/logo/logo_fav.png"/>
 
   <base href="{{asset('')}}">
+      <meta name="_token" content="{{csrf_token()}}" />
+    <script src="https://js.pusher.com/4.4/pusher.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
 
 </head>
 <body>
@@ -19,35 +22,44 @@
               <a href="/myprofile/{{$user->id}}" >{{$user->name}}</a>
                      
             <a href="/logout">Đăng xuất</a>
-      <a href="/home">Trang chủ</a>
+     
       <a href="/contact">Liên hệ</a>
       
       
     </div>
   </div>
   <section>
-  <nav>
-      <ul >
+  <section>
+    <div id="me" hidden>{{$user->id}}</div>
+    <nav class="tutorial">
+      <ul>
                 <li class="menu listmenu">
                   Menu
                 </li>
-        <li href="#" class="listmenu" style="text-align: left;">
-          <a href="/myprofile/{{$user->id}}" class="rowmenu"><img src="image/profile/{{$user->image}}"width="30" height= "30" />
-            
+        <li href="#" class="listmenu" >
+          <a href="/myprofile/{{$user->id}}" class="rowmenu"><img src="image/profile/{{$user->image}}"width="30" height= "30" />    
                   {{$user->name}}</a>
          
                 </li>
                 <li href="#" class="listmenu">
-          <a href="/chat" class="rowmenu"><img src="image/chat.png" width="30" height= "30"/>
+          <a href="/chat" class="rowmenu "id="tinnhan"><img src="image/chat.png" width="30" height= "30"/>
                   Chat</a>
                 </li>
                 <li href="#" class="listmenu">
-          <a href="/crush/{{$user->id}}" class="rowmenu"><image src="image/ghepdoi.png" width="30"  height= "30">
+          <a href="/crush/{{$user->id}}" class="rowmenu"><image src="image/ghepdoi.png" width="30"  height= "30"/>
                   Ghép đôi</a>
                 </li>
-                <li href="#" class="listmenu">
-          <a href="/thongbao" class="rowmenu"><image src="image/thongbao.png" width="30"  height= "30">
-                  Thông báo</a>
+                <li href="#" class="listmenu" >
+
+          <a  class="rowmenu" id="nhapnhay"  ><image src="image/thongbao.png" width="30"  height= "30"/>
+
+                  Thông báo <i class="fa fa-angle-down"></i></a>
+
+                  <ul class="drop">
+
+            </ul>
+
+
                 </li>
             </ul>
         </nav>
@@ -74,12 +86,12 @@
               @if($check==1)
             <div class="button_container">
 
-              <a href="/unfollow_fschool/{{$user->id}}/{{$school->id}}"><button style="background-image: url('image/love_follow.png')" onclick = "myClick()" id="fl" class="btn" style="width: 150px; border-radius: 50px; margin-top: 50px;"><span>Đang theo dõi</span></button></a>
+              <a href="/unfollow_fschool/{{$user->id}}/{{$school->id}}"><button style="background-color: rgba(143,188,143); border-radius: 10px; border: none;" onclick = "myClick()" id="fl" class="btn" style="width: 150px; border-radius: 50px; margin-top: 50px;"><span>Đang theo dõi</span></button></a>
               </div>
               @else
              <div class="button_container">
 
-              <a href="/follow_fschool/{{$user->id}}/{{$school->id}}"><button style="background-image: url('image/love_follow.png')" onclick = "myClick()" id="fl" class="btn" style="width: 150px; border-radius: 50px; margin-top: 50px;"><span>Theo dõi</span></button></a>
+              <a href="/follow_fschool/{{$user->id}}/{{$school->id}}"><button style="background-color: rgba(143,188,143); border-radius: 10px; border: none;" onclick = "myClick()" id="fl" class="btn" style="width: 150px; border-radius: 50px; margin-top: 50px;"><span>Theo dõi</span></button></a>
               </div>
                @endif  
             
@@ -132,6 +144,61 @@
     </div>
     
   </section>
+
+  <script>
+   
+  $(document).ready(function () {
+   
+   Pusher.logToConsole = true;
+
+ var pusher = new Pusher('936d12ed94ff6b0de391', {
+    cluster: 'ap1',
+    encrypted: false
+});
+
+var chanelNotify = "notify." + $("#me").html();
+
+
+// Subscribe to the channel we specified in our Laravel Event
+var channel = pusher.subscribe(chanelNotify);
+
+// Bind a function to a Event (the full Laravel class)
+channel.bind('App\\Events\\NotifyEvent', function(data) {
+  var infomation;
+  if(data.type == "add"){
+    infomation = "<li id=\"\"><image src=\"image/love_follow.png\" width=\"15\"  height= \"15\"/>" + data.message + "</li>";
+  }else{
+    infomation = "<li id=\"\"><image src=\"image/love_unfollow.png\" width=\"15\"  height= \"15\"/>" + data.message + "</li>";
+  }
+  $(".drop").html(infomation);
+  $("#nhapnhay").attr('class', 'animate-flicker');
+});
+
+ $("#nhapnhay").hover(function(){
+    $(this).removeAttr('class');
+    $(this).attr('class', 'rowmenu');
+ });
+
+var chanelChat = "messages." +  $("#me").html();
+
+
+// Subscribe to the channel we specified in our Laravel Event
+var channelC = pusher.subscribe(chanelChat);
+
+// Bind a function to a Event (the full Laravel class)
+channelC.bind('App\\Events\\NewMessage', function(data) {
+    $("#tinnhan").attr('class', 'animate-flicker');
+});
+
+});
+
+
+  $("#tinnhan").click(function(){
+    $(this).removeAttr('class');
+    $(this).attr('class', 'rowmenu');
+ });
+
+ </script>
 
 </body>
 </html>

@@ -20,7 +20,9 @@
     background-image: url('image/love_unfollow.png');"
   }
 </style>
-   <script src="https://js.pusher.com/4.4/pusher.min.js"></script>
+
+    <meta name="_token" content="{{csrf_token()}}" />
+    <script src="https://js.pusher.com/4.4/pusher.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
    
 </head>
@@ -39,8 +41,9 @@
   </div>
 
   <section>
-    <nav>
-      <ul >
+    <div id="me" hidden>{{$user->id}}</div>
+    <nav class="tutorial">
+      <ul>
                 <li class="menu listmenu">
                   Menu
                 </li>
@@ -50,18 +53,24 @@
          
                 </li>
                 <li href="#" class="listmenu">
-					<a href="/chat" class="rowmenu" ><img src="image/chat.png" width="30" height= "30"/>
-                	Chat</a>
+          <a href="/chat" class="rowmenu "id="tinnhan"><img src="image/chat.png" width="30" height= "30"/>
+                  Chat</a>
                 </li>
                 <li href="#" class="listmenu">
-          <a href="/crush/{{$user->id}}" class="rowmenu"><image src="image/ghepdoi.png" width="30"  height= "30">
+          <a href="/crush/{{$user->id}}" class="rowmenu"><image src="image/ghepdoi.png" width="30"  height= "30"/>
                   Ghép đôi</a>
                 </li>
-                <li href="#" class="listmenu">
+                <li href="#" class="listmenu" >
 
-          <a href="/thongbao" class="rowmenu"><image src="image/thongbao.png" width="30"  height= "30">
+          <a  class="rowmenu" id="nhapnhay"  ><image src="image/thongbao.png" width="30"  height= "30"/>
 
-                  Thông báo</a>
+                  Thông báo <i class="fa fa-angle-down"></i></a>
+
+                  <ul class="drop">
+
+            </ul>
+
+
                 </li>
             </ul>
         </nav>
@@ -223,80 +232,62 @@
         }, false);
     }
 
+</script>
 
-  </script>
-
-
-<script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.12.0.min.js"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js" ></script>
-  <script>
-   /* 
-  $(document).ready(function () {
-      var currentCrush = $("#currentCrush").text();
-      var pictureCrush = null;
-      var me = null;
-      var pictureMe = null;
-
-    me = $(".info").find("#infoId").text();
-    pictureMe = $(".info").find("#infoPic").text();
-
-  
-    $(".btn-item love").click(crushSchool);  
-
-    function crushSchool(){
-      var link = $("#love").attr('href');
-      //goi server
-      $.ajaxSetup({
-          headers: {
-                      'X-CSRF-TOKEN': $('meta[name="_token"]').attr('content')
-                  }
-      });
-      $.ajaxSetup({ cache: false });
-      $.ajax({
-          url : link,
-          type : "post",
-          dataType:"text",
-          data : {
-          'message': message,
-          'crushId': currentCrush
-          },
-          success : function (result){
-          alert(result);
-          }
-      });
-    }
-
-/*
-    // xu li realtime khi co tin nhan moi den
-    // Enable pusher logging - don't include this in production
-    Pusher.logToConsole = true;
+<script>
+   
+$(document).ready(function () {
+   
+   Pusher.logToConsole = true;
 
  var pusher = new Pusher('936d12ed94ff6b0de391', {
     cluster: 'ap1',
     encrypted: false
 });
 
-var chanelChat = "messages." + me;
+var chanelNotify = "notify." + $("#me").html();
 
 
 // Subscribe to the channel we specified in our Laravel Event
-var channel = pusher.subscribe(chanelChat);
+var channel = pusher.subscribe(chanelNotify);
 
 // Bind a function to a Event (the full Laravel class)
-channel.bind('App\\Events\\NewMessage', function(data) {
-    var buff = "";
-    buff = "<div class=\"chat-form-crush\"><div class=\"avt\"><img src=\"";
-    buff += pictureCrush;
-    buff += "\"></div><div class=\"messenger\"> <p>";
-    buff += data.message.message;
-    buff += "</p></div></div>";
-    $(' .chatting').append(buff);
+channel.bind('App\\Events\\NotifyEvent', function(data) {
+  var infomation;
+  if(data.type == "add"){
+    infomation = "<li id=\"\"><image src=\"image/love_follow.png\" width=\"15\"  height= \"15\"/>" + data.message + "</li>";
+  }else{
+    infomation = "<li id=\"\"><image src=\"image/love_unfollow.png\" width=\"15\"  height= \"15\"/>" + data.message + "</li>";
+  }
+  $(".drop").html(infomation);
+  $("#nhapnhay").attr('class', 'animate-flicker');
+});
+
+ $("#nhapnhay").hover(function(){
+    $(this).removeAttr('class');
+    $(this).attr('class', 'rowmenu');
+ });
+
+var chanelChat = "messages." +  $("#me").html();
+
+
+// Subscribe to the channel we specified in our Laravel Event
+var channelC = pusher.subscribe(chanelChat);
+
+// Bind a function to a Event (the full Laravel class)
+channelC.bind('App\\Events\\NewMessage', function(data) {
+    $("#tinnhan").attr('class', 'animate-flicker');
 });
 
 });
-*/
 
-  </script>
+
+  $("#tinnhan").click(function(){
+    $(this).removeAttr('class');
+    $(this).attr('class', 'rowmenu');
+ });
+
+ </script>
 </body>
 </html>
 
