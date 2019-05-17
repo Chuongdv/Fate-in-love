@@ -51,11 +51,11 @@
                 	Ghép đôi</a>
                 </li>
                 <li href="#" class="listmenu" >
-					<a href="/thongbao" class="rowmenu animate-flicker"  ><image src="image/thongbao.png" width="30"  height= "30"/>
+					<a href="/thongbao" class="rowmenu" id="nhapnhay"  ><image src="image/thongbao.png" width="30"  height= "30"/>
                 	Thông báo <i class="fa fa-angle-down"></i></a>
 
                 	<ul class="drop">
-                		
+
 				    </ul>
 
 
@@ -114,11 +114,19 @@ channel.bind('App\\Events\\NotifyEvent', function(data) {
 		infomation = "<li id=\"\"><image src=\"image/love_unfollow.png\" width=\"15\"  height= \"15\"/>" + data.message + "</li>";
 	}
 	$(".drop").html(infomation);
+	$("#nhapnhay").attr('class', 'animate-flicker');
 });
+
 
 });
 
-  </script>
+
+ $("#nhapnhay").hover(function(){
+		$(this).removeAttr('class');
+ 		$(this).attr('class', 'rowmenu');
+ });
+
+ </script>
 
 </body>
 </html>

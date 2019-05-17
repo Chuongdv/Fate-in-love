@@ -82,6 +82,8 @@
           <?php
             $data = DB::table('users')->join('crush', 'users.id', '=', 'crush.cid');
             $contacts = $data->where('uid',$user->id)->get();
+            $onUser = DB::table('status')->select('uid')->get();
+
           ?>
 
             @foreach($contacts as $crush)
@@ -89,7 +91,14 @@
               <img src="image/profile/{{$crush->image}}">
               <div class="inf">
               <p class="name">{{$crush->name}}</p>
-              <p class="on">đang online</p>
+               @foreach($onUser as $on)
+                @if($crush->id == $on->uid))
+                  <p class="on">online</p>
+                 @else
+                   <p class="on">offline</p>
+                @endif
+              @endforeach
+
               </div>
               <span class="badge" >39</span><!--bien dem tin nhan moi-->
             </div>
@@ -116,7 +125,14 @@
               <p class="name">{{"silly girl" .$count}}</p>
                <?php $count += 1; ?>
               @endif
-              <p class="on">đang online</p>
+
+              @foreach($onUser as $on)
+                @if($becrush->id == $on->uid))
+                  <p class="on">online</p>
+                 @else
+                   <p class="on">offline</p>
+                @endif
+              @endforeach
               </div>
             </div>
             @endforeach
@@ -323,7 +339,7 @@
           'crushId': currentCrush
           },
           success : function (result){
-          alert(result);
+        //  alert(result);
           }
       });
     }
