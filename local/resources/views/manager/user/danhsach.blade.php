@@ -32,8 +32,8 @@
                         <td>{{$tr->id}}</td>
                         <td>{{$tr->name}}</td>
                         <td>{{$tr->email}}</td>
-                        <td class="center"><i class="fa fa-trash-o  fa-fw"></i><a href="manager/user/chitiet/{{$tr->id}}"> Chi tiết</a></td>
-                        <td class="center"><i class="fa fa-pencil fa-fw"></i> <a href="manager/user/xoa/{{$tr->id}}">Xóa</a></td>
+                        <td class="center"><i class="fa fa-trash-o  fa-fw"></i><a href="profile/{{$tr->id}}"> Chi tiết</a></td>
+                        <td class="center"><i class="fa fa-pencil fa-fw"></i> <a href="profile/user/xoa/{{$tr->id}}">Xóa</a></td>
                     </tr>
                     @endforeach
                 </tbody>

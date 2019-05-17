@@ -108,14 +108,14 @@
                  ?>
                   @foreach($results_school as $sch1)
                       <?php
-                      $count1s = DB::table('fschool')->where('sid',$sch1->id)->count('uid');
+                         $count2 = DB::table('users')->where('sid',$sch->sid)->count('id');
 
                       ?>
                  <div class="item_school">
                      <a href="/home_school/{{$sch1->id}}">   <div style="margin-top: 2px;"><img src="image/logo/{{$sch1->logo}}" width="50" height="50"></div></a>
                         <div style="margin-top: -2px;">
                             <p>{{$sch1->name}}</p>
-                            <p style="font-size: 10px; margin-top: -4px;">{{$count1s}} sinh viên</p>
+                            <p style="font-size: 10px; margin-top: -4px;">{{$count2}} sinh viên</p>
                            <a href="/follow_school/{{$user->id}}/{{$sch1->id}}"> <button value="false"  class="btn-item" style="background-image: url('image/love_unfollow.png');"></button></a>
                         </div>
                     </div>
