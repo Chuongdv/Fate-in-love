@@ -21,7 +21,7 @@
               <a href="/myprofile/{{$user->id}}">{{$user->name}}</a>
                     
             <a href="/logout">Đăng xuất</a>
-			<a href="/home" >Trang chủ</a>
+			
 			<a href="/contact" >Liên hệ</a>
 			
 		</div>
@@ -39,7 +39,7 @@
          
                 </li>
                 <li href="#" class="listmenu">
-					<a href="/chat" class="rowmenu" ><img src="image/chat.png" width="30" height= "30"/>
+					<a href="/chat" class="rowmenu animate-flicker" ><img src="image/chat.png" width="30" height= "30"/>
                 	Chat</a>
                 </li>
                 <li href="#" class="listmenu">
@@ -47,11 +47,12 @@
                 	Ghép đôi</a>
                 </li>
                 <li href="#" class="listmenu" >
-					<a href="/thongbao" class="rowmenu"  ><image src="image/thongbao.png" width="30"  height= "30"/>
+					<a href="/thongbao" class="rowmenu animate-flicker"  ><image src="image/thongbao.png" width="30"  height= "30"/>
                 	Thông báo <i class="fa fa-angle-down"></i></a>
 
                 	<ul class="drop">
 				        <li><a href="#"><image src="image/love_follow.png" width="15"  height= "15"/> Abc đã thích bạn</a></li>
+				       
 				       
 				    </ul>
 
