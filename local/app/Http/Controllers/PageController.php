@@ -16,6 +16,7 @@ class PageController extends Controller
     	$users = User::all();
     	view()->share('users',$users);
     }
+    
      function page(){
          if(Auth::check()){
         $user = Auth::user();
