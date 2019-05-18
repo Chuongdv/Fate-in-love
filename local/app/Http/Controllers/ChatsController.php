@@ -24,8 +24,8 @@ class ChatsController extends Controller
 
         // get all messages between the authenticated user and the selected user
         $idc = null;
-    	if((int) auth()->id() > (int) $id)
-          	 $idc = auth()->id() . $id;
+      if((int) auth()->id() > (int) $id)
+             $idc = auth()->id() . $id;
          else
              $idc = $id . auth()->id() ;    
 
@@ -39,17 +39,15 @@ class ChatsController extends Controller
 
         DB::table('messages')->where('source', '=', auth()->id())->where('destination','=', $request->crushId)->update(['seen' =>'1']);
 
-    	$idc = null;
-    	if((int) auth()->id() > (int) $request->crushId)
-          	 $idc = auth()->id() . $request->crushId;
+      $idc = null;
+      if((int) auth()->id() > (int) $request->crushId)
+             $idc = auth()->id() . $request->crushId;
          else
              $idc = $request->crushId . auth()->id() ;
 
 
-         DB::table('messages')->insert(['idc'=> $idc, 'source' =>auth()->id(), 'destination' => $request->crushId, 
-         	'message' => $request->message, 'seen'=>'0']);
+         DB::table('messages')->insert(['idc'=> $idc, 'source' =>auth()->id(), 'destination' => $request->crushId, 'message' => $request->message, 'seen' => '0']);
 
-	
 
          $mess = DB::table('messages')->where('source', '=', auth()->id())->where('destination', '=', $request->crushId)->get()->last();
          var_dump($mess);

@@ -84,10 +84,12 @@ class SchoolController extends Controller
             DB::table('Schools')->insert(['id'=> $name, 'name'=>$request->Ten, 'address'=>$request->DiaChi]);
         }
 
-        return redirect('manager/school/them/' )->with('thongbao', 'Them thanh cong truong: ' . $request->Ten);
+        return redirect('manager/school/them/' )->with('thongbao', 'Thêm thành công: ' . $request->Ten);
     }
 
     function getXoa($id){
+       // DB::table('users')->where('sid', '=', $id)->delete();
+       // DB::table('fschool')->where('sid', '=', $id)->delete();
         DB::table('Schools')->where('id', '=', $id)->delete();
         return redirect('manager/school/danhsach')->with('thongbao', 'Xóa thành công');
     }

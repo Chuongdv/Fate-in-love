@@ -23,7 +23,6 @@
                         <th>Tên</th>
                         <th>Logo</th>
                         <th>Địa chỉ</th>
-                        <th>Delete</th>
                         <th>Edit</th>
                     </tr>
                 </thead>
@@ -34,7 +33,6 @@
                         <td>{{$tr->name}}</td>
                         <td><img src="image/logo/{{$tr->logo}}" alt="<?php echo "Hình ảnh trường: " . $tr->name;?>" width="200" height="200"></td>
                         <td>{{$tr->address}}</td>
-                        <td class="center"><i class="fa fa-trash-o  fa-fw"></i><a href="manager/school/xoa/{{$tr->id}}"> Delete</a></td>
                         <td class="center"><i class="fa fa-pencil fa-fw"></i> <a href="manager/school/sua/{{$tr->id}}">Edit</a></td>
                     </tr>
                     @endforeach
