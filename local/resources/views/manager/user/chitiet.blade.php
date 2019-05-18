@@ -1,1 +1,0 @@
- chitiet.blade.php

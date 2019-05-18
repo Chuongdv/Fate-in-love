@@ -17,11 +17,32 @@ class AdminController extends Controller
 
     function getSua($id){
         $data = DB::table('Admin')->where('id', '=', $id)->get();
-    	return view ('manager.admin.sua', ['admin' => $data]);
-    }
+    	return view ('manager.admin.sua', ['admin' => $data]);}
 
     function postsua(Request $request, $id){
-        DB::table('admin')->where('id', '=', $id)->update(['name'=> $request->name, 'email' => $reuqest->email, 'password'=>bcrypt($request->password)]);
+         $this->validate($request,
+        [
+         'name'=>'required|min:3',
+         'email'=>'required|email|unique:users,email',
+         'password'=>'required|min:6|max:32',
+         'passwordAgain'=>'required|same:password',
+         
+
+        ],
+        [
+            'name.required'=>'Bạn cần tạo tên tài khoản',
+            'name.min'=>'Tên tài khoản quá ngắn',
+            'email.required'=>'Bận cần nhập email để đăng ký tài khoản',
+            'email.email'=>'Bạn cần nhập đúng định dạng email',
+            'email.unique'=>'Ai đó đã sử dụng email này để đăng ký trước đó',
+            'password.required'=>'Nhập mật khẩu của bạn',
+            'password.min'=>'Mật khẩu không an toàn cho tài khoản của bạn',
+            'password.max'=>'Bạn nên đặt mật khẩu mang tính gợi nhớ',
+            'passwordAgain.required'=>'Bạn cần nhập lại mật khẩu',
+            'passwordAgain.same'=>'Mật khẩu không trùng khớp',
+        ]);
+
+        DB::table('admin')->where('id', '=', $id)->update(['name'=> $request->name, 'email' => $request->email, 'password'=>bcrypt($request->password)]);
 
         return redirect('manager/admin/sua/' . $id)->with('thongbao', 'Thay đổi thành công');
     }
@@ -61,7 +82,16 @@ class AdminController extends Controller
     }
 
     function getXoa($id){
-        DB::table('Admin')->where('id', '=', $id)->delete();
+        if($id == 1){
+            return redirect('manager/admin/danhsach')->with('thongbao', 'Không thể xóa root');
+        }
+        else
+            {
+                DB::table('Admin')->where('id', '=', $id)->delete();
+                return redirect('manager/admin/danhsach')->with('thongbao', 'xóa thành công');
+            }
+        
+        
     }
 
 

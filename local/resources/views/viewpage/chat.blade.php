@@ -115,9 +115,9 @@
               </div>
 
             <?php 
-              $count = DB::table('messages')->where('source', '=', $user->id)->where('destination','=', $crush->id)->where('seen', '=', '0')->get()->count();
+              $number = DB::table('messages')->where('source', '=', $user->id)->where('destination','=', $crush->id)->where('seen', '=', '0')->get()->count();
             ?>
-              <span class="badge" >{{$count}}</span><!--bien dem tin nhan moi-->
+              <span class="badge" >{{$number}}</span><!--bien dem tin nhan moi-->
             </div>
             @endforeach
 
@@ -158,9 +158,9 @@
                 @endif
                </div>
             <?php 
-              $count = DB::table('messages')->where('source', '=', $user->id)->where('destination','=', $becrush->id)->where('seen', '=', '0')->get()->count();
+              $number = DB::table('messages')->where('source', '=', $user->id)->where('destination','=', $becrush->id)->where('seen', '=', '0')->get()->count();
             ?>
-              <span class="badge" >{{$count}}</span><!--bien dem tin nhan moi-->
+              <span class="badge" >{{$number}}</span><!--bien dem tin nhan moi-->
             </div>
             @endforeach
              
@@ -169,7 +169,7 @@
 
           <div class="left-container">
           <div class="top-left-container">
-            <img src="image/profile/<?php if(isset($contacts[0])) echo $contacts[0]->image ?>">
+            <img src="image/profile/<?php if(isset($contacts[0])) echo $contacts[0]->image; else echo "/avatar.jpg"; ?>">
             <div class=" inf-chat">
               <p hidden id="currentCrush"><?php if(isset($contacts[0])) echo $contacts[0]->id ?></p>
               <p class="inf-chat-name"><?php if(isset($contacts[0])) echo $contacts[0]->name ?></p>
@@ -224,7 +224,7 @@
               <div class="avt">
                 <img src="image/profile/{{$contacts[0]->image}}">
               </div>
-              <div class="messenger"> <p>{{$message->message}} hihi</p></div>
+              <div class="messenger"> <p>{{$message->message}}</p></div>
             </div>
             @endif
 
@@ -365,6 +365,7 @@
           'crushId': currentCrush
           },
           success : function (result){
+            alert("hihi");
           }
       });
 

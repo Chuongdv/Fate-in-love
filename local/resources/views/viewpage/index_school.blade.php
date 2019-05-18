@@ -11,7 +11,7 @@
 
   <base href="{{asset('')}}">
 
-<<<<<<< HEAD
+
 <link rel="shortcut icon" type="image/png" href="/image/logo/logo_fav.png"/>
 
 
@@ -24,8 +24,7 @@
 <base href="{{asset('')}}">
 	<style type="text/css">a:hover{text-decoration: none;}</style>
 	
-=======
->>>>>>> fc963d89ba406fa6cef0fda028c15241bed3759d
+
 </head>
 <body>
   <div class="header" >
@@ -35,7 +34,6 @@
               <a href="/myprofile/{{$user->id}}" >{{$user->name}}</a>
                      
             <a href="/logout">Đăng xuất</a>
-<<<<<<< HEAD
 			
 			<a href="/contact" >Liên hệ</a>
 			
@@ -45,17 +43,7 @@
 	<div id="me" hidden>{{$user->id}}</div>
 		<nav class="tutorial">
 			<ul>
-=======
-      
-      <a href="/contact">Liên hệ</a>
-      
-      
-    </div>
-  </div>
-  <section>
-  <nav>
-      <ul >
->>>>>>> fc963d89ba406fa6cef0fda028c15241bed3759d
+
                 <li class="menu listmenu">
                   Menu
                 </li>
@@ -66,7 +54,7 @@
          
                 </li>
                 <li href="#" class="listmenu">
-<<<<<<< HEAD
+
 					<a href="/chat" class="rowmenu "id="tinnhan"><img src="image/chat.png" width="30" height= "30"/>
                 	Chat</a>
                 </li>
@@ -85,18 +73,6 @@
 				    </ul>
 
 
-=======
-          <a href="/chat" class="rowmenu"><img src="image/chat.png" width="30" height= "30"/>
-                  Chat</a>
-                </li>
-                <li href="#" class="listmenu">
-          <a href="/crush/{{$user->id}}" class="rowmenu"><image src="image/ghepdoi.png" width="30"  height= "30">
-                  Ghép đôi</a>
-                </li>
-                <li href="#" class="listmenu">
-          <a href="/thongbao" class="rowmenu"><image src="image/thongbao.png" width="30"  height= "30">
-                  Thông báo</a>
->>>>>>> fc963d89ba406fa6cef0fda028c15241bed3759d
                 </li>
             </ul>
         </nav>

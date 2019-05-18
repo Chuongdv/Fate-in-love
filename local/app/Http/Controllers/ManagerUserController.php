@@ -19,6 +19,9 @@ class ManagerUserController extends Controller
     }
 
     function getXoa($id){
+        DB::table('crush')->where('uid', '=', $id)->delete();
+        DB::table('crush')->where('cid', '=', $id)->delete();
+        DB::table('fschool')->where('uid', '=', $id)->delete();
     	DB::table('users')->where('id', '=', $id)->delete();
     	return redirect('manager/user/danhsach')->with('thongbao', 'Xoá người dùng thành công');
     }

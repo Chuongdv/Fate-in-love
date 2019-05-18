@@ -10,6 +10,13 @@
                     <small>{{$admin[0]->name}}</small>
                 </h1>
             </div>
+                @if(count($errors) > 0)
+                    <div class="alert alert-danger">
+                        @foreach($errors->all() as $err)
+                            {{$err}}<br>
+                        @endforeach()  
+                    </div>
+                @endif
                 @if(session('thongbao'))
                     <div class="alert alert-success">
                         {{session('thongbao')}}

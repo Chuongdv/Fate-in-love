@@ -85,7 +85,6 @@ Route::group(['prefix'=>'manager','middleware'=>'CheckLoginAdmin'],function(){
 
 //chat
 
-Route::get('/contacts', 'ChatsController@get');
 Route::get('/conversation/{id}', 'ChatsController@getMessagesFor');
 Route::post('/conversation/send','ChatsController@send');
 
